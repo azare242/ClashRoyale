@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="567.0" prefWidth="321.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="574.0" fitWidth="331.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@BattleDeckPic.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="21.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/BarbariansCard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="94.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/ArchersCard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="167.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/GiantCard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="238.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/WizardCard.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="21.0" layoutY="89.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="+" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="238.0" layoutY="89.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="+" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="167.0" layoutY="89.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="+" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="94.0" layoutY="89.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="+" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="49.0" layoutY="89.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="-" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="122.0" layoutY="89.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="-" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="195.0" layoutY="89.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="-" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="263.0" layoutY="89.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="-" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="21.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/BabyDragonCard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="94.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/ValkyrieCard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="167.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/MiniPEKKACard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="238.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/FireballCard.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="20.0" layoutY="191.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="+" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="48.0" layoutY="191.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="-" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="97.0" layoutY="191.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="+" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="125.0" layoutY="191.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="-" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="170.0" layoutY="191.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="+" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="198.0" layoutY="191.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="-" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="241.0" layoutY="191.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="+" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="269.0" layoutY="191.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="-" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="21.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/InfernoTowerCard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="94.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/ArrowsCard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="170.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/RageCard.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="23.0" layoutY="293.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="+" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="51.0" layoutY="293.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="-" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="97.0" layoutY="293.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="+" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="125.0" layoutY="293.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="-" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="173.0" layoutY="293.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="+" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="201.0" layoutY="293.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="-" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="241.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/CannonCard.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="244.0" layoutY="293.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="+" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="272.0" layoutY="293.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="23.0" style="-fx-background-radius: 200; -fx-background-color: #31a6a0#31a6a0;" text="-" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Chettan Regular" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="20.0" layoutY="328.0" prefHeight="29.0" prefWidth="114.0" style="-fx-background-color: #31a6a0#31a6a0 #31a6a0#31a6a0; -fx-background-radius: 10;" text="  Your deck :" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Regular" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="24.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/chosenCard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="97.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/chosenCard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="170.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/chosenCard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="240.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/chosenCard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="25.0" layoutY="443.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/chosenCard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="98.0" layoutY="443.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/chosenCard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="171.0" layoutY="443.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/chosenCard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="57.0" layoutX="241.0" layoutY="443.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pics/Scenes/CardsIcon/chosenCard.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="backButton" layoutX="24.0" layoutY="524.0" mnemonicParsing="false" onAction="#switchToMenu" style="-fx-background-color: #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0; -fx-background-radius: 10;" text="Back" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Regular" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="243.0" layoutY="524.0" mnemonicParsing="false" style="-fx-background-color: #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0; -fx-background-radius: 10;" text="Save" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Regular" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="115.0" layoutY="524.0" mnemonicParsing="false" style="-fx-background-color: #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0; -fx-background-radius: 10;" text="Clear deck" textFill="#fabe08">
+         <font>
+            <Font name="Baloo Regular" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
