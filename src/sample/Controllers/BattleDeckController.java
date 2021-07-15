@@ -84,8 +84,13 @@ public class BattleDeckController {
 
     @FXML
     public void addBarbar(javafx.event.ActionEvent actionEvent){
+        if (hasID("BARBARIAN")){
+            removeRepetitive("BARBARIAN");
+            return;
+        }
         if (canChoose()) {
             ImageView card = getEmptyCard();
+            card.setId("BARBARIAN");
             Image barbar = new Image(getClass().getResourceAsStream("/sample/Controllers/view/Pics/Scenes/CardsIcon/BarbariansCard.png"));
             Platform.runLater(new Runnable() {
                 @Override
@@ -97,8 +102,13 @@ public class BattleDeckController {
     }
     @FXML
     public void addArcher(javafx.event.ActionEvent actionEvent){
+        if (hasID("ARCHER")){
+            removeRepetitive("ARCHER");
+            return;
+        }
         if (canChoose()) {
             ImageView card = getEmptyCard();
+            card.setId("ARCHER");
             Image archer = new Image(getClass().getResourceAsStream("/sample/Controllers/view/Pics/Scenes/CardsIcon/ArchersCard.png"));
             Platform.runLater(new Runnable() {
                 @Override
@@ -110,8 +120,13 @@ public class BattleDeckController {
     }
     @FXML
     public void addGiant(javafx.event.ActionEvent actionEvent){
+        if (hasID("GIANT")){
+            removeRepetitive("GIANT");
+            return;
+        }
         if (canChoose()) {
             ImageView card = getEmptyCard();
+            card.setId("GIANT");
             Image giant = new Image(getClass().getResourceAsStream("/sample/Controllers/view/Pics/Scenes/CardsIcon/GiantCard.png"));
             Platform.runLater(new Runnable() {
                 @Override
@@ -123,8 +138,13 @@ public class BattleDeckController {
     }
     @FXML
     public void addWizard(javafx.event.ActionEvent actionEvent){
+        if (hasID("WIZARD")){
+            removeRepetitive("WIZARD");
+            return;
+        }
         if (canChoose()) {
             ImageView card = getEmptyCard();
+            card.setId("WIZARD");
             Image wizard = new Image(getClass().getResourceAsStream("/sample/Controllers/view/Pics/Scenes/CardsIcon/WizardCard.png"));
             Platform.runLater(new Runnable() {
                 @Override
@@ -136,8 +156,13 @@ public class BattleDeckController {
     }
     @FXML
     public void addBaby(javafx.event.ActionEvent actionEvent){
+        if (hasID("BABYDRAGON")){
+            removeRepetitive("BABYDRAGON");
+            return;
+        }
         if (canChoose()) {
             ImageView card = getEmptyCard();
+            card.setId("BABYDRAGON");
             Image babyDragon = new Image(getClass().getResourceAsStream("/sample/Controllers/view/Pics/Scenes/CardsIcon/BabyDragonCard.png"));
             Platform.runLater(new Runnable() {
                 @Override
@@ -149,8 +174,13 @@ public class BattleDeckController {
     }
     @FXML
     public void addValkyrie(javafx.event.ActionEvent actionEvent){
+        if (hasID("VALKYRIE")){
+            removeRepetitive("VALKYRIE");
+            return;
+        }
         if (canChoose()) {
             ImageView card = getEmptyCard();
+            card.setId("VALKYRIE");
             Image valkyrie = new Image(getClass().getResourceAsStream("/sample/Controllers/view/Pics/Scenes/CardsIcon/ValkyrieCard.png"));
             Platform.runLater(new Runnable() {
                 @Override
@@ -162,8 +192,13 @@ public class BattleDeckController {
     }
     @FXML
     public void addPekka(javafx.event.ActionEvent actionEvent){
+        if (hasID("PEKKA")){
+            removeRepetitive("PEKKA");
+            return;
+        }
         if (canChoose()) {
             ImageView card = getEmptyCard();
+            card.setId("PEKKA");
             Image pekka = new Image(getClass().getResourceAsStream("/sample/Controllers/view/Pics/Scenes/CardsIcon/MiniPEKKACard.png"));
             Platform.runLater(new Runnable() {
                 @Override
@@ -175,8 +210,13 @@ public class BattleDeckController {
     }
     @FXML
     public void addFireBall(javafx.event.ActionEvent actionEvent){
+        if (hasID("FIREBALL")){
+            removeRepetitive("FIREBALL");
+            return;
+        }
         if (canChoose()) {
             ImageView card = getEmptyCard();
+            card.setId("FIREBALL");
             Image fireBall = new Image(getClass().getResourceAsStream("/sample/Controllers/view/Pics/Scenes/CardsIcon/FireballCard.png"));
             Platform.runLater(new Runnable() {
                 @Override
@@ -188,8 +228,13 @@ public class BattleDeckController {
     }
     @FXML
     public void addRage(javafx.event.ActionEvent actionEvent){
+        if (hasID("RAGE")){
+            removeRepetitive("RAGE");
+            return;
+        }
         if (canChoose()) {
             ImageView card = getEmptyCard();
+            card.setId("RAGE");
             Image rage = new Image(getClass().getResourceAsStream("/sample/Controllers/view/Pics/Scenes/CardsIcon/RageCard.png"));
             Platform.runLater(new Runnable() {
                 @Override
@@ -201,8 +246,13 @@ public class BattleDeckController {
     }
     @FXML
     public void addArrow(javafx.event.ActionEvent actionEvent){
+        if (hasID("ARROW")){
+            removeRepetitive("ARROW");
+            return;
+        }
         if (canChoose()) {
             ImageView card = getEmptyCard();
+            card.setId("ARROW");
             Image arrow = new Image(getClass().getResourceAsStream("/sample/Controllers/view/Pics/Scenes/CardsIcon/ArrowsCard.png"));
             Platform.runLater(new Runnable() {
                 @Override
@@ -214,8 +264,13 @@ public class BattleDeckController {
     }
     @FXML
     public void addCannon(javafx.event.ActionEvent actionEvent){
+        if (hasID("CANNON")){
+            removeRepetitive("CANNON");
+            return;
+        }
         if (canChoose()) {
             ImageView card = getEmptyCard();
+            card.setId("CANNON");
             Image cannon = new Image(getClass().getResourceAsStream("/sample/Controllers/view/Pics/Scenes/CardsIcon/CannonCard.png"));
             Platform.runLater(new Runnable() {
                 @Override
@@ -227,8 +282,13 @@ public class BattleDeckController {
     }
     @FXML
     public void addInferno(javafx.event.ActionEvent actionEvent){
+        if (hasID("INFERNO")){
+            removeRepetitive("INFERNO");
+            return;
+        }
         if (canChoose()) {
             ImageView card = getEmptyCard();
+            card.setId("INFERNO");
             Image inferno = new Image(getClass().getResourceAsStream("/sample/Controllers/view/Pics/Scenes/CardsIcon/InfernoTowerCard.png"));
             Platform.runLater(new Runnable() {
                 @Override
@@ -240,23 +300,36 @@ public class BattleDeckController {
     }
 
     @FXML
-    public void clearDeck(javafx.event.ActionEvent actionEvent){
-        ArrayList<ImageView> deck = new ArrayList<>();
-        deck.add(card11);
-        deck.add(card22);
-        deck.add(card33);
-        deck.add(card44);
-        deck.add(card55);
-        deck.add(card66);
-        deck.add(card77);
-        deck.add(card88);
+    public boolean hasID(String id){
+        ArrayList<ImageView> deck = buildArray();
         for (ImageView card : deck){
-            card.setImage(null);
+            if (card.getId().equals(id))
+                return true;
+        }
+        return false;
+    }
+
+    @FXML
+    public void removeRepetitive(String id){
+        ArrayList<ImageView> deck = buildArray();
+        for (ImageView card : deck){
+            if (card.getId().equals(id)) {
+                card.setId("");
+                card.setImage(null);
+            }
         }
     }
 
     @FXML
-    public boolean canChoose(){
+    public void clearDeck(javafx.event.ActionEvent actionEvent){
+        ArrayList<ImageView> deck = buildArray();
+        for (ImageView card : deck){
+            card.setId("");
+            card.setImage(null);
+        }
+    }
+
+    private ArrayList<ImageView> buildArray() {
         ArrayList<ImageView> deck = new ArrayList<>();
         deck.add(card11);
         deck.add(card22);
@@ -266,6 +339,12 @@ public class BattleDeckController {
         deck.add(card66);
         deck.add(card77);
         deck.add(card88);
+        return deck;
+    }
+
+    @FXML
+    public boolean canChoose(){
+        ArrayList<ImageView> deck = buildArray();
         for (ImageView card : deck){
             if (card.getImage()==null)
                 return true;
@@ -289,15 +368,7 @@ public class BattleDeckController {
 
     @FXML
     public ImageView getEmptyCard(){
-        ArrayList<ImageView> deck = new ArrayList<>();
-        deck.add(card11);
-        deck.add(card22);
-        deck.add(card33);
-        deck.add(card44);
-        deck.add(card55);
-        deck.add(card66);
-        deck.add(card77);
-        deck.add(card88);
+        ArrayList<ImageView> deck = buildArray();
         for (ImageView card : deck){
             if (card.getImage()==null)
                 return card;
