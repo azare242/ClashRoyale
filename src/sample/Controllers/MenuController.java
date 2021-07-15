@@ -6,12 +6,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import sample.model.User;
 
 import java.io.IOException;
 
 public class MenuController {
 
+    private User user;
 
+    public MenuController(User user){
+        this.user = user;
+    }
     @FXML private Button profileButton;
 
     @FXML private Button battleDeckButton;
@@ -23,9 +28,9 @@ public class MenuController {
         stage.close();
         Stage stage1 = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("view/profileScene.fxml"));
-        loader.setController(new ProfileController());
+        loader.setController(new ProfileController(this.user));
         Parent root = loader.load();
-        stage1.setScene(new Scene(root,364,567));
+        stage1.setScene(new Scene(root,321,567));
         stage1.setTitle("App");
         stage1.show();
     }
@@ -36,9 +41,9 @@ public class MenuController {
         stage.close();
         Stage stage1 = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("view/battleDeckScene.fxml"));
-        loader.setController(new BattleDeckController());
+        loader.setController(new BattleDeckController(this.user));
         Parent root = loader.load();
-        stage1.setScene(new Scene(root,364,567));
+        stage1.setScene(new Scene(root,321,567));
         stage1.setTitle("App");
         stage1.show();
     }

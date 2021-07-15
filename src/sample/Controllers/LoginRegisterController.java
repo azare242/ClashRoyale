@@ -20,7 +20,7 @@ public class LoginRegisterController {
     @FXML private PasswordField enterPassword;
     @FXML private Button loginButton;
     @FXML private Button registerButton;
-    @FXML private TextField enterRealName;
+    @FXML private TextField enterRealname;
     @FXML private TextField enterUsernameNew;
     @FXML private PasswordField enterPasswordNew;
 
@@ -52,7 +52,7 @@ public class LoginRegisterController {
         try {
             Stage menuStage = new Stage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view/menuScene.fxml"));
-            loader.setController(new MenuController());
+            loader.setController(new MenuController(loggedInUser));
             Parent root = loader.load();
             menuStage.setTitle("Clash Royal");
             menuStage.setScene(new Scene(root,321,567));
@@ -91,12 +91,13 @@ public class LoginRegisterController {
         String userName = enterUsernameNew.getText();
         if (checkNewUsername(userName)){
             String passWord = enterPasswordNew.getText();
-            saveNewUser(userName,passWord);
+            String realName = enterRealname.getText();
+            saveNewUser(userName,passWord,realName);
         }
     }
-    private void saveNewUser(String userName,String passWord){
+    private void saveNewUser(String userName,String passWord,String realName){
         FileUtils fileUtil = new FileUtils();
-        User user = new User(userName,passWord);
+        User user = new User(userName,passWord,realName);
         fileUtil.saveNewUser(user);
     }
 }

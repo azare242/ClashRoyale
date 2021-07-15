@@ -64,7 +64,7 @@
             <Font name="Baloo Regular" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="243.0" layoutY="524.0" mnemonicParsing="false" style="-fx-background-color: #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0; -fx-background-radius: 10;" text="Save" textFill="#fabe08">
+      <Button fx:id="saveButton" layoutX="243.0" layoutY="524.0" mnemonicParsing="false" onAction="#save" style="-fx-background-color: #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0 #31a6a0#31a6a0; -fx-background-radius: 10;" text="Save" textFill="#fabe08">
          <font>
             <Font name="Baloo Regular" size="15.0" />
          </font>
