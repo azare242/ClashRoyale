@@ -14,6 +14,8 @@ public class User implements Serializable {
     private String realName;
     private BattleDeck battleDeck;
     private HashMap<String,Card> cards;
+    private int XP;
+    private int level;
 
 
     public User(String userName,String passWord,String realName){
@@ -22,7 +24,18 @@ public class User implements Serializable {
         this.realName = realName;
         battleDeck = new BattleDeck();
         initCards();
+        XP = 0;
+        level = 1;
     }
+
+    public int getXP() {
+        return XP;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
     private void initCards(){
         cards = new HashMap<>();
         cards.put("BARBARIAN",new Barbarians());

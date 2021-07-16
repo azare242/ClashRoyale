@@ -7,7 +7,7 @@ public abstract class Troop implements Card{
     private int level;
     private int count;
     private int cost;
-    //protected GameElement gameElement;
+    //protected GameElement[] gameElement;
     public Troop(int count,int cost){
         this.cost = cost;
         this.count = count;

@@ -33,7 +33,6 @@ public class ProfileController {
     @FXML private ImageView card8;
     @FXML private Label levelLabel;
     @FXML private Label cupCountLabel;
-
     private Image getImageByCard(Card card){
         if (card == null) return null;
         String className = card.getClass().getSimpleName();
@@ -150,6 +149,7 @@ public class ProfileController {
         card8.setId(classNameToId(card_8));
         card8.setImage(getImageByCard(card_8));
 
+        levelLabel.setText(String.valueOf(user.getLevel()));
 
     }
     @FXML

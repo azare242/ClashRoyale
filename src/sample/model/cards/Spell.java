@@ -7,7 +7,7 @@ public abstract class Spell implements Card{
     private double radius;
     private int cost;
     private int level;
-    //protected GameElement gameElement;
+    //protected GameElement[] gameElement;
 
 
     public Spell(double radius,int cost){
