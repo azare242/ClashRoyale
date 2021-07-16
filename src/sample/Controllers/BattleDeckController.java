@@ -225,7 +225,6 @@ public class BattleDeckController {
             Card card = user.getCardFromDeck(i);
             view.setId(classNameToId(card));
             Image image = getImageByCard(card);
-            System.out.println("Image: " + image.getUrl());
             view.setImage(image);
             initBattleDeckTemp.put(i,classNameToId(card));
             chosenCards++;
