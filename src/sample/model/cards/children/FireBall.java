@@ -2,16 +2,18 @@ package sample.model.cards.children;
 
 import sample.model.cards.Spell;
 import sample.model.elements.GameElement;
+import sample.model.elements.children.FireBallElement;
 
 public class FireBall extends Spell {
 
     public FireBall(){
         super(2.5,4);
+        gameElements = new GameElement[]{new FireBallElement()};
     }
 
     @Override
     public GameElement[] getGameElements() {
-        return new GameElement[0];
+        return gameElements;
     }
 
     @Override

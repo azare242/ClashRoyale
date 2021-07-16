@@ -161,7 +161,7 @@ public class ProfileController {
         loader.setController(new MenuController(this.user));
         Parent root = loader.load();
         stage1.setScene(new Scene(root,321,567));
-        stage1.setTitle("App");
+        stage1.setTitle("Clash Royal");
         stage1.show();
     }
 }

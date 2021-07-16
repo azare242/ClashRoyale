@@ -1,6 +1,8 @@
 package sample.model.elements;
 
-public interface GameElement {
+import java.io.Serializable;
+
+public interface GameElement extends Serializable {
 
     public void levelUp();
 }

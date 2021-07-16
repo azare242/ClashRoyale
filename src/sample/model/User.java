@@ -2,6 +2,8 @@ package sample.model;
 
 import sample.model.cards.Card;
 import sample.model.cards.children.*;
+import sample.model.elements.towers.KingTower;
+import sample.model.elements.towers.PrincessTower;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -17,6 +19,9 @@ public class User implements Serializable {
     private int XP;
     private int level;
 
+    private PrincessTower princessTowerLeft;
+    private PrincessTower princessTowerRight;
+    private KingTower kingTower;
 
     public User(String userName,String passWord,String realName){
         this.userName = userName;
@@ -26,6 +31,9 @@ public class User implements Serializable {
         initCards();
         XP = 0;
         level = 1;
+        princessTowerLeft = new PrincessTower();
+        princessTowerRight = new PrincessTower();
+        kingTower = new KingTower();
     }
 
     public int getXP() {

@@ -6,7 +6,7 @@ public abstract class Building implements Card{
 
     private int level;
     private int cost;
-    //protected GameElement[] gameElement;
+    protected GameElement[] gameElements;
 
 
     public Building(int cost){
