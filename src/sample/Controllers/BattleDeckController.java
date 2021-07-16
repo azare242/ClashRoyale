@@ -26,10 +26,6 @@ public class BattleDeckController {
     public BattleDeckController(User user){
         this.user = user;
         initBattleDeckTemp = new HashMap<>();
-        //initialize();
-        for (int i = 0 ; i < 8 ; ++i){
-            System.out.println("CARD    " + this.user.getCardFromDeck(i));
-        }
     }
 
     private Image getImageByCard(Card card){
@@ -187,7 +183,9 @@ public class BattleDeckController {
 
     @FXML private Button saveButton;
 
+    private int chosenCards;
     @FXML public void save(javafx.event.ActionEvent actionEvent) throws IOException {
+        if (chosenCards != 8) return;
         for (int i = 0 ; i < 8 ; ++i){
             String id = initBattleDeckTemp.get(i);
             user.addCardToDeck(i,id);
@@ -214,7 +212,9 @@ public class BattleDeckController {
                 view.setId("");
                 view.setImage(null);
                 initBattleDeckTemp.put(i,"");
+
             }
+            chosenCards = 0;
             return;
         }
 
@@ -228,6 +228,8 @@ public class BattleDeckController {
             System.out.println("Image: " + image.getUrl());
             view.setImage(image);
             initBattleDeckTemp.put(i,classNameToId(card));
+            chosenCards++;
+
         }
     }
     @FXML
@@ -248,6 +250,8 @@ public class BattleDeckController {
                 }
             });
             initBattleDeckTemp.replace(i,"BARBARIAN");
+            chosenCards++;
+
         }
     }
     @FXML
@@ -268,6 +272,8 @@ public class BattleDeckController {
                 }
             });
             initBattleDeckTemp.replace(i,"ARCHER");
+            chosenCards++;
+
         }
     }
     @FXML
@@ -288,6 +294,8 @@ public class BattleDeckController {
                 }
             });
             initBattleDeckTemp.replace(i,"GIANT");
+            chosenCards++;
+
         }
     }
     @FXML
@@ -308,6 +316,8 @@ public class BattleDeckController {
                 }
             });
             initBattleDeckTemp.replace(i,"WIZARD");
+            chosenCards++;
+
         }
     }
     @FXML
@@ -328,6 +338,8 @@ public class BattleDeckController {
                 }
             });
             initBattleDeckTemp.replace(i,"BABYDRAGON");
+            chosenCards++;
+
         }
     }
     @FXML
@@ -348,6 +360,8 @@ public class BattleDeckController {
                 }
             });
             initBattleDeckTemp.replace(i,"VALKYRIE");
+            chosenCards++;
+
         }
     }
     @FXML
@@ -368,6 +382,8 @@ public class BattleDeckController {
                 }
             });
             initBattleDeckTemp.replace(i,"PEKKA");
+            chosenCards++;
+
         }
     }
     @FXML
@@ -388,6 +404,8 @@ public class BattleDeckController {
                 }
             });
             initBattleDeckTemp.replace(i,"FIREBALL");
+            chosenCards++;
+
         }
     }
     @FXML
@@ -408,6 +426,8 @@ public class BattleDeckController {
                 }
             });
             initBattleDeckTemp.replace(i,"RAGE");
+            chosenCards++;
+
         }
     }
     @FXML
@@ -428,6 +448,8 @@ public class BattleDeckController {
                 }
             });
             initBattleDeckTemp.replace(i,"ARROW");
+            chosenCards++;
+
         }
     }
     @FXML
@@ -448,6 +470,8 @@ public class BattleDeckController {
                 }
             });
             initBattleDeckTemp.replace(i,"CANNON");
+            chosenCards++;
+
         }
     }
     @FXML
@@ -468,6 +492,7 @@ public class BattleDeckController {
                 }
             });
             initBattleDeckTemp.replace(i,"INFERNO");
+            chosenCards++;
         }
     }
 
@@ -488,6 +513,7 @@ public class BattleDeckController {
             if (card.getId().equals(id)) {
                 card.setId("");
                 card.setImage(null);
+                chosenCards--;
             }
         }
     }
@@ -498,6 +524,11 @@ public class BattleDeckController {
         for (ImageView card : deck){
             card.setId("");
             card.setImage(null);
+            chosenCards = 0;
+
+        }
+        for (int i = 0 ; i < 8 ; ++i){
+            initBattleDeckTemp.replace(i,"");
         }
     }
 
