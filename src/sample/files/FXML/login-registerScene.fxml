@@ -36,7 +36,7 @@
                         </Label>
                         <TextField fx:id="enterUsername" layoutX="117.0" layoutY="35.0" promptText="username" />
                         <PasswordField fx:id="enterPassword" layoutX="117.0" layoutY="70.0" promptText="password" />
-                        <Button fx:id="loginButton" layoutX="187.0" layoutY="155.0" mnemonicParsing="false" onAction="#login" prefHeight="45.0" prefWidth="90.0" style="-fx-background-color: #2934b0#2934b0;" text="Login" textFill="#c84343">
+                        <Button fx:id="loginButton" layoutX="187.0" layoutY="155.0" mnemonicParsing="false" onAction="#login" prefHeight="45.0" prefWidth="90.0" style="-fx-background-color: #2934b0#2934b0; -fx-background-radius: 10;" text="Login" textFill="#c84343">
                            <font>
                               <Font name="Baloo Paaji Regular" size="18.0" />
                            </font>
@@ -67,7 +67,7 @@
                         <TextField fx:id="enterRealname" layoutX="126.0" layoutY="34.0" promptText="real name" />
                         <TextField fx:id="enterUsernameNew" layoutX="126.0" layoutY="68.0" promptText="user name" />
                         <PasswordField fx:id="enterPasswordNew" layoutX="126.0" layoutY="102.0" promptText="password" />
-                        <Button fx:id="registerButton" layoutX="186.0" layoutY="157.0" mnemonicParsing="false" onAction="#register" prefHeight="45.0" prefWidth="100.0" style="-fx-background-color: #2934b0#2934b0 #2934b0#2934b0;" text="Register" textFill="#c84343">
+                        <Button fx:id="registerButton" layoutX="186.0" layoutY="157.0" mnemonicParsing="false" onAction="#register" prefHeight="45.0" prefWidth="100.0" style="-fx-background-color: #2934b0#2934b0 #2934b0#2934b0; -fx-background-radius: 10;" text="Register" textFill="#c84343">
                            <font>
                               <Font name="Baloo Paaji Regular" size="18.0" />
                            </font>
