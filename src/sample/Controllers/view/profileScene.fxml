@@ -60,22 +60,22 @@
             <Image url="@Pics/Scenes/CardsIcon/chosenCard.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="77.0" fitWidth="64.0" layoutX="18.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="77.0" fitWidth="64.0" layoutX="90.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="77.0" fitWidth="64.0" layoutX="166.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="77.0" fitWidth="64.0" layoutX="239.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="77.0" fitWidth="64.0" layoutX="18.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="77.0" fitWidth="64.0" layoutX="90.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="77.0" fitWidth="64.0" layoutX="166.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="77.0" fitWidth="64.0" layoutX="239.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="card1" fitHeight="77.0" fitWidth="64.0" layoutX="18.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="card2" fitHeight="77.0" fitWidth="64.0" layoutX="90.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="card3" fitHeight="77.0" fitWidth="64.0" layoutX="166.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="card4" fitHeight="77.0" fitWidth="64.0" layoutX="239.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="card5" fitHeight="77.0" fitWidth="64.0" layoutX="18.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="card6" fitHeight="77.0" fitWidth="64.0" layoutX="90.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="card7" fitHeight="77.0" fitWidth="64.0" layoutX="166.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="card8" fitHeight="77.0" fitWidth="64.0" layoutX="239.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="155.0" fitWidth="284.0" layoutX="24.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../Downloads/Wooden-banne-on-transparent-background-PNG.png" />
+            <Image url="@Wooden-banne-on-transparent-background-PNG.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="155.0" fitWidth="284.0" layoutX="24.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../Downloads/Wooden-banne-on-transparent-background-PNG.png" />
+            <Image url="@Wooden-banne-on-transparent-background-PNG.png" />
          </image>
       </ImageView>
       <Label alignment="CENTER" layoutX="118.0" layoutY="296.0" prefHeight="35.0" prefWidth="86.0" style="-fx-background-color: #b04b9f#b04b9f #b04b9f#b04b9f; -fx-background-radius: 10;" text="Deck" textFill="#8fcce9">
@@ -97,15 +97,25 @@
             </Label>
             <ImageView fitHeight="48.0" fitWidth="53.0" layoutX="40.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../Downloads/trophy6.png" />
+                  <Image url="@trophy6.png" />
                </image>
             </ImageView>
-            <ProgressBar layoutX="48.0" layoutY="71.0" prefHeight="28.0" prefWidth="166.0" progress="0.51" />
+            <ProgressBar layoutX="48.0" layoutY="71.0" prefHeight="28.0" prefWidth="166.0" progress="0.0" />
             <ImageView fitHeight="58.0" fitWidth="86.0" layoutX="35.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../Downloads/level%20star%202.png" />
+                  <Image url="@level%20star%202.png" />
                </image>
             </ImageView>
+            <Label fx:id="levelLabel" alignment="CENTER" layoutX="52.0" layoutY="68.0" prefHeight="34.0" prefWidth="22.0" text="0" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="cupCountLabel" alignment="CENTER" layoutX="117.0" layoutY="188.0" text="0" textFill="WHITE">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
