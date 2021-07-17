@@ -28,7 +28,7 @@
             <Font name="Baloo Chettan Regular" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="78.0" layoutY="211.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="165.0" style="-fx-background-color: #d8c048#d8c048 #d8c048#d8c048;" text="Training Camp" textFill="#228b76">
+      <Button fx:id="startGameButton" layoutX="78.0" layoutY="211.0" mnemonicParsing="false" onAction="#goToGame" prefHeight="42.0" prefWidth="165.0" style="-fx-background-color: #d8c048#d8c048 #d8c048#d8c048;" text="Training Camp" textFill="#228b76">
          <font>
             <Font name="Baloo Chettan Regular" size="20.0" />
          </font>

@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.util.Duration;
+import sample.model.User;
 
 public class GameController {
 
@@ -20,6 +21,11 @@ public class GameController {
     private Timeline timer;
     private int second , minute;
 
+    private User user;
+
+    public GameController(User user){
+        this.user = user;
+    }
     @FXML
     public void startTimer(){
         timerCounter.setText("03:00");

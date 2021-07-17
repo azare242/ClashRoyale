@@ -21,6 +21,7 @@ public class MenuController {
 
     @FXML private Button battleDeckButton;
 
+    @FXML private Button startGameButton;
 
     @FXML
     public void switchToProfile(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -48,5 +49,16 @@ public class MenuController {
         stage1.show();
     }
 
-
+    @FXML
+    public void goToGame(javafx.event.ActionEvent actionEvent) throws IOException {
+        Stage stage  = (Stage) startGameButton.getScene().getWindow();
+        stage.close();
+        Stage stage1 = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("view/Pics/Scenes/game.fxml"));
+        loader.setController(new GameController(this.user));
+        Parent root = loader.load();
+        stage1.setScene(new Scene(root,600,663));
+        stage1.setTitle("Clash Royal");
+        stage1.show();
+    }
 }
