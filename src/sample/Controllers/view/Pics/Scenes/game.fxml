@@ -100,22 +100,22 @@
                      <children>
                         <ImageView fitHeight="52.0" fitWidth="56.0" layoutX="16.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../Downloads/Elixir%20icon.png" />
+                              <Image url="@Elixir%20icon.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="52.0" fitWidth="56.0" layoutX="85.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../Downloads/Elixir%20icon.png" />
+                              <Image url="@Elixir%20icon.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="52.0" fitWidth="56.0" layoutX="155.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../Downloads/Elixir%20icon.png" />
+                              <Image url="@Elixir%20icon.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="52.0" fitWidth="56.0" layoutX="224.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../Downloads/Elixir%20icon.png" />
+                              <Image url="@Elixir%20icon.png" />
                            </image>
                         </ImageView>
                         <AnchorPane layoutX="-31.0" layoutY="-14.0" prefHeight="106.0" prefWidth="388.0">
@@ -149,7 +149,7 @@
             <ProgressBar layoutX="392.0" layoutY="78.0" prefWidth="200.0" progress="0.32" />
             <ImageView fitHeight="50.0" fitWidth="57.0" layoutX="376.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Downloads/Elixir%20icon.png" />
+                  <Image url="@Elixir%20icon.png" />
                </image>
             </ImageView>
             <Label layoutX="414.0" layoutY="-8.0" text="Next:" textFill="#e6e6c3">
