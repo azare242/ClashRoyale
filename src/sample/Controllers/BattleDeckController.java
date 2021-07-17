@@ -218,8 +218,6 @@ public class BattleDeckController {
             return;
         }
 
-
-
         for (int i = 0; i < 8 ; ++i){
             ImageView view = views.get(i);
             Card card = user.getCardFromDeck(i);
