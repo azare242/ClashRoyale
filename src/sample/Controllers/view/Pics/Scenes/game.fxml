@@ -14,8 +14,7 @@
    <right>
       <Pane prefHeight="577.0" prefWidth="111.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="31.0" layoutY="514.0" mnemonicParsing="false" text="Button1" />
-            <Button fx:id="startBtn" layoutX="12.0" layoutY="447.0" mnemonicParsing="false" onAction="#startTimer" text="START">
+            <Button fx:id="startBtn" layoutX="5.0" layoutY="480.0" mnemonicParsing="false" onAction="#startTimer" prefHeight="45.0" prefWidth="94.0" text="START">
                <font>
                   <Font size="21.0" />
                </font></Button>
@@ -163,6 +162,7 @@
                   <Image url="@CardsIcon/RageCard.png" />
                </image>
             </ImageView>
+            <Button fx:id="back" layoutX="559.0" layoutY="1.0" mnemonicParsing="false" onAction="#backToMenu" text="Back" />
          </children>
       </Pane>
    </bottom>

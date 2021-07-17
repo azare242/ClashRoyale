@@ -5,10 +5,16 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import sample.model.User;
+
+import java.io.IOException;
 
 public class GameController {
 
@@ -17,6 +23,9 @@ public class GameController {
 
     @FXML
     private Label timerCounter;
+
+    @FXML
+    private Button back;
 
     private Timeline timer;
     private int second , minute;
@@ -61,5 +70,18 @@ public class GameController {
         });
         timer.getKeyFrames().add(frame);
         timer.playFromStart();
+    }
+
+    @FXML
+    public void backToMenu(javafx.event.ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) back.getScene().getWindow();
+        stage.close();
+        Stage stage1 = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("view/menuScene.fxml"));
+        loader.setController(new MenuController(this.user));
+        Parent root = loader.load();
+        stage1.setScene(new Scene(root,321,567));
+        stage1.setTitle("Clash Royal");
+        stage1.show();
     }
 }
