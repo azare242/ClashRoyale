@@ -20,7 +20,7 @@
                </font></Button>
             <ImageView fitHeight="97.0" fitWidth="103.0" layoutX="7.0" layoutY="-19.0" opacity="0.71" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Downloads/timer%20backgraund.png" />
+                  <Image url="@timer%20backgraund.png" />
                </image>
             </ImageView>
             <Label layoutX="13.0" layoutY="-2.0" text="Time left:" textFill="#e6e6c3">
@@ -35,22 +35,22 @@
             </Label>
             <ImageView fitHeight="114.0" fitWidth="109.0" layoutX="-1.0" layoutY="160.0" opacity="0.69" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                <image>
-                  <Image url="@../../../../../../../../Downloads/timer%20backgraund.png" />
+                  <Image url="@timer%20backgraund.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="114.0" fitWidth="109.0" layoutY="309.0" opacity="0.69" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                <image>
-                  <Image url="@../../../../../../../../Downloads/timer%20backgraund.png" />
+                  <Image url="@timer%20backgraund.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="99.0" fitWidth="117.0" layoutX="-3.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Downloads/red%20crown.png" />
+                  <Image url="@red%20crown.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="57.0" fitWidth="83.0" layoutX="14.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Downloads/pngfind.com-coronas-png-3039657.png" />
+                  <Image url="@blue%20crown1.png" />
                </image>
             </ImageView>
             <Label layoutX="37.0" layoutY="338.0" text="0" textFill="#38d0f7">
