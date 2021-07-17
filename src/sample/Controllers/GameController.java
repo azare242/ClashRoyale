@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
 
 public class GameController implements Initializable {
 
-    private int progress;
+    private double progress;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
