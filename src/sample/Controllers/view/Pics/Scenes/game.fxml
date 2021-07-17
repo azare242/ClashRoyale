@@ -146,7 +146,7 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <ProgressBar layoutX="392.0" layoutY="78.0" prefWidth="200.0" progress="0.32" />
+            <ProgressBar fx:id="progressBar" layoutX="392.0" layoutY="78.0" prefWidth="200.0" progress="0.0" />
             <ImageView fitHeight="50.0" fitWidth="57.0" layoutX="376.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Elixir%20icon.png" />

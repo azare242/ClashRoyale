@@ -6,17 +6,31 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import sample.model.User;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class GameController {
+public class GameController implements Initializable {
+
+    private int progress;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        progressBar.setStyle("-fx-accent: #e647e9");
+    }
+
+    @FXML
+    private ProgressBar progressBar;
 
     @FXML
     private Button startBtn;
@@ -53,6 +67,11 @@ public class GameController {
             @Override
             public void handle(ActionEvent actionEvent) {
                 second--;
+                if (minute<2)
+                    progress+=0.4;                   //4 elixir per second
+                else
+                    progress+=0.2;                       //2 elixir per second
+                progressBar.setProgress(progress);
                 if (second<10){
                     timerCounter.setText("0"+minute + ":" +"0"+second);
                 }else {
