@@ -14,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import sample.model.ElixirHandler;
 import sample.model.User;
 
 import java.io.IOException;
@@ -23,7 +24,7 @@ import java.util.ResourceBundle;
 public class GameController implements Initializable {
 
     private double progress;
-
+    @FXML private Label elixirLabel;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         progressBar.setStyle("-fx-accent: #e647e9");
@@ -44,10 +45,13 @@ public class GameController implements Initializable {
     private Timeline timer;
     private int second , minute;
 
+    private ElixirHandler elixir;
     private User user;
 
     public GameController(User user){
+        progress = 0.4;
         this.user = user;
+        elixir = new ElixirHandler();
     }
     @FXML
     public void startTimer(){
@@ -67,11 +71,18 @@ public class GameController implements Initializable {
             @Override
             public void handle(ActionEvent actionEvent) {
                 second--;
-                if (minute<2)
-                    progress+=0.4;                   //4 elixir per second
-                else
-                    progress+=0.2;                       //2 elixir per second
-                progressBar.setProgress(progress);
+                if (!elixir.isFull()) {
+                    if (minute < 2) {
+                        progress += 0.4;                   //4 elixir per second
+                        elixir.increase(4);
+                        elixirLabel.setText(String.valueOf(elixir.getCount()));
+                    } else {
+                        progress += 0.2;                       //2 elixir per second
+                        elixir.increase(2);
+                        elixirLabel.setText(String.valueOf(elixir.getCount()));
+                    }
+                    progressBar.setProgress(progress);
+                }
                 if (second<10){
                     timerCounter.setText("0"+minute + ":" +"0"+second);
                 }else {

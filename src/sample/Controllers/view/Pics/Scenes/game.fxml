@@ -146,7 +146,7 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <ProgressBar fx:id="progressBar" layoutX="392.0" layoutY="78.0" prefWidth="200.0" progress="0.0" />
+            <ProgressBar fx:id="progressBar" layoutX="392.0" layoutY="78.0" prefWidth="200.0" progress="0.4" />
             <ImageView fitHeight="50.0" fitWidth="57.0" layoutX="376.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Elixir%20icon.png" />
@@ -163,6 +163,11 @@
                </image>
             </ImageView>
             <Button fx:id="back" layoutX="559.0" layoutY="1.0" mnemonicParsing="false" onAction="#backToMenu" text="Back" />
+            <Label fx:id="elixirLabel" alignment="CENTER" layoutX="385.0" layoutY="68.0" prefHeight="34.0" prefWidth="33.0" text="4" textFill="WHITE">
+               <font>
+                  <Font name="Baloo Bhaijaan Regular" size="23.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </bottom>
