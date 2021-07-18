@@ -9,7 +9,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import sample.model.SoundEffects;
 import sample.model.User;
 import sample.utils.FileUtils;
 
@@ -33,6 +36,7 @@ public class LoginRegisterController {
         if (!folder.exists()) folder.mkdirs();
     }
 
+
     @FXML public void login(ActionEvent e){
         if (folder.listFiles().length == 0) {
             statusLoginTab.setText("User Doesn't exist");
@@ -49,7 +53,10 @@ public class LoginRegisterController {
 
             openMenu(login);
         }
-        else statusLoginTab.setText("Username Or Password\n is incorrect");
+        else{
+            SoundEffects.playErrorSound();
+            statusLoginTab.setText("Username Or Password\n is incorrect");
+        }
     }
 
     private void openMenu(User loggedInUser){
@@ -98,6 +105,7 @@ public class LoginRegisterController {
             String realName = enterRealname.getText();
             saveNewUser(userName,passWord,realName);
         } else {
+            SoundEffects.playErrorSound();
             statusRegisterTab.setText("a User with this username exist");
         }
     }

@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import sample.model.SoundEffects;
 import sample.model.User;
 
 import java.io.IOException;
@@ -56,6 +57,7 @@ public class MenuController {
 
         if (user.battleDeckIsEmpty()){
             status.setText("Please Set Your BattleDeck");
+            SoundEffects.playErrorSound();
             return;
         }
         Stage stage  = (Stage) startGameButton.getScene().getWindow();
