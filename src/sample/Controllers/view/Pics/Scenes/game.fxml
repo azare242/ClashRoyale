@@ -5,7 +5,6 @@
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -74,78 +73,6 @@
                   <Image url="@../../Wooden-banne-on-transparent-background-PNG.png" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="-32.0" layoutY="-10.0" prefHeight="141.0" prefWidth="450.0">
-               <children>
-                  <ImageView fitHeight="80.0" fitWidth="96.0" layoutX="84.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@CardsIcon/WizardCard.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="80.0" fitWidth="96.0" layoutX="152.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@CardsIcon/BabyDragonCard.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="80.0" fitWidth="96.0" layoutX="220.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@CardsIcon/GiantCard.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="80.0" fitWidth="96.0" layoutX="286.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@CardsIcon/ValkyrieCard.png" />
-                     </image>
-                  </ImageView>
-                  <AnchorPane layoutX="72.0" layoutY="21.0" prefHeight="102.0" prefWidth="384.0">
-                     <children>
-                        <ImageView fitHeight="52.0" fitWidth="56.0" layoutX="16.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Elixir%20icon.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="52.0" fitWidth="56.0" layoutX="85.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Elixir%20icon.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="52.0" fitWidth="56.0" layoutX="155.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Elixir%20icon.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="52.0" fitWidth="56.0" layoutX="224.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Elixir%20icon.png" />
-                           </image>
-                        </ImageView>
-                        <AnchorPane layoutX="-31.0" layoutY="-14.0" prefHeight="106.0" prefWidth="388.0">
-                           <children>
-                              <Label alignment="CENTER" layoutX="51.0" layoutY="77.0" prefHeight="44.0" prefWidth="45.0" text="5" textFill="WHITE">
-                                 <font>
-                                    <Font name="Baloo Bhaijaan Regular" size="23.0" />
-                                 </font>
-                              </Label>
-                              <Label alignment="CENTER" layoutX="189.0" layoutY="77.0" prefHeight="44.0" prefWidth="45.0" text="5" textFill="WHITE">
-                                 <font>
-                                    <Font name="Baloo Bhaijaan Regular" size="23.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="135.0" layoutY="80.0" text="4" textFill="WHITE">
-                                 <font>
-                                    <Font name="Baloo Bhaijaan Regular" size="23.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="273.0" layoutY="80.0" text="4" textFill="WHITE">
-                                 <font>
-                                    <Font name="Baloo Bhaijaan Regular" size="23.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
             <ProgressBar fx:id="progressBar" layoutX="392.0" layoutY="78.0" prefWidth="200.0" progress="0.4" />
             <ImageView fitHeight="50.0" fitWidth="57.0" layoutX="376.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -157,13 +84,73 @@
                   <Font name="Baloo Paaji Regular" size="19.0" />
                </font>
             </Label>
-            <ImageView fitHeight="56.0" fitWidth="45.0" layoutX="415.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="nextCardImageView" fitHeight="56.0" fitWidth="45.0" layoutX="397.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@CardsIcon/RageCard.png" />
+                  <Image url="@CardsIcon/chosenCard.png" />
                </image>
             </ImageView>
             <Button fx:id="back" layoutX="559.0" layoutY="1.0" mnemonicParsing="false" onAction="#backToMenu" text="Back" />
             <Label fx:id="elixirLabel" alignment="CENTER" layoutX="385.0" layoutY="68.0" prefHeight="34.0" prefWidth="33.0" text="4" textFill="WHITE">
+               <font>
+                  <Font name="Baloo Bhaijaan Regular" size="23.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="card4ImageView" fitHeight="80.0" fitWidth="96.0" layoutX="249.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@CardsIcon/chosenCard.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="card3ImageView" fitHeight="80.0" fitWidth="96.0" layoutX="185.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@CardsIcon/chosenCard.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="card2ImageView" fitHeight="80.0" fitWidth="96.0" layoutX="118.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@CardsIcon/chosenCard.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="card1ImageView" fitHeight="80.0" fitWidth="96.0" layoutX="51.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@CardsIcon/chosenCard.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="57.0" layoutX="258.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Elixir%20icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="57.0" layoutX="194.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Elixir%20icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="57.0" layoutX="127.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Elixir%20icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="57.0" layoutX="60.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Elixir%20icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="card4Cost" alignment="CENTER" layoutX="266.0" layoutY="68.0" prefHeight="34.0" prefWidth="33.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="Baloo Bhaijaan Regular" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="card3Cost" alignment="CENTER" layoutX="202.0" layoutY="70.0" prefHeight="34.0" prefWidth="33.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="Baloo Bhaijaan Regular" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="card2Cost" alignment="CENTER" layoutX="135.0" layoutY="68.0" prefHeight="34.0" prefWidth="33.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="Baloo Bhaijaan Regular" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="card1Cost" alignment="CENTER" layoutX="68.0" layoutY="70.0" prefHeight="34.0" prefWidth="33.0" text="0" textFill="WHITE">
                <font>
                   <Font name="Baloo Bhaijaan Regular" size="23.0" />
                </font>
