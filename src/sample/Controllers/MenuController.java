@@ -18,6 +18,7 @@ public class MenuController {
 
     public MenuController(User user){
         this.user = user;
+        SoundEffects.playMenuSound();
     }
     @FXML private Button profileButton;
 
@@ -54,7 +55,7 @@ public class MenuController {
     @FXML private Label status;
     @FXML
     public void goToGame(javafx.event.ActionEvent actionEvent) throws IOException {
-
+        SoundEffects.stopMenuSound();
         if (user.battleDeckIsEmpty()){
             status.setText("Please Set Your BattleDeck");
             SoundEffects.playErrorSound();

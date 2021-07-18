@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import sample.Controllers.view.ImagesByCard;
 import sample.model.ElixirHandler;
+import sample.model.SoundEffects;
 import sample.model.User;
 import sample.model.cards.Card;
 
@@ -178,6 +179,7 @@ public class GameController implements Initializable {
         });
         timer.getKeyFrames().add(frame);
         timer.playFromStart();
+        SoundEffects.playGameSound();
     }
 
     @FXML
@@ -191,6 +193,7 @@ public class GameController implements Initializable {
         stage1.setScene(new Scene(root,321,567));
         stage1.setTitle("Clash Royal");
         stage1.show();
+        SoundEffects.stopGameSound();
     }
 
 
