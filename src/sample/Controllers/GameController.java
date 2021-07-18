@@ -69,6 +69,14 @@ public class GameController implements Initializable {
         nextCard = getCardFromDeck();
         Image image_next = images.getImage(nextCard);
         nextCardImageView.setImage(image_next);
+
+        card1ImageView.setUserData(card_1);
+
+        card2ImageView.setUserData(card_2);
+
+        card3ImageView.setUserData(card_3);
+
+        card4ImageView.setUserData(card_4);
     }
     @FXML
     private ProgressBar progressBar;
@@ -196,6 +204,77 @@ public class GameController implements Initializable {
     @FXML private ImageView card3ImageView;
     @FXML private ImageView card4ImageView;
     @FXML private ImageView nextCardImageView;
+
+
+    @FXML private Label selected1;
+    @FXML private Label selected2;
+    @FXML private Label selected3;
+    @FXML private Label selected4;
+
+    private Card playedCard;
+    private void setSelected(int i){
+        switch (i) {
+            case 1 -> {
+                selected1.setText("Selected");
+                selected2.setText("");
+                selected3.setText("");
+                selected4.setText("");
+            }
+            case 2 -> {
+                selected1.setText("");
+                selected2.setText("Selected");
+                selected3.setText("");
+                selected4.setText("");
+            }
+            case 3 -> {
+                selected1.setText("");
+                selected2.setText("");
+                selected3.setText("Selected");
+                selected4.setText("");
+            }
+            case 4 -> {
+                selected1.setText("");
+                selected2.setText("");
+                selected3.setText("");
+                selected4.setText("Selected");
+            }
+        }
+    }
+    @FXML public void select1(MouseEvent e){
+        playedCard = (Card) card1ImageView.getUserData();
+        if (!elixir.enough(playedCard.getCost())){
+            return;
+        }
+        setSelected(1);
+
+    }
+
+@FXML public void select2(MouseEvent e){
+        playedCard = (Card) card1ImageView.getUserData();
+        if (!elixir.enough(playedCard.getCost())){
+            return;
+        }
+        setSelected(2);
+
+    }
+
+@FXML public void select3(MouseEvent e){
+        playedCard = (Card) card1ImageView.getUserData();
+        if (!elixir.enough(playedCard.getCost())){
+            return;
+        }
+        setSelected(3);
+
+    }
+
+@FXML public void select4(MouseEvent e){
+        playedCard = (Card) card1ImageView.getUserData();
+        if (!elixir.enough(playedCard.getCost())){
+            return;
+        }
+        setSelected(4);
+
+    }
 
 
 

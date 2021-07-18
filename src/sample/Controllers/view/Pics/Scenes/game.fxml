@@ -95,22 +95,22 @@
                   <Font name="Baloo Bhaijaan Regular" size="23.0" />
                </font>
             </Label>
-            <ImageView fx:id="card4ImageView" fitHeight="80.0" fitWidth="96.0" layoutX="249.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="card4ImageView" fitHeight="80.0" fitWidth="96.0" layoutX="249.0" layoutY="6.0" onMouseClicked="#select4" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@CardsIcon/chosenCard.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="card3ImageView" fitHeight="80.0" fitWidth="96.0" layoutX="185.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="card3ImageView" fitHeight="80.0" fitWidth="96.0" layoutX="185.0" layoutY="6.0" onMouseClicked="#select3" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@CardsIcon/chosenCard.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="card2ImageView" fitHeight="80.0" fitWidth="96.0" layoutX="118.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="card2ImageView" fitHeight="80.0" fitWidth="96.0" layoutX="118.0" layoutY="6.0" onMouseClicked="#select2" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@CardsIcon/chosenCard.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="card1ImageView" fitHeight="80.0" fitWidth="96.0" layoutX="51.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="card1ImageView" fitHeight="80.0" fitWidth="96.0" layoutX="51.0" layoutY="6.0" onMouseClicked="#select1" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@CardsIcon/chosenCard.png" />
                </image>
@@ -153,6 +153,26 @@
             <Label fx:id="card1Cost" alignment="CENTER" layoutX="68.0" layoutY="70.0" prefHeight="34.0" prefWidth="33.0" text="0" textFill="WHITE">
                <font>
                   <Font name="Baloo Bhaijaan Regular" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="selected1" layoutX="56.0" layoutY="10.0" textFill="#00ff04">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="selected2" layoutX="123.0" layoutY="10.0" textFill="#00ff04">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="selected3" layoutX="190.0" layoutY="10.0" textFill="#00ff04">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="selected4" layoutX="254.0" layoutY="10.0" textFill="#00ff04">
+               <font>
+                  <Font size="14.0" />
                </font>
             </Label>
          </children>
