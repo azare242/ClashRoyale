@@ -212,6 +212,7 @@ public class GameController implements Initializable {
     @FXML private Label selected4;
 
     private Card playedCard;
+    private ImageView toReplaceNextTime;
     private void setSelected(int i){
         switch (i) {
             case 1 -> {
@@ -246,36 +247,75 @@ public class GameController implements Initializable {
             return;
         }
         setSelected(1);
-
+        toReplaceNextTime = card1ImageView;
     }
 
 @FXML public void select2(MouseEvent e){
-        playedCard = (Card) card1ImageView.getUserData();
+        playedCard = (Card) card2ImageView.getUserData();
         if (!elixir.enough(playedCard.getCost())){
             return;
         }
         setSelected(2);
+        toReplaceNextTime = card2ImageView;
 
     }
 
-@FXML public void select3(MouseEvent e){
-        playedCard = (Card) card1ImageView.getUserData();
-        if (!elixir.enough(playedCard.getCost())){
-            return;
-        }
-        setSelected(3);
-
+    @FXML public void select3(MouseEvent e) {
+    playedCard = (Card) card3ImageView.getUserData();
+    if (!elixir.enough(playedCard.getCost())) {
+        return;
     }
+    setSelected(3);
+    toReplaceNextTime = card3ImageView;
+
+}
 
 @FXML public void select4(MouseEvent e){
-        playedCard = (Card) card1ImageView.getUserData();
+        playedCard = (Card) card4ImageView.getUserData();
         if (!elixir.enough(playedCard.getCost())){
             return;
         }
         setSelected(4);
-
+        toReplaceNextTime = card4ImageView;
     }
 
+
+    private void setAllSelectedClear(){
+        selected1.setText("");
+        selected2.setText("");
+        selected3.setText("");
+        selected4.setText("");
+    }
+    private void playCard(Card card){
+        cardsInGame.add(card);
+    }
+    @FXML public void deploy(MouseEvent e){
+        if (playedCard == null) return;
+        Card replaceCard = nextCard;
+        playCard(playedCard);
+        nextCard = getCardFromDeck();
+        Image nextCardNewImage = images.getImage(nextCard);
+        Image canPlayCardNewImage = images.getImage(replaceCard);
+        toReplaceNextTime.setImage(canPlayCardNewImage);
+        setNewCost(replaceCard.getCost());
+        toReplaceNextTime.setUserData(replaceCard);
+        nextCardImageView.setImage(nextCardNewImage);
+        int cost = playedCard.getCost();
+        double newProgress = progress - (((double) cost) / 10.0);
+        progress = newProgress;
+        int elixirNewText = Integer.parseInt(elixirLabel.getText()) - cost;
+        elixirLabel.setText(String.valueOf(elixirNewText));
+        elixir.decrease(cost);
+        setAllSelectedClear();
+        playedCard = null;
+    }
+
+    private void setNewCost(int cost){
+        if (toReplaceNextTime == card1ImageView) card1Cost.setText(String.valueOf(cost));
+        else if (toReplaceNextTime == card2ImageView) card2Cost.setText(String.valueOf(cost));
+        else if (toReplaceNextTime == card3ImageView) card3Cost.setText(String.valueOf(cost));
+        else if (toReplaceNextTime == card4ImageView) card4Cost.setText(String.valueOf(cost));
+    }
 
 
 }

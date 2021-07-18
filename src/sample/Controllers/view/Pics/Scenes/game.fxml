@@ -179,6 +179,6 @@
       </Pane>
    </bottom>
    <center>
-      <Pane prefHeight="577.0" prefWidth="574.0" BorderPane.alignment="CENTER" />
+      <Pane onMouseClicked="#deploy" prefHeight="577.0" prefWidth="574.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>
