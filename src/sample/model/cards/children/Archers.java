@@ -8,12 +8,16 @@ public class Archers extends Troop {
 
     public Archers(){
         super(2,3);
-        gameElements = new GameElement[]{
-                new ArcherElement() , new ArcherElement()
-        };
     }
     @Override
     public GameElement[] getGameElements() {
+
+        gameElements = new GameElement[]{
+                new ArcherElement(),new ArcherElement()
+        };
+        for (int i = 0 ; i < 2 ; ++i){
+            gameElements[i].setLevel(level);
+        }
         return gameElements;
     }
 

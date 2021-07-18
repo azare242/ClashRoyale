@@ -46,6 +46,7 @@ public abstract class BuildingElement implements GameElement{
         this.damage = damage;
     }
 
+    @Override
     public void setLevel(int level) {
         this.level = level;
     }

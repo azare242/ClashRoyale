@@ -6,7 +6,7 @@ public abstract class Spell implements Card{
 
     private double radius;
     private int cost;
-    private int level;
+    protected int level;
     protected GameElement[] gameElements;
 
 
@@ -20,4 +20,9 @@ public abstract class Spell implements Card{
 
     @Override
     public abstract void levelUp();
+
+    @Override
+    public int getCost(){
+        return cost;
+    }
 }

@@ -2,6 +2,7 @@ package sample.model.cards.children;
 
 import sample.model.cards.Spell;
 import sample.model.elements.GameElement;
+import sample.model.elements.children.BabyDragonElement;
 import sample.model.elements.children.FireBallElement;
 
 public class FireBall extends Spell {
@@ -13,6 +14,8 @@ public class FireBall extends Spell {
 
     @Override
     public GameElement[] getGameElements() {
+        gameElements = new GameElement[]{new FireBallElement()};
+        gameElements[0].setLevel(level);
         return gameElements;
     }
 

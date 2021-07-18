@@ -8,12 +8,16 @@ public class Barbarians extends Troop {
 
     public Barbarians(){
         super(4,5);
-        gameElements = new GameElement[]{
-                new BarbariansElement(),new BarbariansElement(),new BarbariansElement(),new BarbariansElement()
-        };
+
     }
     @Override
     public GameElement[] getGameElements() {
+        gameElements = new GameElement[]{
+                new BarbariansElement(),new BarbariansElement(),new BarbariansElement(), new BarbariansElement(),
+        };
+        for (int i = 0 ; i < 4 ; ++i){
+            gameElements[i].setLevel(level);
+        }
         return gameElements;
     }
 

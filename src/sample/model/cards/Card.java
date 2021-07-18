@@ -8,4 +8,5 @@ public interface Card extends Serializable {
 
     public GameElement[] getGameElements();
     public void levelUp();
+    public int getCost();
 }

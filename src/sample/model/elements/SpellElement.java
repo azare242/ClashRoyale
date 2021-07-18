@@ -11,6 +11,7 @@ public abstract class SpellElement implements GameElement{
     @Override
     public abstract void levelUp();
 
+    @Override
     public void setLevel(int level) {
         this.level = level;
     }

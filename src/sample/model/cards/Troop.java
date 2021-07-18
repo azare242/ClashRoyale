@@ -4,7 +4,7 @@ import sample.model.elements.GameElement;
 
 public abstract class Troop implements Card{
 
-    private int level;
+    protected int level;
     private int count;
     private int cost;
     protected GameElement[] gameElements;
@@ -18,4 +18,9 @@ public abstract class Troop implements Card{
 
     @Override
     public abstract void levelUp();
+
+    @Override
+    public int getCost(){
+        return cost;
+    }
 }

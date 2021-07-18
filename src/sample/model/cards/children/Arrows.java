@@ -8,11 +8,13 @@ public class Arrows extends Spell {
 
     public Arrows(){
         super(4,3);
-        gameElements = new GameElement[]{ new ArrowsElement() };
+
     }
 
     @Override
     public GameElement[] getGameElements() {
+        gameElements = new GameElement[]{new ArrowsElement()};
+        gameElements[0].setLevel(level);
         return gameElements;
     }
 

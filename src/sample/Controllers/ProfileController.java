@@ -122,7 +122,10 @@ public class ProfileController {
     }
 
     @FXML private void initialize(){
-        if (user.battleDeckIsEmpty()) return;
+        if (user.battleDeckIsEmpty()) {
+            levelLabel.setText(String.valueOf(user.getLevel()));
+            return;
+        }
 
         Card card_1 = user.getCardFromDeck(0);
         card1.setId(classNameToId(card_1));
