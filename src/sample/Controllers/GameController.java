@@ -14,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import sample.Controllers.view.ImagesByCard;
@@ -121,14 +122,35 @@ public class GameController implements Initializable {
                 second--;
                 if (!elixir.isFull()) {
                     if (minute < 2) {
-                        progress += 0.4;                   //4 elixir per second
-                        elixir.increase(4);
+                        if (progress == 0.9){
+                            progress += 0.1;
+                            elixir.increase(1);
+                        }
+                        if (progress == 0.8){
+                            progress += 0.2;
+                            elixir.increase(2);
+                        }
+                        if (progress == 0.7){
+                            progress += 3.0;
+                            elixir.increase(3);
+                        }
+                        else{
+                            progress += 0.4;                   //4 elixir per second
+                            elixir.increase(4);
+                        }
+
                         elixirLabel.setText(String.valueOf(elixir.getCount()));
                     } else {
-                        progress += 0.2;                       //2 elixir per second
-                        elixir.increase(2);
+                        if (progress == 0.9) {
+                            progress += 0.1;
+                            elixir.increase(1);
+                        } else {
+                            progress += 0.2;                       //2 elixir per second
+                            elixir.increase(2);
+                        }
                         elixirLabel.setText(String.valueOf(elixir.getCount()));
                     }
+
                     progressBar.setProgress(progress);
                 }
                 if (second<10){

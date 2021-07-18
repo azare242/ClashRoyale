@@ -15,6 +15,7 @@ public class ElixirHandler {
     public synchronized void increase(int count){
         if (isFull()) return;
         this.count += count;
+        if (this.count > 10) this.count = 10;
     }
 
 
@@ -23,7 +24,7 @@ public class ElixirHandler {
     }
 
     public synchronized boolean enough(int count){
-        return this.count <= count;
+        return this.count >= count;
     }
 
     public synchronized int getCount(){
