@@ -303,6 +303,7 @@ public class GameController implements Initializable {
         int cost = playedCard.getCost();
         double newProgress = progress - (((double) cost) / 10.0);
         progress = newProgress;
+        progressBar.setProgress(newProgress);
         int elixirNewText = Integer.parseInt(elixirLabel.getText()) - cost;
         elixirLabel.setText(String.valueOf(elixirNewText));
         elixir.decrease(cost);

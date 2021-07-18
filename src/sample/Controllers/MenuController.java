@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import sample.model.User;
 
@@ -49,8 +50,14 @@ public class MenuController {
         stage1.show();
     }
 
+    @FXML private Label status;
     @FXML
     public void goToGame(javafx.event.ActionEvent actionEvent) throws IOException {
+
+        if (user.battleDeckIsEmpty()){
+            status.setText("Please Set Your BattleDeck");
+            return;
+        }
         Stage stage  = (Stage) startGameButton.getScene().getWindow();
         stage.close();
         Stage stage1 = new Stage();

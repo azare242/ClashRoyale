@@ -41,6 +41,7 @@
                               <Font name="Baloo Paaji Regular" size="18.0" />
                            </font>
                         </Button>
+                        <Label fx:id="statusLoginTab" layoutX="15.0" layoutY="147.0" prefHeight="54.0" prefWidth="171.0" textFill="#c84343" />
                      </children>
                   </AnchorPane>
             </content>
@@ -72,6 +73,7 @@
                               <Font name="Baloo Paaji Regular" size="18.0" />
                            </font>
                         </Button>
+                        <Label fx:id="statusRegisterTab" layoutX="14.0" layoutY="152.0" prefHeight="54.0" prefWidth="164.0" textFill="#c84343" />
                      </children>
                   </AnchorPane>
             </content>

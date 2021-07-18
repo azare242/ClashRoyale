@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -23,7 +24,8 @@ public class LoginRegisterController {
     @FXML private TextField enterRealname;
     @FXML private TextField enterUsernameNew;
     @FXML private PasswordField enterPasswordNew;
-
+    @FXML private Label statusLoginTab;
+    @FXML private Label statusRegisterTab;
     private File folder;
 
     public LoginRegisterController(){
@@ -33,6 +35,7 @@ public class LoginRegisterController {
 
     @FXML public void login(ActionEvent e){
         if (folder.listFiles().length == 0) {
+            statusLoginTab.setText("User Doesn't exist");
             return;
         }
         String userName = enterUsername.getText();
@@ -46,6 +49,7 @@ public class LoginRegisterController {
 
             openMenu(login);
         }
+        else statusLoginTab.setText("Username Or Password\n is incorrect");
     }
 
     private void openMenu(User loggedInUser){
@@ -93,11 +97,14 @@ public class LoginRegisterController {
             String passWord = enterPasswordNew.getText();
             String realName = enterRealname.getText();
             saveNewUser(userName,passWord,realName);
+        } else {
+            statusRegisterTab.setText("a User with this username exist");
         }
     }
     private void saveNewUser(String userName,String passWord,String realName){
         FileUtils fileUtil = new FileUtils();
         User user = new User(userName,passWord,realName);
         fileUtil.saveNewUser(user);
+        statusRegisterTab.setText("User Created , Please log in \nwith your username and\n password");
     }
 }
