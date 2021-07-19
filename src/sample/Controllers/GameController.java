@@ -276,14 +276,14 @@ public class GameController implements Initializable {
 
 }
 
-@FXML public void select4(MouseEvent e){
-        playedCard = (Card) card4ImageView.getUserData();
-        if (!elixir.enough(playedCard.getCost())){
-            return;
-        }
-        setSelected(4);
-        toReplaceNextTime = card4ImageView;
+@FXML public void select4(MouseEvent e) {
+    playedCard = (Card) card4ImageView.getUserData();
+    if (!elixir.enough(playedCard.getCost())) {
+        return;
     }
+    setSelected(4);
+    toReplaceNextTime = card4ImageView;
+}
 
 
     private void setAllSelectedClear(){
@@ -304,6 +304,7 @@ public class GameController implements Initializable {
 
 
     @FXML public void deploy(MouseEvent e){
+        if (toReplaceNextTime == null) return;
         if (playedCard == null) {
             return;
         }
