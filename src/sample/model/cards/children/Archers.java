@@ -1,5 +1,6 @@
 package sample.model.cards.children;
 
+import javafx.scene.image.Image;
 import sample.model.cards.Troop;
 import sample.model.elements.GameElement;
 import sample.model.elements.children.ArcherElement;
@@ -24,5 +25,12 @@ public class Archers extends Troop {
     @Override
     public void levelUp() {
 
+    }
+
+    @Override
+    public Image getDefaultImage(String side){
+        if (side.equalsIgnoreCase("PLAYER")) return new Image(getClass().getResourceAsStream("/sample/model/cards/children/images/drop/ArcherDropPlayerSide.PNG"));
+        else if (side.equalsIgnoreCase("BOT")) return new Image(getClass().getResourceAsStream("/sample/model/cards/children/images/drop/ArcherDropBotSide.PNG"));
+        return null;
     }
 }

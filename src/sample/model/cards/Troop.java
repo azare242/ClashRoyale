@@ -1,5 +1,6 @@
 package sample.model.cards;
 
+import javafx.scene.image.Image;
 import sample.model.elements.GameElement;
 
 public abstract class Troop implements Card{
@@ -23,4 +24,7 @@ public abstract class Troop implements Card{
     public int getCost(){
         return cost;
     }
+
+    @Override
+    public abstract Image getDefaultImage(String side);
 }

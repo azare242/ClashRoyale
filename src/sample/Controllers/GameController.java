@@ -336,7 +336,7 @@ public class GameController implements Initializable {
     @FXML ImageView leftBridge;
     @FXML ImageView rightBridge;
     private void addImageToMap(MouseEvent e,Card playedCard){
-        Image image = new Image(getClass().getResourceAsStream("/sample/Controllers/view/Pics/Scenes/CardsIcon/test.png"));
+        Image image = playedCard.getDefaultImage("PLAYER");
 
         GameElement[] gameElements = playedCard.getGameElements();
 
@@ -344,48 +344,48 @@ public class GameController implements Initializable {
             ImageView newImageView = new ImageView(image);
             newImageView.setLayoutX(e.getX());
             newImageView.setLayoutY(e.getY());
-            newImageView.setFitWidth(30);
-            newImageView.setFitHeight(30);
+            newImageView.setFitWidth(100);
+            newImageView.setFitHeight(100);
             mapPane.getChildren().add(newImageView);
         }
         else if (gameElements.length == 2) {
             ImageView newImageView1 = new ImageView(image);
             newImageView1.setLayoutX(e.getX() + 10);
             newImageView1.setLayoutY(e.getY());
-            newImageView1.setFitWidth(50);
-            newImageView1.setFitHeight(50);
+            newImageView1.setFitWidth(70);
+            newImageView1.setFitHeight(70);
             mapPane.getChildren().add(newImageView1);
             ImageView newImageView2 = new ImageView(image);
             newImageView2.setLayoutX(e.getX() - 10);
             newImageView2.setLayoutY(e.getY());
-            newImageView2.setFitWidth(50);
-            newImageView2.setFitHeight(50);
+            newImageView2.setFitWidth(70);
+            newImageView2.setFitHeight(70);
             mapPane.getChildren().add(newImageView2);
         }
         else if (gameElements.length == 4){
             ImageView newImageView1 = new ImageView(image);
             newImageView1.setLayoutX(e.getX() + 10);
             newImageView1.setLayoutY(e.getY() - 10);
-            newImageView1.setFitWidth(50);
-            newImageView1.setFitHeight(50);
+            newImageView1.setFitWidth(100);
+            newImageView1.setFitHeight(100);
             mapPane.getChildren().add(newImageView1);
             ImageView newImageView2 = new ImageView(image);
             newImageView2.setLayoutX(e.getX() - 10);
             newImageView2.setLayoutY(e.getY() - 10);
-            newImageView2.setFitWidth(50);
-            newImageView2.setFitHeight(50);
+            newImageView2.setFitWidth(100);
+            newImageView2.setFitHeight(100);
             mapPane.getChildren().add(newImageView2);
             ImageView newImageView3 = new ImageView(image);
             newImageView3.setLayoutX(e.getX() - 10);
             newImageView3.setLayoutY(e.getY() + 10);
-            newImageView3.setFitWidth(50);
-            newImageView3.setFitHeight(50);
+            newImageView3.setFitWidth(100);
+            newImageView3.setFitHeight(100);
             mapPane.getChildren().add(newImageView3);
             ImageView newImageView4 = new ImageView(image);
             newImageView4.setLayoutX(e.getX() + 10);
             newImageView4.setLayoutY(e.getY() + 10);
-            newImageView4.setFitWidth(50);
-            newImageView4.setFitHeight(50);
+            newImageView4.setFitWidth(100);
+            newImageView4.setFitHeight(100);
             mapPane.getChildren().add(newImageView4);
         }
     }

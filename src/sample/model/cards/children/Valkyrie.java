@@ -1,5 +1,6 @@
 package sample.model.cards.children;
 
+import javafx.scene.image.Image;
 import sample.model.cards.Troop;
 import sample.model.elements.GameElement;
 import sample.model.elements.children.BabyDragonElement;
@@ -21,5 +22,12 @@ public class Valkyrie extends Troop {
     @Override
     public void levelUp() {
 
+    }
+
+    @Override
+    public Image getDefaultImage(String side){
+        if (side.equalsIgnoreCase("PLAYER")) return new Image(getClass().getResourceAsStream("/sample/model/cards/children/images/drop/ValkyrieDropPlayerSide.PNG"));
+        else if (side.equalsIgnoreCase("BOT")) return new Image(getClass().getResourceAsStream("/sample/model/cards/children/images/drop/ValkyrieDropBotSide.PNG"));
+        return null;
     }
 }
