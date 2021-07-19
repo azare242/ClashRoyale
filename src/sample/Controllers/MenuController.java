@@ -55,12 +55,13 @@ public class MenuController {
     @FXML private Label status;
     @FXML
     public void goToGame(javafx.event.ActionEvent actionEvent) throws IOException {
-        SoundEffects.stopMenuSound();
+
         if (user.battleDeckIsEmpty()){
             status.setText("Please Set Your BattleDeck");
             SoundEffects.playErrorSound();
             return;
         }
+        SoundEffects.stopMenuSound();
         Stage stage  = (Stage) startGameButton.getScene().getWindow();
         stage.close();
         Stage stage1 = new Stage();
