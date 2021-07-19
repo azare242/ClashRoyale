@@ -327,8 +327,9 @@ public class GameController implements Initializable {
         elixirLabel.setText(String.valueOf(elixirNewText));
         elixir.decrease(cost);
         setAllSelectedClear();
-        addImageToMap(e,playedCard);
+        Card tpPlay = playedCard;
         playedCard = null;
+        addImageToMap(e,tpPlay);
 
 
     }
@@ -336,6 +337,7 @@ public class GameController implements Initializable {
     @FXML ImageView leftBridge;
     @FXML ImageView rightBridge;
     private void addImageToMap(MouseEvent e,Card playedCard){
+        if (playedCard == null) return;
         Image image = playedCard.getDefaultImage("PLAYER");
 
         GameElement[] gameElements = playedCard.getGameElements();
