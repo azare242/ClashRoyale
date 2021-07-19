@@ -67,7 +67,7 @@
       </Pane>
    </right>
    <bottom>
-      <Pane prefHeight="110.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="113.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="212.0" fitWidth="545.0" layoutX="-21.0" layoutY="-51.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -182,19 +182,19 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="563.0" fitWidth="488.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="549.0" fitWidth="483.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@level_ice_arena_map.png" />
                </image>
             </ImageView>
-            <Pane fx:id="mapPane" layoutX="2.0" onMouseClicked="#deploy" prefHeight="564.0" prefWidth="486.0">
+            <Pane fx:id="mapPane" layoutX="2.0" onMouseClicked="#deploy" prefHeight="538.0" prefWidth="486.0">
                <children>
-                  <ImageView fx:id="playerKingTower" fitHeight="81.0" fitWidth="132.0" layoutX="213.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="playerKingTower" fitHeight="81.0" fitWidth="132.0" layoutX="213.0" layoutY="440.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@CardsIcon/towers/building_tower_king_BLUE.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="enemyKingTower" fitHeight="81.0" fitWidth="56.0" layoutX="217.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="enemyKingTower" fitHeight="81.0" fitWidth="56.0" layoutX="213.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@CardsIcon/towers/building_tower_king_RED.png" />
                      </image>
@@ -204,17 +204,17 @@
                         <Image url="@CardsIcon/towers/building_tower_princess_RED.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="enemyPrincessTowerRight" fitHeight="60.0" fitWidth="58.0" layoutX="350.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="enemyPrincessTowerRight" fitHeight="60.0" fitWidth="58.0" layoutX="345.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@CardsIcon/towers/building_tower_princess_RED.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="playerPrincessTowerLeft" fitHeight="73.0" fitWidth="50.0" layoutX="87.0" layoutY="414.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="playerPrincessTowerLeft" fitHeight="73.0" fitWidth="50.0" layoutX="86.0" layoutY="398.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@CardsIcon/towers/building_tower_princess_BLUE.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="playerPrincessTowerRight" fitHeight="73.0" fitWidth="50.0" layoutX="349.0" layoutY="414.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="playerPrincessTowerRight" fitHeight="73.0" fitWidth="50.0" layoutX="347.0" layoutY="398.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@CardsIcon/towers/building_tower_princess_BLUE.png" />
                      </image>
@@ -224,7 +224,7 @@
                         <Image url="@level_ice_arena_bridge.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="rightBridge" fitHeight="47.0" fitWidth="55.0" layoutX="347.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="rightBridge" fitHeight="47.0" fitWidth="55.0" layoutX="342.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@level_ice_arena_bridge.png" />
                      </image>
