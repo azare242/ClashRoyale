@@ -15,6 +15,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import sample.Controllers.view.ImagesByCard;
@@ -22,6 +23,8 @@ import sample.model.ElixirHandler;
 import sample.model.SoundEffects;
 import sample.model.User;
 import sample.model.cards.Card;
+import sample.model.cards.Spell;
+import sample.model.elements.GameElement;
 
 import java.io.IOException;
 import java.net.URL;
@@ -292,8 +295,21 @@ public class GameController implements Initializable {
     private void playCard(Card card){
         cardsInGame.add(card);
     }
+    private void setNewCost(int cost){
+        if (toReplaceNextTime == card1ImageView) card1Cost.setText(String.valueOf(cost));
+        else if (toReplaceNextTime == card2ImageView) card2Cost.setText(String.valueOf(cost));
+        else if (toReplaceNextTime == card3ImageView) card3Cost.setText(String.valueOf(cost));
+        else if (toReplaceNextTime == card4ImageView) card4Cost.setText(String.valueOf(cost));
+    }
+
+
     @FXML public void deploy(MouseEvent e){
-        if (playedCard == null) return;
+        if (playedCard == null) {
+            return;
+        }
+        if ((e.getY() < leftBridge.getLayoutY() || e.getY() < rightBridge.getLayoutY() )&&( !(playedCard instanceof Spell)) ){  //TODO: CHECK ENEMY PRINCESS TOWERS DESTROYED
+            return;
+        }
         Card replaceCard = nextCard;
         playCard(playedCard);
         nextCard = getCardFromDeck();
@@ -311,14 +327,67 @@ public class GameController implements Initializable {
         elixirLabel.setText(String.valueOf(elixirNewText));
         elixir.decrease(cost);
         setAllSelectedClear();
+        addImageToMap(e,playedCard);
         playedCard = null;
-    }
 
-    private void setNewCost(int cost){
-        if (toReplaceNextTime == card1ImageView) card1Cost.setText(String.valueOf(cost));
-        else if (toReplaceNextTime == card2ImageView) card2Cost.setText(String.valueOf(cost));
-        else if (toReplaceNextTime == card3ImageView) card3Cost.setText(String.valueOf(cost));
-        else if (toReplaceNextTime == card4ImageView) card4Cost.setText(String.valueOf(cost));
+
+    }
+    @FXML private Pane mapPane;
+    @FXML ImageView leftBridge;
+    @FXML ImageView rightBridge;
+    private void addImageToMap(MouseEvent e,Card playedCard){
+        Image image = new Image(getClass().getResourceAsStream("/sample/Controllers/view/Pics/Scenes/CardsIcon/test.png"));
+
+        GameElement[] gameElements = playedCard.getGameElements();
+
+        if (gameElements.length == 1) {
+            ImageView newImageView = new ImageView(image);
+            newImageView.setLayoutX(e.getX());
+            newImageView.setLayoutY(e.getY());
+            newImageView.setFitWidth(30);
+            newImageView.setFitHeight(30);
+            mapPane.getChildren().add(newImageView);
+        }
+        else if (gameElements.length == 2) {
+            ImageView newImageView1 = new ImageView(image);
+            newImageView1.setLayoutX(e.getX() + 10);
+            newImageView1.setLayoutY(e.getY());
+            newImageView1.setFitWidth(50);
+            newImageView1.setFitHeight(50);
+            mapPane.getChildren().add(newImageView1);
+            ImageView newImageView2 = new ImageView(image);
+            newImageView2.setLayoutX(e.getX() - 10);
+            newImageView2.setLayoutY(e.getY());
+            newImageView2.setFitWidth(50);
+            newImageView2.setFitHeight(50);
+            mapPane.getChildren().add(newImageView2);
+        }
+        else if (gameElements.length == 4){
+            ImageView newImageView1 = new ImageView(image);
+            newImageView1.setLayoutX(e.getX() + 10);
+            newImageView1.setLayoutY(e.getY() - 10);
+            newImageView1.setFitWidth(50);
+            newImageView1.setFitHeight(50);
+            mapPane.getChildren().add(newImageView1);
+            ImageView newImageView2 = new ImageView(image);
+            newImageView2.setLayoutX(e.getX() - 10);
+            newImageView2.setLayoutY(e.getY() - 10);
+            newImageView2.setFitWidth(50);
+            newImageView2.setFitHeight(50);
+            mapPane.getChildren().add(newImageView2);
+            ImageView newImageView3 = new ImageView(image);
+            newImageView3.setLayoutX(e.getX() - 10);
+            newImageView3.setLayoutY(e.getY() + 10);
+            newImageView3.setFitWidth(50);
+            newImageView3.setFitHeight(50);
+            mapPane.getChildren().add(newImageView3);
+            ImageView newImageView4 = new ImageView(image);
+            newImageView4.setLayoutX(e.getX() + 10);
+            newImageView4.setLayoutY(e.getY() + 10);
+            newImageView4.setFitWidth(50);
+            newImageView4.setFitHeight(50);
+            mapPane.getChildren().add(newImageView4);
+        }
     }
 
 
