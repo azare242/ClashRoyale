@@ -39,6 +39,7 @@ public class LoginRegisterController {
 
     @FXML public void login(ActionEvent e){
         if (folder.listFiles().length == 0) {
+            SoundEffects.playErrorSound();
             statusLoginTab.setText("User Doesn't exist");
             return;
         }

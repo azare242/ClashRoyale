@@ -1,5 +1,6 @@
 package sample.model.elements;
 
+import javafx.scene.image.ImageView;
 import sample.model.mechanismes.Target;
 
 public abstract class BuildingElement implements GameElement{
@@ -50,5 +51,8 @@ public abstract class BuildingElement implements GameElement{
     public void setLevel(int level) {
         this.level = level;
     }
+
+    @Override
+    public abstract void moveElement(ImageView imageView);
 }
 

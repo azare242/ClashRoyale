@@ -1,5 +1,6 @@
 package sample.model.elements.children;
 
+import javafx.scene.image.ImageView;
 import sample.model.cards.Spell;
 import sample.model.elements.SpellElement;
 
@@ -13,6 +14,11 @@ public class ArrowsElement extends SpellElement {
     }
     @Override
     public void levelUp() {
+
+    }
+
+    @Override
+    public void moveElement(ImageView imageView){
 
     }
 }

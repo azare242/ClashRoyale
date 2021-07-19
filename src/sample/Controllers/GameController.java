@@ -25,6 +25,7 @@ import sample.model.User;
 import sample.model.cards.Card;
 import sample.model.cards.Spell;
 import sample.model.elements.GameElement;
+import sample.model.elements.children.ArcherElement;
 
 import java.io.IOException;
 import java.net.URL;
@@ -349,6 +350,7 @@ public class GameController implements Initializable {
             newImageView.setLayoutY(e.getY());
             newImageView.setFitWidth(100);
             newImageView.setFitHeight(100);
+            newImageView.setUserData(gameElements[0]);
             mapPane.getChildren().add(newImageView);
         }
         else if (gameElements.length == 2) {
@@ -357,12 +359,14 @@ public class GameController implements Initializable {
             newImageView1.setLayoutY(e.getY());
             newImageView1.setFitWidth(70);
             newImageView1.setFitHeight(70);
+            newImageView1.setUserData(gameElements[0]);
             mapPane.getChildren().add(newImageView1);
             ImageView newImageView2 = new ImageView(image);
             newImageView2.setLayoutX(e.getX() - 10);
             newImageView2.setLayoutY(e.getY());
             newImageView2.setFitWidth(70);
             newImageView2.setFitHeight(70);
+            newImageView2.setUserData(gameElements[0]);
             mapPane.getChildren().add(newImageView2);
         }
         else if (gameElements.length == 4){
@@ -371,24 +375,28 @@ public class GameController implements Initializable {
             newImageView1.setLayoutY(e.getY() - 10);
             newImageView1.setFitWidth(100);
             newImageView1.setFitHeight(100);
+            newImageView1.setUserData(gameElements[0]);
             mapPane.getChildren().add(newImageView1);
             ImageView newImageView2 = new ImageView(image);
             newImageView2.setLayoutX(e.getX() - 10);
             newImageView2.setLayoutY(e.getY() - 10);
             newImageView2.setFitWidth(100);
             newImageView2.setFitHeight(100);
+            newImageView2.setUserData(gameElements[1]);
             mapPane.getChildren().add(newImageView2);
             ImageView newImageView3 = new ImageView(image);
             newImageView3.setLayoutX(e.getX() - 10);
             newImageView3.setLayoutY(e.getY() + 10);
             newImageView3.setFitWidth(100);
             newImageView3.setFitHeight(100);
+            newImageView3.setUserData(gameElements[2]);
             mapPane.getChildren().add(newImageView3);
             ImageView newImageView4 = new ImageView(image);
             newImageView4.setLayoutX(e.getX() + 10);
             newImageView4.setLayoutY(e.getY() + 10);
             newImageView4.setFitWidth(100);
             newImageView4.setFitHeight(100);
+            newImageView4.setUserData(gameElements[3]);
             mapPane.getChildren().add(newImageView4);
         }
     }

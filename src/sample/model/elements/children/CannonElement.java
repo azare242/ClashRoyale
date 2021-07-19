@@ -1,5 +1,6 @@
 package sample.model.elements.children;
 
+import javafx.scene.image.ImageView;
 import sample.model.elements.BuildingElement;
 import sample.model.mechanismes.Target;
 
@@ -10,6 +11,11 @@ public class CannonElement extends BuildingElement {
 
     @Override
     public void levelUp() {
+
+    }
+
+    @Override
+    public void moveElement(ImageView imageView){
 
     }
 }

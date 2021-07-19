@@ -1,5 +1,6 @@
 package sample.model.elements.children;
 
+import javafx.scene.image.ImageView;
 import sample.model.elements.SpellElement;
 
 public class RageElement extends SpellElement {
@@ -11,6 +12,11 @@ public class RageElement extends SpellElement {
     }
     @Override
     public void levelUp() {
+
+    }
+
+    @Override
+    public void moveElement(ImageView imageView){
 
     }
 }

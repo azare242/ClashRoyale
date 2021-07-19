@@ -1,5 +1,7 @@
 package sample.model.elements;
 
+import javafx.scene.image.ImageView;
+
 public abstract class SpellElement implements GameElement{
 
     private int level;
@@ -15,4 +17,7 @@ public abstract class SpellElement implements GameElement{
     public void setLevel(int level) {
         this.level = level;
     }
+
+    @Override
+    public abstract void moveElement(ImageView imageView);
 }

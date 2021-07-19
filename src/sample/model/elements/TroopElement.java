@@ -1,5 +1,6 @@
 package sample.model.elements;
 
+import javafx.scene.image.ImageView;
 import sample.model.mechanismes.Speed;
 import sample.model.mechanismes.Target;
 
@@ -60,4 +61,7 @@ public abstract class TroopElement implements GameElement{
     public void setLevel(int level) {
         this.level = level;
     }
+
+    @Override
+    public abstract void moveElement(ImageView imageView);
 }
