@@ -164,6 +164,11 @@ public abstract class TroopElement implements GameElement{
                                 imageView.setLayoutY(newY);
                         }
                     }
+                    if (seconds[0] % 2 == 0) {
+                        imageView.setImage(move1);
+                    } else {
+                        imageView.setImage(move2);
+                    }
                 } else if (this.side == Side.BOT) {
                     if (x <= nearBridge.getLayoutX()) {
                         if (imageView.getLayoutX() <= nearBridge.getLayoutX()) {
@@ -195,14 +200,15 @@ public abstract class TroopElement implements GameElement{
                                 imageView.setLayoutY(newY);
                         }
                     }
+                    if (seconds[0] % 2 == 0) {
+                        imageView.setImage(move1);
+                    } else {
+                        imageView.setImage(move2);
+                    }
                 }
             }
 
-                if (seconds[0] % 2 == 0) {
-                    imageView.setImage(move1);
-                } else {
-                    imageView.setImage(move2);
-                }
+
 
             seconds[0]++;
         }));

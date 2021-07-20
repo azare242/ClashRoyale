@@ -531,7 +531,7 @@ public class GameController implements Initializable {
                 }
                 gameElements[2].startElementAction(newImageView3,mapPane.getChildren(),nearBridge(newImageView3));
                 ImageView newImageView4 = new ImageView(image);
-                newImageView4.setLayoutX(cords[0]+ 10);
+                newImageView4.setLayoutX(cords[0] + 10);
                 newImageView4.setLayoutY(cords[1] + 10);
                 newImageView4.setFitWidth(100);
                 newImageView4.setFitHeight(100);

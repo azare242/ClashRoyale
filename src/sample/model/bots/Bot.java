@@ -25,12 +25,12 @@ public abstract class Bot {
         battleDeck.setCard(6,new MiniPEKKA(Side.BOT));
         battleDeck.setCard(7,new MiniPEKKA(Side.BOT));
     }
-    private int generateRandom(){
-        Random r = new Random();
-        return new Random().nextInt(8);
-    }
+    private int battleDeckCounter = 0;
     protected Card getCardFromBattleDeck(){
-        return battleDeck.getCard(generateRandom());
+        int toDeploy = battleDeckCounter;
+        if (battleDeckCounter == 7) battleDeckCounter = 0;
+        else battleDeckCounter++;
+        return battleDeck.getCard(toDeploy);
     }
 
     public abstract Card play();
