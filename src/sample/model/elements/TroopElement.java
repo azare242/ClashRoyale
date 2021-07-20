@@ -93,7 +93,9 @@ public abstract class TroopElement implements GameElement{
             while (iterator.hasNext()){
                 ImageView imageView = (ImageView) iterator.next();
                 if (imageView != thisImageView) {
-                    if (imageView.getLayoutY() == newY && imageView.getLayoutX() == newX) return false;
+                    boolean bridgesCondition = imageView.getLayoutY() != 261 && imageView.getLayoutX() != 84 && imageView.getLayoutX() != 342;
+                    boolean condition = imageView.getLayoutY() == newY && imageView.getLayoutX() == newX;
+                    if (condition && !bridgesCondition) return false;
                 }
             }
         }
@@ -105,7 +107,7 @@ public abstract class TroopElement implements GameElement{
         double dy = Math.abs(otherImageView.getLayoutY() - thisImageView.getLayoutY());
         return Math.hypot(dx,dy);
     }
-    private boolean canBattle(ImageView imageView,ObservableList<Node> inGameElements){
+    private GameElement canBattle(ImageView imageView,ObservableList<Node> inGameElements){
         synchronized (inGameElements){
             Iterator<Node> iterator = inGameElements.iterator();
             ImageView element = null;
@@ -115,13 +117,13 @@ public abstract class TroopElement implements GameElement{
                 if (gameElement != null){
                 if (this.side != gameElement.getSide()) {
                         if (distance(imageView, element) <= range * 10) {
-                            return true;
+                            return gameElement;
                         }
                     }
                 }
             }
         }
-        return false;
+        return null;
     }
     private Timeline animation;
     @Override
@@ -132,7 +134,7 @@ public abstract class TroopElement implements GameElement{
 
         animation = new Timeline(new KeyFrame(Duration.millis(200), actionEvent -> {
 
-            if (canBattle(imageView,inGameElements)){
+            if (canBattle(imageView,inGameElements) != null){
                 if (seconds[0] % 2 == 0) {
                     imageView.setImage(attack1);
                 } else {
