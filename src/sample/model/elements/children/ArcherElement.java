@@ -1,6 +1,6 @@
 package sample.model.elements.children;
 
-import sample.model.Animations.Animations;
+import sample.model.animations.Animations;
 import sample.model.elements.TroopElement;
 import sample.model.mechanismes.Side;
 import sample.model.mechanismes.Speed;

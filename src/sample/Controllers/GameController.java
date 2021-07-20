@@ -26,6 +26,7 @@ import sample.model.cards.Card;
 import sample.model.cards.Spell;
 import sample.model.elements.GameElement;
 import sample.model.elements.children.ArcherElement;
+import sample.model.elements.children.BabyDragonElement;
 
 import java.io.IOException;
 import java.net.URL;
@@ -352,7 +353,11 @@ public class GameController implements Initializable {
             newImageView.setFitHeight(100);
             newImageView.setUserData(gameElements[0]);
             mapPane.getChildren().add(newImageView);
-            gameElements[0].startElementAction(newImageView,mapPane.getChildren(),nearBridge(newImageView));
+            if (gameElements[0] instanceof BabyDragonElement){
+                gameElements[0].startElementAction(newImageView,mapPane.getChildren(),nearPrincessViewForBabyDragonPlayerSide(newImageView));
+            } else {
+                gameElements[0].startElementAction(newImageView,mapPane.getChildren(),nearBridge(newImageView));
+            }
         }
         else if (gameElements.length == 2) {
             ImageView newImageView1 = new ImageView(image);
@@ -410,8 +415,6 @@ public class GameController implements Initializable {
 
     private ImageView nearBridge(ImageView element){
         ImageView nearBridge = null;
-        double x = element.getLayoutX();
-        double y = element.getLayoutY();
         double dx1 = Math.abs(element.getLayoutX() - leftBridge.getLayoutX());
         double dx2 = Math.abs(element.getLayoutX() - rightBridge.getLayoutX());
         if (dx1>dx2) nearBridge = rightBridge;
@@ -419,5 +422,22 @@ public class GameController implements Initializable {
 
         return nearBridge;
     }
+
+    @FXML private ImageView enemyPrincessTowerLeft;
+    @FXML private ImageView enemyPrincessTowerRight;
+    @FXML private ImageView enemyKingTower;
+    @FXML private ImageView playerPrincessTowerLeft;
+    @FXML private ImageView playerPrincessTowerRight;
+    @FXML private ImageView playerKingTower;
+
+    private ImageView nearPrincessViewForBabyDragonPlayerSide(ImageView element){
+        ImageView nearPrincessTower = null;
+        double dx1 = Math.abs(element.getLayoutX() - enemyPrincessTowerLeft.getLayoutX());
+        double dx2 = Math.abs(element.getLayoutX() - enemyPrincessTowerRight.getLayoutX());
+        if (dx1>dx2) nearPrincessTower = enemyPrincessTowerRight;
+        else nearPrincessTower = enemyPrincessTowerLeft;
+        return nearPrincessTower;
+    }
+
 
 }

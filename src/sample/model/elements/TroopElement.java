@@ -106,7 +106,8 @@ public abstract class TroopElement implements GameElement{
                     double newY = imageView.getLayoutY() - speed.getTilesPerSecond();
                     if (canWalk(imageView,inGameElements,newX,newY)) {
                         imageView.setLayoutX(newX);
-                        imageView.setLayoutY(newY);
+                        if (imageView.getLayoutY() >= nearBridge.getLayoutY())
+                            imageView.setLayoutY(newY);
                     }
                 } else {
                     double newY = imageView.getLayoutY() - speed.getTilesPerSecond();
@@ -119,6 +120,7 @@ public abstract class TroopElement implements GameElement{
                     double newY = imageView.getLayoutY() - speed.getTilesPerSecond();
                     if (canWalk(imageView,inGameElements,newX,newY)) {
                         imageView.setLayoutX(newX);
+                        if (imageView.getLayoutY() >= nearBridge.getLayoutY())
                         imageView.setLayoutY(newY);
                     }
                 } else {
