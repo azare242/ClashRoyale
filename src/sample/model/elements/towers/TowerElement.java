@@ -43,7 +43,10 @@ public abstract class TowerElement implements GameElement {
     public void setLevel(int level) {
         this.level = level;
     }
-
+    @Override
+    public Side getSide(){
+        return side;
+    }
     @Override
     public abstract void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge);
 }

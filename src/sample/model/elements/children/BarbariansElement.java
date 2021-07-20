@@ -14,9 +14,13 @@ public class BarbariansElement extends TroopElement {
         if (side == Side.PLAYER){
             move1 = animations.BarbarianPlayerSideMove1;
             move2 = animations.BarbarianPlayerSideMove2;
+            attack1 = animations.BarbarianPlayerSideAttack1;
+            attack2 = animations.BarbarianPlayerSideAttack2;
         } else if (side == Side.BOT){
             move1 = animations.BarbarianBotSideMove1;
             move2 = animations.BarbarianBotSideMove2;
+            attack1 = animations.BarbarianBotSideAttack1;
+            attack2 = animations.BarbarianBotSideAttack2;
         }
     }
 

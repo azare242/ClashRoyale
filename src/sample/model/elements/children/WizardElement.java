@@ -14,9 +14,13 @@ public class WizardElement extends TroopElement {
         if (side == Side.PLAYER){
             move1 =animations.WizardPlayerSideMove1;
             move2 = animations.WizardPlayerSideMove2;
+            attack1 = animations.WizardPlayerSideAttack1;
+            attack2 = animations.WizardPlayerSideAttack2;
         } else if (side == Side.BOT){
             move1 = animations.WizardBotSideMove1;
             move2 = animations.WizardBotSideMove2;
+            attack1 = animations.WizardBotSideAttack1;
+            attack2 = animations.WizardBotSideAttack2;
         }
     }
 

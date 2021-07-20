@@ -14,9 +14,13 @@ public class GiantElement extends TroopElement {
         if (side == Side.PLAYER){
             move1 = animations.GiantPlayerSideMove1;
             move2 = animations.GiantPlayerSideMove2;
+            attack1 = animations.GiantPlayerSideAttack1;
+            attack2 = animations.GiantPlayerSideAttack2;
         } else if (side == Side.BOT){
             move1 = animations.GiantBotSideMove1;
             move2 = animations.GiantBotSideMove2;
+            attack1 = animations.GiantBotSideAttack1;
+            attack2 = animations.GiantBotSideAttack2;
         }
     }
 

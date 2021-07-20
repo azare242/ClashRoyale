@@ -14,9 +14,13 @@ public class ValkyrieElement extends TroopElement {
         if (side == Side.PLAYER){
             move1 = animations.ValkyriePlayerSideMove1;
             move2 = animations.ValkyriePlayerSideMove2;
+            attack1 = animations.ValkyriePlayerSideAttack1;
+            attack2 = animations.ValkyriePlayerSideAttack2;
         } else if (side == Side.BOT){
             move1 = animations.ValkyrieBotSideMove1;
             move2 = animations.ValkyrieBotSideMove2;
+            attack1 = animations.ValkyrieBotSideAttack1;
+            attack2 = animations.ValkyrieBotSideAttack2;
         }
     }
 

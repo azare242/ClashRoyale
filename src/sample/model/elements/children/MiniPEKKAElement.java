@@ -14,9 +14,13 @@ public class MiniPEKKAElement extends TroopElement {
         if (side == Side.PLAYER){
             move1 = animations.MiniPEKKAPlayerSideMove1;
             move2 = animations.MiniPEKKAPlayerSideMove2;
+            attack1 = animations.MiniPEKKAPlayerSideAttack1;
+            attack2 = animations.MiniPEKKAPlayerSideAttack2;
         } else if (side == Side.BOT){
             move1 = animations.MiniPEKKABotSideMove1;
             move2 = animations.MiniPEKKABotSideMove2;
+            attack1 = animations.MiniPEKKABotSideAttack1;
+            attack2 = animations.MiniPEKKABotSideAttack2;
         }
     }
 

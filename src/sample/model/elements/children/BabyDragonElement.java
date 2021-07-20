@@ -14,9 +14,13 @@ public class BabyDragonElement extends TroopElement {
         if (side == Side.PLAYER){
             move1 = animations.BabyDragonPlayerSideMove1;
             move2 = animations.BabyDragonPlayerSideMove2;
+            attack1 = animations.BabyDragonPlayerSideAttack1;
+            attack2 = animations.BabyDragonPlayerSideAttack2;
         } else if (side == Side.BOT){
             move1 = animations.BabyDragonBotSideMove1;
             move2 = animations.BabyDragonBotSideMove2;
+            attack1 = animations.BabyDragonBotSideAttack1;
+            attack2 = animations.BabyDragonBotSideAttack2;
         }
     }
 

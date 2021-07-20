@@ -13,9 +13,13 @@ public class ArcherElement extends TroopElement {
         if (side == Side.PLAYER){
             move1 = animations.ArcherPlayerSideMove1;
             move2 = animations.ArcherPlayerSideMove2;
+            attack1 = animations.ArcherPlayerSideAttack1;
+            attack2 = animations.ArcherPlayerSideAttack2;
         } else if (side == Side.BOT){
             move1 = animations.ArcherBotSideMove1;
             move2 = animations.ArcherBotSideMove2;
+            attack1 = animations.ArcherBotSideAttack1;
+            attack2 = animations.ArcherBotSideAttack2;
         }
     }
 

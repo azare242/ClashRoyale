@@ -14,7 +14,6 @@ public class PrincessTower extends TowerElement{
     public void levelUp() {
 
     }
-
     @Override
     public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge){
 
