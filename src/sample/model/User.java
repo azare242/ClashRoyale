@@ -4,6 +4,7 @@ import sample.model.cards.Card;
 import sample.model.cards.children.*;
 import sample.model.elements.towers.KingTower;
 import sample.model.elements.towers.PrincessTower;
+import sample.model.mechanismes.Side;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -31,9 +32,9 @@ public class User implements Serializable {
         initCards();
         XP = 0;
         level = 1;
-        princessTowerLeft = new PrincessTower();
-        princessTowerRight = new PrincessTower();
-        kingTower = new KingTower();
+        princessTowerLeft = new PrincessTower(Side.PLAYER);
+        princessTowerRight = new PrincessTower(Side.PLAYER);
+        kingTower = new KingTower(Side.PLAYER);
     }
 
     public int getXP() {
@@ -46,18 +47,18 @@ public class User implements Serializable {
 
     private void initCards(){
         cards = new HashMap<>();
-        cards.put("BARBARIAN",new Barbarians());
-        cards.put("ARCHER",new Archers());
-        cards.put("BABYDRAGON",new BabyDragon());
-        cards.put("WIZARD",new Wizard());
-        cards.put("GIANT",new Giant());
-        cards.put("VALKYRIE",new Valkyrie());
-        cards.put("PEKKA",new MiniPEKKA());
-        cards.put("RAGE",new Rage());
-        cards.put("ARROW",new Arrows());
-        cards.put("FIREBALL",new FireBall());
-        cards.put("INFERNO",new InfernoTower());
-        cards.put("CANNON",new Cannon());
+        cards.put("BARBARIAN",new Barbarians(Side.PLAYER));
+        cards.put("ARCHER",new Archers(Side.PLAYER));
+        cards.put("BABYDRAGON",new BabyDragon(Side.PLAYER));
+        cards.put("WIZARD",new Wizard(Side.PLAYER));
+        cards.put("GIANT",new Giant(Side.PLAYER));
+        cards.put("VALKYRIE",new Valkyrie(Side.PLAYER));
+        cards.put("PEKKA",new MiniPEKKA(Side.PLAYER));
+        cards.put("RAGE",new Rage(Side.PLAYER));
+        cards.put("ARROW",new Arrows(Side.PLAYER));
+        cards.put("FIREBALL",new FireBall(Side.PLAYER));
+        cards.put("INFERNO",new InfernoTower(Side.PLAYER));
+        cards.put("CANNON",new Cannon(Side.PLAYER));
     }
     public Card getCard(String cardName){
         return cards.get(cardName);

@@ -4,11 +4,12 @@ import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import sample.model.elements.BuildingElement;
+import sample.model.mechanismes.Side;
 import sample.model.mechanismes.Target;
 
 public class InfernoTowerElement extends BuildingElement {
-    public InfernoTowerElement() {
-        super(0.4, Target.AIR_AND_GROUND, 6, 40, 800, 20);
+    public InfernoTowerElement(Side side) {
+        super(0.4, Target.AIR_AND_GROUND, 6, 40, 800, 20,side);
         minDamage = currentDamage = 20;
         maxDamage = 400;
     }

@@ -9,6 +9,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
+import sample.model.mechanismes.Side;
 import sample.model.mechanismes.Speed;
 import sample.model.mechanismes.Target;
 
@@ -22,8 +23,8 @@ public abstract class TroopElement implements GameElement{
     protected int HP;
     protected int damage;
     protected int level;
-
-    public TroopElement(double hitSpeed, Speed speed, Target target, double range, boolean areaSplash, int HP, int damage) {
+    protected Side side;
+    public TroopElement(double hitSpeed, Speed speed, Target target, double range, boolean areaSplash, int HP, int damage, Side side) {
         this.hitSpeed = hitSpeed;
         this.speed = speed;
         this.target = target;
@@ -31,6 +32,7 @@ public abstract class TroopElement implements GameElement{
         this.areaSplash = areaSplash;
         this.HP = HP;
         this.damage = damage;
+        this.side = side;
         level = 1;
     }
 

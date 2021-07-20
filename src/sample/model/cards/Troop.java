@@ -2,6 +2,7 @@ package sample.model.cards;
 
 import javafx.scene.image.Image;
 import sample.model.elements.GameElement;
+import sample.model.mechanismes.Side;
 
 public abstract class Troop implements Card{
 
@@ -9,10 +10,12 @@ public abstract class Troop implements Card{
     private int count;
     private int cost;
     protected GameElement[] gameElements;
-    public Troop(int count,int cost){
+    protected Side side;
+    public Troop(int count, int cost, Side side){
         this.cost = cost;
         this.count = count;
         this.level = 1;
+        this.side = side;
     }
     @Override
     public abstract GameElement[] getGameElements();

@@ -4,17 +4,18 @@ import javafx.scene.image.Image;
 import sample.model.cards.Troop;
 import sample.model.elements.GameElement;
 import sample.model.elements.children.ArcherElement;
+import sample.model.mechanismes.Side;
 
 public class Archers extends Troop {
 
-    public Archers(){
-        super(2,3);
+    public Archers(Side side){
+        super(2,3,side);
     }
     @Override
     public GameElement[] getGameElements() {
 
         gameElements = new GameElement[]{
-                new ArcherElement(),new ArcherElement()
+                new ArcherElement(this.side),new ArcherElement(this.side)
         };
         for (int i = 0 ; i < 2 ; ++i){
             gameElements[i].setLevel(level);

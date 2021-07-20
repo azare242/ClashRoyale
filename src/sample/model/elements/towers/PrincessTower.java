@@ -3,10 +3,11 @@ package sample.model.elements.towers;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
+import sample.model.mechanismes.Side;
 
 public class PrincessTower extends TowerElement{
-    public PrincessTower() {
-        super(7.5,0.8,1400,50);
+    public PrincessTower(Side side) {
+        super(7.5,0.8,1400,50,side);
     }
 
     @Override

@@ -11,12 +11,13 @@ import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import sample.model.cards.Troop;
 import sample.model.elements.TroopElement;
+import sample.model.mechanismes.Side;
 import sample.model.mechanismes.Speed;
 import sample.model.mechanismes.Target;
 
 public class GiantElement extends TroopElement {
-    public GiantElement() {
-        super(1.5,Speed.SLOW,Target.BUILDINGS,0,false,2000,126);
+    public GiantElement(Side side) {
+        super(1.5,Speed.SLOW,Target.BUILDINGS,0,false,2000,126,side);
     }
 
     @Override

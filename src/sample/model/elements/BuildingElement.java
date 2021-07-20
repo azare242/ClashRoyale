@@ -3,25 +3,27 @@ package sample.model.elements;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
+import sample.model.mechanismes.Side;
 import sample.model.mechanismes.Target;
 
 public abstract class BuildingElement implements GameElement{
 
-    private double hitSpeed;
-    private Target target;
-    private double range;
-    private int lifeTime;
-    private int HP;
-    private int damage;
-    private int level;
-
-    public BuildingElement(double hitSpeed, Target target, double range, int lifeTime, int HP, int damage) {
+    protected double hitSpeed;
+    protected Target target;
+    protected double range;
+    protected int lifeTime;
+    protected int HP;
+    protected int damage;
+    protected int level;
+    protected Side side;
+    public BuildingElement(double hitSpeed, Target target, double range, int lifeTime, int HP, int damage,Side side) {
         this.hitSpeed = hitSpeed;
         this.target = target;
         this.range = range;
         this.lifeTime = lifeTime;
         this.HP = HP;
         this.damage = damage;
+        this.side = side;
         level = 1;
     }
 

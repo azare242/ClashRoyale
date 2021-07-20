@@ -4,12 +4,13 @@ import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import sample.model.elements.SpellElement;
+import sample.model.mechanismes.Side;
 
 public class RageElement extends SpellElement {
 
     private double duration;
-    public RageElement(){
-        super();
+    public RageElement(Side side){
+        super(side);
         duration = 6;
     }
     @Override

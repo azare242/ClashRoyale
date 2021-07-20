@@ -4,17 +4,18 @@ import javafx.scene.image.Image;
 import sample.model.cards.Troop;
 import sample.model.elements.GameElement;
 import sample.model.elements.children.BarbariansElement;
+import sample.model.mechanismes.Side;
 
 public class Barbarians extends Troop {
 
-    public Barbarians(){
-        super(4,5);
+    public Barbarians(Side side){
+        super(4,5,side);
 
     }
     @Override
     public GameElement[] getGameElements() {
         gameElements = new GameElement[]{
-                new BarbariansElement(),new BarbariansElement(),new BarbariansElement(), new BarbariansElement(),
+                new BarbariansElement(this.side),new BarbariansElement(this.side),new BarbariansElement(this.side), new BarbariansElement(this.side),
         };
         for (int i = 0 ; i < 4 ; ++i){
             gameElements[i].setLevel(level);

@@ -3,13 +3,15 @@ package sample.model.elements;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
+import sample.model.mechanismes.Side;
 
 public abstract class SpellElement implements GameElement{
 
-    private int level;
-
-    public SpellElement(){
+    protected int level;
+    protected Side side;
+    public SpellElement(Side side){
         level = 1;
+        this.side = side;
     }
 
     @Override

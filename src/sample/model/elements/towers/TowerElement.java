@@ -4,6 +4,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import sample.model.elements.GameElement;
+import sample.model.mechanismes.Side;
 
 public abstract class TowerElement implements GameElement {
 
@@ -12,13 +13,15 @@ public abstract class TowerElement implements GameElement {
     private int hp;
     private int damage;
     private int level;
+    protected Side side;
 
-    public TowerElement(double range,double hitSpeed, int hp, int damage) {
+    public TowerElement(double range,double hitSpeed, int hp, int damage,Side side) {
         this.range = range;
         this.hitSpeed = hitSpeed;
         this.hp = hp;
         this.damage = damage;
         this.level = 1;
+        this.side = side;
     }
 
     public void setRange(int range) {

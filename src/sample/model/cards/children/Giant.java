@@ -5,17 +5,17 @@ import sample.model.cards.Troop;
 import sample.model.elements.GameElement;
 import sample.model.elements.children.BabyDragonElement;
 import sample.model.elements.children.GiantElement;
+import sample.model.mechanismes.Side;
 
 public class Giant extends Troop {
 
-    public Giant(){
-        super(1,5);
-        gameElements = new GameElement[]{new GiantElement()};
+    public Giant(Side side){
+        super(1,5,side);
     }
 
     @Override
     public GameElement[] getGameElements() {
-        gameElements = new GameElement[]{new GiantElement()};
+        gameElements = new GameElement[]{new GiantElement(this.side)};
         gameElements[0].setLevel(level);
         return gameElements;
     }

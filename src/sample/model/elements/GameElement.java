@@ -3,6 +3,7 @@ package sample.model.elements;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
+import sample.model.mechanismes.Side;
 
 import java.io.Serializable;
 

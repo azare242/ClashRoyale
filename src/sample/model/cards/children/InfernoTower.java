@@ -5,17 +5,17 @@ import sample.model.cards.Building;
 import sample.model.elements.GameElement;
 import sample.model.elements.children.BabyDragonElement;
 import sample.model.elements.children.InfernoTowerElement;
+import sample.model.mechanismes.Side;
 
 public class InfernoTower extends Building {
 
-    public InfernoTower(){
-        super(5);
-        gameElements = new GameElement[]{ new InfernoTowerElement()};
+    public InfernoTower(Side side){
+        super(5,side);
     }
 
     @Override
     public GameElement[] getGameElements() {
-        gameElements = new GameElement[]{new InfernoTowerElement()};
+        gameElements = new GameElement[]{new InfernoTowerElement(this.side)};
         gameElements[0].setLevel(level);
         return gameElements;
     }

@@ -5,13 +5,14 @@ import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import sample.model.cards.Spell;
 import sample.model.elements.SpellElement;
+import sample.model.mechanismes.Side;
 
 public class ArrowsElement extends SpellElement {
 
     private int areaDamage;
 
-    public ArrowsElement(){
-        super();
+    public ArrowsElement(Side side){
+        super(side);
         areaDamage = 144;
     }
     @Override

@@ -2,6 +2,7 @@ package sample.model.cards;
 
 import javafx.scene.image.Image;
 import sample.model.elements.GameElement;
+import sample.model.mechanismes.Side;
 
 public abstract class Spell implements Card{
 
@@ -9,12 +10,13 @@ public abstract class Spell implements Card{
     private int cost;
     protected int level;
     protected GameElement[] gameElements;
+    protected Side side;
 
-
-    public Spell(double radius,int cost){
+    public Spell(double radius, int cost, Side side){
         this.radius = radius;
         this.cost = cost;
         this.level = 1;
+        this.side = side;
     }
     @Override
     public abstract GameElement[] getGameElements();

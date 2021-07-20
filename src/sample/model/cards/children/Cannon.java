@@ -6,16 +6,16 @@ import sample.model.cards.Building;
 import sample.model.elements.GameElement;
 import sample.model.elements.children.BabyDragonElement;
 import sample.model.elements.children.CannonElement;
+import sample.model.mechanismes.Side;
 
 public class Cannon extends Building {
 
-    public Cannon(){
-        super(6);
-        gameElements = new GameElement[]{new CannonElement()};
+    public Cannon(Side side){
+        super(6,side);
     }
     @Override
     public GameElement[] getGameElements() {
-        gameElements = new GameElement[]{new CannonElement()};
+        gameElements = new GameElement[]{new CannonElement(this.side)};
         gameElements[0].setLevel(level);
         return gameElements;
     }
