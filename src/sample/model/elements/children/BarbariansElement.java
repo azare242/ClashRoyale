@@ -8,7 +8,7 @@ import sample.model.mechanismes.Target;
 
 public class BarbariansElement extends TroopElement {
     public BarbariansElement(Side side) {
-        super(1.5, Speed.MEDIUM, Target.AIR_AND_GROUND, 0, false,300, 75,side);
+        super(1.5, Speed.MEDIUM, Target.AIR_AND_GROUND, 1, false,300, 75,side);
         Animations animations = Animations.getInstance();
 
         if (side == Side.PLAYER){

@@ -374,9 +374,6 @@ public class GameController implements Initializable {
             newImageView1.setFitWidth(70);
             newImageView1.setFitHeight(70);
             newImageView1.setUserData(gameElements[0]);
-            synchronized (mapPane.getChildren()){
-                mapPane.getChildren().add(newImageView1);
-            }
             gameElements[0].startElementAction(newImageView1,mapPane.getChildren(),nearBridge(newImageView1));
             ImageView newImageView2 = new ImageView(image);
             newImageView2.setLayoutX(e.getX() - 10 - 35);
@@ -384,10 +381,11 @@ public class GameController implements Initializable {
             newImageView2.setFitWidth(70);
             newImageView2.setFitHeight(70);
             newImageView2.setUserData(gameElements[0]);
+            gameElements[1].startElementAction(newImageView2,mapPane.getChildren(),nearBridge(newImageView2));
             synchronized (mapPane.getChildren()){
+                mapPane.getChildren().add(newImageView1);
                 mapPane.getChildren().add(newImageView2);
             }
-            gameElements[1].startElementAction(newImageView2,mapPane.getChildren(),nearBridge(newImageView2));
         }
         else if (gameElements.length == 4){
             ImageView newImageView1 = new ImageView(image);
@@ -396,30 +394,18 @@ public class GameController implements Initializable {
             newImageView1.setFitWidth(100);
             newImageView1.setFitHeight(100);
             newImageView1.setUserData(gameElements[0]);
-            synchronized (mapPane.getChildren()){
-                mapPane.getChildren().add(newImageView1);
-            }
-            gameElements[0].startElementAction(newImageView1,mapPane.getChildren(),nearBridge(newImageView1));
             ImageView newImageView2 = new ImageView(image);
             newImageView2.setLayoutX(e.getX() - 10 - 50);
             newImageView2.setLayoutY(e.getY() - 10 - 50);
             newImageView2.setFitWidth(100);
             newImageView2.setFitHeight(100);
             newImageView2.setUserData(gameElements[1]);
-            synchronized (mapPane.getChildren()){
-                mapPane.getChildren().add(newImageView2);
-            }
-            gameElements[1].startElementAction(newImageView2,mapPane.getChildren(),nearBridge(newImageView2));
             ImageView newImageView3 = new ImageView(image);
             newImageView3.setLayoutX(e.getX() - 10 - 50);
             newImageView3.setLayoutY(e.getY() + 10 - 50);
             newImageView3.setFitWidth(100);
             newImageView3.setFitHeight(100);
             newImageView3.setUserData(gameElements[2]);
-            synchronized (mapPane.getChildren()){
-                mapPane.getChildren().add(newImageView3);
-            }
-            gameElements[2].startElementAction(newImageView3,mapPane.getChildren(),nearBridge(newImageView3));
             ImageView newImageView4 = new ImageView(image);
             newImageView4.setLayoutX(e.getX() + 10 - 50);
             newImageView4.setLayoutY(e.getY() + 10 - 50);
@@ -427,8 +413,14 @@ public class GameController implements Initializable {
             newImageView4.setFitHeight(100);
             newImageView4.setUserData(gameElements[3]);
             synchronized (mapPane.getChildren()){
+                mapPane.getChildren().add(newImageView1);
+                mapPane.getChildren().add(newImageView2);
+                mapPane.getChildren().add(newImageView3);
                 mapPane.getChildren().add(newImageView4);
             }
+            gameElements[0].startElementAction(newImageView1,mapPane.getChildren(),nearBridge(newImageView1));
+            gameElements[1].startElementAction(newImageView2,mapPane.getChildren(),nearBridge(newImageView2));
+            gameElements[2].startElementAction(newImageView3,mapPane.getChildren(),nearBridge(newImageView3));
             gameElements[3].startElementAction(newImageView4,mapPane.getChildren(),nearBridge(newImageView4));
         }
     }
@@ -467,6 +459,7 @@ public class GameController implements Initializable {
             int[] cords = bot.getCords();
             Image image = card.getDefaultImage("BOT");
             GameElement[] gameElements = card.getGameElements();
+
             if (gameElements.length == 1){
                 ImageView newImageView = new ImageView(image);
                 newImageView.setLayoutX(cords[0]);

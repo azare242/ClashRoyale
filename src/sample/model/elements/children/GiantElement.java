@@ -8,7 +8,7 @@ import sample.model.mechanismes.Target;
 
 public class GiantElement extends TroopElement {
     public GiantElement(Side side) {
-        super(1.5,Speed.SLOW,Target.BUILDINGS,0,false,2000,126,side);
+        super(1.5,Speed.SLOW,Target.BUILDINGS,1,false,2000,126,side);
         Animations animations = Animations.getInstance();
 
         if (side == Side.PLAYER){

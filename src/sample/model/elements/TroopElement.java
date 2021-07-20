@@ -83,6 +83,11 @@ public abstract class TroopElement implements GameElement{
 
 
     private boolean canWalk(ImageView thisImageView,ObservableList<Node> inGameElements,double newX , double newY){
+        if (side == Side.BOT ) {
+            if (newX >= 380|| newY >= 480) return false;
+        } else {
+            if (newX <= 10 || newY <= 10) return false;
+        }
         synchronized (inGameElements){
             Iterator<Node> iterator = inGameElements.iterator();
             while (iterator.hasNext()){
@@ -103,8 +108,9 @@ public abstract class TroopElement implements GameElement{
     private boolean canBattle(ImageView imageView,ObservableList<Node> inGameElements){
         synchronized (inGameElements){
             Iterator<Node> iterator = inGameElements.iterator();
+            ImageView element = null;
             while (iterator.hasNext()){
-                ImageView element = (ImageView) iterator.next();
+                element = (ImageView) iterator.next();
                 GameElement gameElement = (GameElement) element.getUserData();
                 if (gameElement != null){
                 if (this.side != gameElement.getSide()) {
