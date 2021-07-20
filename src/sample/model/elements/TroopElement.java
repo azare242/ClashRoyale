@@ -1,19 +1,27 @@
 package sample.model.elements;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 import sample.model.mechanismes.Speed;
 import sample.model.mechanismes.Target;
 
 public abstract class TroopElement implements GameElement{
 
-    private double hitSpeed;
-    private Speed speed;
-    private Target target;
-    private double range;
-    private boolean areaSplash;
-    private int HP;
-    private int damage;
-    private int level;
+    protected double hitSpeed;
+    protected Speed speed;
+    protected Target target;
+    protected double range;
+    protected boolean areaSplash;
+    protected int HP;
+    protected int damage;
+    protected int level;
 
     public TroopElement(double hitSpeed, Speed speed, Target target, double range, boolean areaSplash, int HP, int damage) {
         this.hitSpeed = hitSpeed;
@@ -62,6 +70,36 @@ public abstract class TroopElement implements GameElement{
         this.level = level;
     }
 
+
+
     @Override
-    public abstract void moveElement(ImageView imageView);
+    public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge){
+        double x = imageView.getLayoutX();
+        double y = imageView.getLayoutY();
+        final int[] seconds = {0};
+
+        Timeline animation = new Timeline(new KeyFrame(Duration.seconds(1.5), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                if (x<= nearBridge.getLayoutX()) {
+                    if (imageView.getLayoutX() <= nearBridge.getLayoutX()) {
+                        imageView.setLayoutX(imageView.getLayoutX() + speed.getTilesPerSecond());
+                        imageView.setLayoutY(imageView.getLayoutY() - speed.getTilesPerSecond());
+                    } else {
+                        imageView.setLayoutY(imageView.getLayoutY() - speed.getTilesPerSecond());
+                    }
+                } else {
+                    if (imageView.getLayoutX() >= nearBridge.getLayoutX()){
+                        imageView.setLayoutX(imageView.getLayoutX() - speed.getTilesPerSecond());
+                        imageView.setLayoutY(imageView.getLayoutY() - speed.getTilesPerSecond());
+                    } else {
+                        imageView.setLayoutY(imageView.getLayoutY() - speed.getTilesPerSecond());
+                    }
+                }
+                seconds[0]++;
+            }
+        }));
+        animation.setCycleCount(Animation.INDEFINITE);
+        animation.play();
+    }
 }

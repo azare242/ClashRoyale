@@ -1,7 +1,7 @@
 package sample.model.mechanismes;
 
 public enum Speed {
-    SLOW(1),MEDIUM(2),FAST(3);
+    SLOW(5),MEDIUM(10),FAST(15);
 
     private int tilesPerSecond;
     Speed(int i) {

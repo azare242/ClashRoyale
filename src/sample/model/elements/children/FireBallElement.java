@@ -1,5 +1,7 @@
 package sample.model.elements.children;
 
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import sample.model.elements.SpellElement;
 
@@ -17,7 +19,7 @@ public class FireBallElement extends SpellElement {
     }
 
     @Override
-    public void moveElement(ImageView imageView){
+    public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge){
 
     }
 }

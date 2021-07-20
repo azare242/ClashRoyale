@@ -336,8 +336,8 @@ public class GameController implements Initializable {
 
     }
     @FXML private Pane mapPane;
-    @FXML ImageView leftBridge;
-    @FXML ImageView rightBridge;
+    @FXML private ImageView leftBridge;
+    @FXML private ImageView rightBridge;
     private void addImageToMap(MouseEvent e,Card playedCard){
         if (playedCard == null) return;
         Image image = playedCard.getDefaultImage("PLAYER");
@@ -352,6 +352,7 @@ public class GameController implements Initializable {
             newImageView.setFitHeight(100);
             newImageView.setUserData(gameElements[0]);
             mapPane.getChildren().add(newImageView);
+            gameElements[0].startElementAction(newImageView,mapPane.getChildren(),nearBridge(newImageView));
         }
         else if (gameElements.length == 2) {
             ImageView newImageView1 = new ImageView(image);
@@ -401,5 +402,16 @@ public class GameController implements Initializable {
         }
     }
 
+    private ImageView nearBridge(ImageView element){
+        ImageView nearBridge = null;
+        double x = element.getLayoutX();
+        double y = element.getLayoutY();
+        double dx1 = Math.abs(element.getLayoutX() - leftBridge.getLayoutX());
+        double dx2 = Math.abs(element.getLayoutX() - rightBridge.getLayoutX());
+        if (dx1>dx2) nearBridge = rightBridge;
+        else nearBridge = leftBridge;
+
+        return nearBridge;
+    }
 
 }

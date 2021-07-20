@@ -1,5 +1,7 @@
 package sample.model.elements.towers;
 
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import sample.model.elements.GameElement;
 
@@ -40,5 +42,5 @@ public abstract class TowerElement implements GameElement {
     }
 
     @Override
-    public abstract void moveElement(ImageView imageView);
+    public abstract void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge);
 }

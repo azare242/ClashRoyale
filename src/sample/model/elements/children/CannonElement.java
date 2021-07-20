@@ -1,5 +1,7 @@
 package sample.model.elements.children;
 
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import sample.model.elements.BuildingElement;
 import sample.model.mechanismes.Target;
@@ -15,7 +17,7 @@ public class CannonElement extends BuildingElement {
     }
 
     @Override
-    public void moveElement(ImageView imageView){
+    public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge){
 
     }
 }

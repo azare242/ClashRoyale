@@ -1,5 +1,7 @@
 package sample.model.elements.children;
 
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import sample.model.elements.TroopElement;
 import sample.model.mechanismes.Speed;
@@ -15,8 +17,4 @@ public class ValkyrieElement extends TroopElement {
 
     }
 
-    @Override
-    public void moveElement(ImageView imageView){
-
-    }
 }
