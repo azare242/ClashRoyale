@@ -1,5 +1,6 @@
 package sample.Controllers;
 
+import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -22,6 +23,8 @@ import sample.Controllers.view.ImagesByCard;
 import sample.model.ElixirHandler;
 import sample.model.SoundEffects;
 import sample.model.User;
+import sample.model.bots.Bot;
+import sample.model.bots.EasyBot;
 import sample.model.cards.Card;
 import sample.model.cards.Spell;
 import sample.model.elements.GameElement;
@@ -98,6 +101,7 @@ public class GameController implements Initializable {
 
     private Timeline timer;
     private int second , minute;
+    private Timeline botTimeLine;
 
     private ElixirHandler elixir;
     private User user;
@@ -122,6 +126,7 @@ public class GameController implements Initializable {
         second = 0;
         minute = 3;
         countDownTimer();
+
     }
 
     public void countDownTimer(){
@@ -184,6 +189,7 @@ public class GameController implements Initializable {
         });
         timer.getKeyFrames().add(frame);
         timer.playFromStart();
+        botPlay();
         SoundEffects.playGameSound();
     }
 
@@ -361,16 +367,16 @@ public class GameController implements Initializable {
         }
         else if (gameElements.length == 2) {
             ImageView newImageView1 = new ImageView(image);
-            newImageView1.setLayoutX(e.getX() + 10 - 50);
-            newImageView1.setLayoutY(e.getY() - 50);
+            newImageView1.setLayoutX(e.getX() + 10 - 35);
+            newImageView1.setLayoutY(e.getY() - 35);
             newImageView1.setFitWidth(70);
             newImageView1.setFitHeight(70);
             newImageView1.setUserData(gameElements[0]);
             mapPane.getChildren().add(newImageView1);
             gameElements[0].startElementAction(newImageView1,mapPane.getChildren(),nearBridge(newImageView1));
             ImageView newImageView2 = new ImageView(image);
-            newImageView2.setLayoutX(e.getX() - 10 - 50);
-            newImageView2.setLayoutY(e.getY() - 50);
+            newImageView2.setLayoutX(e.getX() - 10 - 35);
+            newImageView2.setLayoutY(e.getY() - 35);
             newImageView2.setFitWidth(70);
             newImageView2.setFitHeight(70);
             newImageView2.setUserData(gameElements[0]);
@@ -440,4 +446,75 @@ public class GameController implements Initializable {
     }
 
 
+    private void botPlay(){
+        Bot bot = new EasyBot();
+        botTimeLine = new Timeline(new KeyFrame(Duration.seconds(2),actionEvent -> {
+            Card card = bot.play();
+            int[] cords = bot.getCords();
+            Image image = card.getDefaultImage("BOT");
+            GameElement[] gameElements = card.getGameElements();
+            if (gameElements.length == 1){
+                ImageView newImageView = new ImageView(image);
+                newImageView.setLayoutX(cords[0]);
+                newImageView.setLayoutY(cords[1]);
+                newImageView.setFitHeight(100);
+                newImageView.setFitWidth(100);
+                newImageView.setUserData(gameElements[0]);
+                mapPane.getChildren().add(newImageView);
+                gameElements[0].startElementAction(newImageView,mapPane.getChildren(),nearBridge(newImageView));
+            } else if (gameElements.length == 2){
+                ImageView newImageView1 = new ImageView(image);
+                newImageView1.setLayoutX(cords[0] + 10);
+                newImageView1.setLayoutY(cords[1]);
+                newImageView1.setFitWidth(70);
+                newImageView1.setFitHeight(70);
+                newImageView1.setUserData(gameElements[0]);
+                mapPane.getChildren().add(newImageView1);
+                gameElements[0].startElementAction(newImageView1,mapPane.getChildren(),nearBridge(newImageView1));
+                ImageView newImageView2 = new ImageView(image);
+                newImageView2.setLayoutX(cords[0] - 10);
+                newImageView2.setLayoutY(cords[1]);
+                newImageView2.setFitWidth(70);
+                newImageView2.setFitHeight(70);
+                newImageView2.setUserData(gameElements[1]);
+                mapPane.getChildren().add(newImageView2);
+                gameElements[1].startElementAction(newImageView2,mapPane.getChildren(),nearBridge(newImageView2));
+            } else if (gameElements.length == 4){
+                ImageView newImageView1 = new ImageView(image);
+                newImageView1.setLayoutX(cords[0] + 10);
+                newImageView1.setLayoutY(cords[1] - 10);
+                newImageView1.setFitWidth(100);
+                newImageView1.setFitHeight(100);
+                newImageView1.setUserData(gameElements[0]);
+                mapPane.getChildren().add(newImageView1);
+                gameElements[0].startElementAction(newImageView1,mapPane.getChildren(),nearBridge(newImageView1));
+                ImageView newImageView2 = new ImageView(image);
+                newImageView2.setLayoutX(cords[0] - 10);
+                newImageView2.setLayoutY(cords[1] - 10);
+                newImageView2.setFitWidth(100);
+                newImageView2.setFitHeight(100);
+                newImageView2.setUserData(gameElements[1]);
+                mapPane.getChildren().add(newImageView2);
+                gameElements[1].startElementAction(newImageView2,mapPane.getChildren(),nearBridge(newImageView2));
+                ImageView newImageView3 = new ImageView(image);
+                newImageView3.setLayoutX(cords[0] - 10);
+                newImageView3.setLayoutY(cords[1] + 10);
+                newImageView3.setFitWidth(100);
+                newImageView3.setFitHeight(100);
+                newImageView3.setUserData(gameElements[2]);
+                mapPane.getChildren().add(newImageView3);
+                gameElements[2].startElementAction(newImageView3,mapPane.getChildren(),nearBridge(newImageView3));
+                ImageView newImageView4 = new ImageView(image);
+                newImageView4.setLayoutX(cords[0]+ 10);
+                newImageView4.setLayoutY(cords[1] + 10);
+                newImageView4.setFitWidth(100);
+                newImageView4.setFitHeight(100);
+                newImageView4.setUserData(gameElements[3]);
+                mapPane.getChildren().add(newImageView4);
+                gameElements[3].startElementAction(newImageView4,mapPane.getChildren(),nearBridge(newImageView4));
+            }
+        }));
+        botTimeLine.setCycleCount(Animation.INDEFINITE);
+        botTimeLine.play();
+    }
 }
