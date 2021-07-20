@@ -100,40 +100,73 @@ public abstract class TroopElement implements GameElement{
         final int[] seconds = {0};
 
         animation = new Timeline(new KeyFrame(Duration.millis(200), actionEvent -> {
-            if (x<= nearBridge.getLayoutX()) {
-                if (imageView.getLayoutX() <= nearBridge.getLayoutX()) {
-                    double newX = imageView.getLayoutX() + speed.getTilesPerSecond();
-                    double newY = imageView.getLayoutY() - speed.getTilesPerSecond();
-                    if (canWalk(imageView,inGameElements,newX,newY)) {
-                        imageView.setLayoutX(newX);
-                        if (imageView.getLayoutY() >= nearBridge.getLayoutY())
+            if (this.side == Side.PLAYER) {
+                if (x <= nearBridge.getLayoutX()) {
+                    if (imageView.getLayoutX() <= nearBridge.getLayoutX()) {
+                        double newX = imageView.getLayoutX() + speed.getTilesPerSecond();
+                        double newY = imageView.getLayoutY() - speed.getTilesPerSecond();
+                        if (canWalk(imageView, inGameElements, newX, newY)) {
+                            imageView.setLayoutX(newX);
+                            if (imageView.getLayoutY() >= nearBridge.getLayoutY())
+                                imageView.setLayoutY(newY);
+                        }
+                    } else {
+                        double newY = imageView.getLayoutY() - speed.getTilesPerSecond();
+                        if (canWalk(imageView, inGameElements, imageView.getLayoutX(), newY))
                             imageView.setLayoutY(newY);
                     }
                 } else {
-                    double newY = imageView.getLayoutY() - speed.getTilesPerSecond();
-                    if (canWalk(imageView,inGameElements,imageView.getLayoutX(),newY))
-                        imageView.setLayoutY(newY);
+                    if (imageView.getLayoutX() >= nearBridge.getLayoutX()) {
+                        double newX = imageView.getLayoutX() - speed.getTilesPerSecond();
+                        double newY = imageView.getLayoutY() - speed.getTilesPerSecond();
+                        if (canWalk(imageView, inGameElements, newX, newY)) {
+                            imageView.setLayoutX(newX);
+                            if (imageView.getLayoutY() >= nearBridge.getLayoutY())
+                                imageView.setLayoutY(newY);
+                        }
+                    } else {
+                        double newY = imageView.getLayoutY() - speed.getTilesPerSecond();
+                        if (canWalk(imageView, inGameElements, imageView.getLayoutX(), newY))
+                            imageView.setLayoutY(newY);
+                    }
                 }
-            } else {
-                if (imageView.getLayoutX() >= nearBridge.getLayoutX()){
-                    double newX = imageView.getLayoutX() - speed.getTilesPerSecond();
-                    double newY = imageView.getLayoutY() - speed.getTilesPerSecond();
-                    if (canWalk(imageView,inGameElements,newX,newY)) {
-                        imageView.setLayoutX(newX);
-                        if (imageView.getLayoutY() >= nearBridge.getLayoutY())
-                        imageView.setLayoutY(newY);
+            } else if (this.side == Side.BOT){
+                if (x<=nearBridge.getLayoutX()) {
+                    if (imageView.getLayoutX()<= nearBridge.getLayoutX()){
+                        double newX = imageView.getLayoutX() + speed.getTilesPerSecond();
+                        double newY = imageView.getLayoutY() + speed.getTilesPerSecond();
+                        if (canWalk(imageView,inGameElements,newX,newY)){
+                            imageView.setLayoutX(newX);
+                            if (imageView.getLayoutY()<=nearBridge.getLayoutY() - 60)
+                                imageView.setLayoutY(newY);
+                        }
+                    } else {
+                        double newY = imageView.getLayoutY() + speed.getTilesPerSecond();
+                        if (canWalk(imageView,inGameElements,imageView.getLayoutX(),newY))
+                            imageView.setLayoutY(newY);
                     }
                 } else {
-                    double newY = imageView.getLayoutY() - speed.getTilesPerSecond();
-                    if (canWalk(imageView,inGameElements,imageView.getLayoutX(),newY))
-                        imageView.setLayoutY(newY);
+                    if (imageView.getLayoutX() >= nearBridge.getLayoutX()){
+                        double newX = imageView.getLayoutX() - speed.getTilesPerSecond();
+                        double newY = imageView.getLayoutY()  + speed.getTilesPerSecond();
+                        if (canWalk(imageView,inGameElements,newX,newY)){
+                            imageView.setLayoutX(newX);
+                            if (imageView.getLayoutY() >= nearBridge.getLayoutY() - 60){
+                                imageView.setLayoutX(newY);
+                            }
+                        }
+                    } else {
+                        double newY = imageView.getLayoutY() + speed.getTilesPerSecond();
+                        if (canWalk(imageView,inGameElements,imageView.getLayoutX(),newY))
+                            imageView.setLayoutY(newY);
+                    }
                 }
             }
-            if (seconds[0] % 2 == 0){
-                imageView.setImage(move1);
-            } else {
-                imageView.setImage(move2);
-            }
+                if (seconds[0] % 2 == 0) {
+                    imageView.setImage(move1);
+                } else {
+                    imageView.setImage(move2);
+                }
             seconds[0]++;
         }));
         animation.setCycleCount(Animation.INDEFINITE);
