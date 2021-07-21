@@ -18,7 +18,7 @@ public class RageElement extends SpellElement {
 
     }
     @Override
-    public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge){
+    public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt){
 
     }
 }

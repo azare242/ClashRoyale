@@ -123,7 +123,7 @@ public abstract class TroopElement implements GameElement{
                 GameElement gameElement = (GameElement) element.getUserData();
                 if (gameElement != null){
                 if (this.side != gameElement.getSide()) {
-                        if (distance(imageView, element) <= range * 10) {
+                        if (distance(imageView, element) <= range * 20) {
                             if (checkTarget(gameElement))
                                 return gameElement;
                         }

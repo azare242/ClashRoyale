@@ -51,7 +51,7 @@ public class PrincessTower extends TowerElement{
 
     private Timeline animation;
     @Override
-    public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge) {
+    public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt) {
         animation = new Timeline(new KeyFrame(Duration.millis(800), actionEvent -> {
            check(imageView);
             GameElement inRange = canBattle(imageView,inGameElements);

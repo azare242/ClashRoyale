@@ -61,9 +61,11 @@ public abstract class BuildingElement implements GameElement{
         return side;
     }
     @Override
-    public abstract void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge);
+    public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt){
 
-    public synchronized void takeDamage(int count){
+    }
+
+        public synchronized void takeDamage(int count){
         HP -= count;
     }
     private void check(ImageView imageView , ObservableList<Node> inGameElements){

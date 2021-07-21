@@ -12,7 +12,7 @@ public interface GameElement extends Serializable {
 
     public void levelUp();
     public void setLevel(int level);
-    public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge);
+    public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt);
     public Side getSide();
     public void takeDamage(int count);
     public MovingArea getMovingArea();

@@ -48,7 +48,7 @@ public abstract class TowerElement implements GameElement {
         return side;
     }
     @Override
-    public abstract void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge);
+    public abstract void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt);
 
     public synchronized void takeDamage(int count){
         hp -= count;
@@ -56,6 +56,7 @@ public abstract class TowerElement implements GameElement {
     public void check(ImageView imageView){
         if (hp <= 0) {
             imageView.setImage(null);
+            imageView.setUserData(null);
         }
     }
 }

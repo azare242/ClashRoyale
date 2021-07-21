@@ -139,10 +139,10 @@ public class GameController implements Initializable {
     }
 
     private void startTowers(){
-        bot.getPrincessTowerLeft().startElementAction(enemyPrincessTowerLeft, mapPane.getChildren(),null);
-        bot.getPrincessTowerRight().startElementAction(enemyPrincessTowerRight, mapPane.getChildren(),null);
-        user.getPrincessTowerLeft().startElementAction(playerPrincessTowerLeft, mapPane.getChildren(), null);
-        user.getPrincessTowerRight().startElementAction(playerPrincessTowerRight, mapPane.getChildren(), null);
+        bot.getPrincessTowerLeft().startElementAction(enemyPrincessTowerLeft, mapPane.getChildren(),null,null,null,null);
+        bot.getPrincessTowerRight().startElementAction(enemyPrincessTowerRight, mapPane.getChildren(),null,null,null,null);
+        user.getPrincessTowerLeft().startElementAction(playerPrincessTowerLeft, mapPane.getChildren(), null,null,null,null);
+        user.getPrincessTowerRight().startElementAction(playerPrincessTowerRight, mapPane.getChildren(), null,null,null,null);
     }
     @FXML private Label scoreLabelPlayer;
     @FXML private Label scoreLabelBot;
@@ -161,11 +161,11 @@ public class GameController implements Initializable {
     private void activeKingTower(){
         KingTower kingTowerBot = bot.getKingTower();
         if (enemyPrincessTowerLeft.getImage() == null || enemyPrincessTowerRight.getImage() == null || kingTowerBot.isDamaged()){
-            if (!kingTowerBot.isActive()) kingTowerBot.startElementAction(enemyKingTower,mapPane.getChildren(),null);
+            if (!kingTowerBot.isActive()) kingTowerBot.startElementAction(enemyKingTower,mapPane.getChildren(),null,null,null,null);
         }
         KingTower kingTowerPlayer = user.getKingTower();
         if (playerPrincessTowerLeft.getImage() == null ||playerPrincessTowerRight.getImage() == null || kingTowerPlayer.isDamaged()){
-            if (!kingTowerPlayer.isActive()) kingTowerPlayer.startElementAction(enemyKingTower,mapPane.getChildren(),null);
+            if (!kingTowerPlayer.isActive()) kingTowerPlayer.startElementAction(enemyKingTower,mapPane.getChildren(),null,null,null,null);
         }
     }
     public void countDownTimer(){
@@ -403,9 +403,9 @@ public class GameController implements Initializable {
                 mapPane.getChildren().add(newImageView);
             }
             if (gameElements[0] instanceof BabyDragonElement){
-                gameElements[0].startElementAction(newImageView,mapPane.getChildren(),nearPrincessViewForBabyDragonPlayerSide(newImageView));
+                gameElements[0].startElementAction(newImageView,mapPane.getChildren(),nearPrincessViewForBabyDragonPlayerSide(newImageView),enemyPrincessTowerLeft,enemyPrincessTowerRight,enemyKingTower);
             } else {
-                gameElements[0].startElementAction(newImageView,mapPane.getChildren(),nearBridge(newImageView));
+                gameElements[0].startElementAction(newImageView,mapPane.getChildren(),nearBridge(newImageView),enemyPrincessTowerLeft,enemyPrincessTowerRight,enemyKingTower);
             }
         }
         else if (gameElements.length == 2) {
@@ -415,14 +415,14 @@ public class GameController implements Initializable {
             newImageView1.setFitWidth(70);
             newImageView1.setFitHeight(70);
             newImageView1.setUserData(gameElements[0]);
-            gameElements[0].startElementAction(newImageView1,mapPane.getChildren(),nearBridge(newImageView1));
+            gameElements[0].startElementAction(newImageView1,mapPane.getChildren(),nearBridge(newImageView1),enemyPrincessTowerLeft,enemyPrincessTowerRight,enemyKingTower);
             ImageView newImageView2 = new ImageView(image);
             newImageView2.setLayoutX(e.getX() - 10 - 35);
             newImageView2.setLayoutY(e.getY() - 35);
             newImageView2.setFitWidth(70);
             newImageView2.setFitHeight(70);
             newImageView2.setUserData(gameElements[0]);
-            gameElements[1].startElementAction(newImageView2,mapPane.getChildren(),nearBridge(newImageView2));
+            gameElements[1].startElementAction(newImageView2,mapPane.getChildren(),nearBridge(newImageView2),enemyPrincessTowerLeft,enemyPrincessTowerRight,enemyKingTower);
             synchronized (mapPane.getChildren()){
                 mapPane.getChildren().add(newImageView1);
                 mapPane.getChildren().add(newImageView2);
@@ -459,10 +459,10 @@ public class GameController implements Initializable {
                 mapPane.getChildren().add(newImageView3);
                 mapPane.getChildren().add(newImageView4);
             }
-            gameElements[0].startElementAction(newImageView1,mapPane.getChildren(),nearBridge(newImageView1));
-            gameElements[1].startElementAction(newImageView2,mapPane.getChildren(),nearBridge(newImageView2));
-            gameElements[2].startElementAction(newImageView3,mapPane.getChildren(),nearBridge(newImageView3));
-            gameElements[3].startElementAction(newImageView4,mapPane.getChildren(),nearBridge(newImageView4));
+            gameElements[0].startElementAction(newImageView1,mapPane.getChildren(),nearBridge(newImageView1),enemyPrincessTowerLeft,enemyPrincessTowerRight,enemyKingTower);
+            gameElements[1].startElementAction(newImageView2,mapPane.getChildren(),nearBridge(newImageView2),enemyPrincessTowerLeft,enemyPrincessTowerRight,enemyKingTower);
+            gameElements[2].startElementAction(newImageView3,mapPane.getChildren(),nearBridge(newImageView3),enemyPrincessTowerLeft,enemyPrincessTowerRight,enemyKingTower);
+            gameElements[3].startElementAction(newImageView4,mapPane.getChildren(),nearBridge(newImageView4),enemyPrincessTowerLeft,enemyPrincessTowerRight,enemyKingTower);
         }
     }
 
@@ -520,9 +520,9 @@ public class GameController implements Initializable {
                     mapPane.getChildren().add(newImageView);
                 }
                 if (gameElements[0] instanceof BabyDragonElement){
-                    gameElements[0].startElementAction(newImageView,mapPane.getChildren(),nearPrincessViewForBabyDragonBotSide(newImageView));
+                    gameElements[0].startElementAction(newImageView,mapPane.getChildren(),nearPrincessViewForBabyDragonBotSide(newImageView),playerPrincessTowerLeft,playerPrincessTowerRight,playerKingTower);
                 } else
-                    gameElements[0].startElementAction(newImageView,mapPane.getChildren(),nearBridge(newImageView));
+                    gameElements[0].startElementAction(newImageView,mapPane.getChildren(),nearBridge(newImageView),playerPrincessTowerLeft,playerPrincessTowerRight,playerKingTower);
             } else if (gameElements.length == 2){
                 ImageView newImageView1 = new ImageView(image);
                 newImageView1.setLayoutX(cords[0] + 10);
@@ -534,7 +534,7 @@ public class GameController implements Initializable {
                     mapPane.getChildren().add(newImageView1);
                 }
 
-                gameElements[0].startElementAction(newImageView1,mapPane.getChildren(),nearBridge(newImageView1));
+                gameElements[0].startElementAction(newImageView1,mapPane.getChildren(),nearBridge(newImageView1),playerPrincessTowerLeft,playerPrincessTowerRight,playerKingTower);
                 ImageView newImageView2 = new ImageView(image);
                 newImageView2.setLayoutX(cords[0] - 10);
                 newImageView2.setLayoutY(cords[1]);
@@ -544,7 +544,7 @@ public class GameController implements Initializable {
                 synchronized (mapPane.getChildren()){
                     mapPane.getChildren().add(newImageView2);
                 }
-                gameElements[1].startElementAction(newImageView2,mapPane.getChildren(),nearBridge(newImageView2));
+                gameElements[1].startElementAction(newImageView2,mapPane.getChildren(),nearBridge(newImageView2),playerPrincessTowerLeft,playerPrincessTowerRight,playerKingTower);
             } else if (gameElements.length == 4){
                 ImageView newImageView1 = new ImageView(image);
                 newImageView1.setLayoutX(cords[0] + 10);
@@ -555,7 +555,7 @@ public class GameController implements Initializable {
                 synchronized (mapPane.getChildren()){
                     mapPane.getChildren().add(newImageView1);
                 }
-                gameElements[0].startElementAction(newImageView1,mapPane.getChildren(),nearBridge(newImageView1));
+                gameElements[0].startElementAction(newImageView1,mapPane.getChildren(),nearBridge(newImageView1),playerPrincessTowerLeft,playerPrincessTowerRight,playerKingTower);
                 ImageView newImageView2 = new ImageView(image);
                 newImageView2.setLayoutX(cords[0] - 10);
                 newImageView2.setLayoutY(cords[1] - 10);
@@ -565,7 +565,7 @@ public class GameController implements Initializable {
                 synchronized (mapPane.getChildren()){
                     mapPane.getChildren().add(newImageView2);
                 }
-                gameElements[1].startElementAction(newImageView2,mapPane.getChildren(),nearBridge(newImageView2));
+                gameElements[1].startElementAction(newImageView2,mapPane.getChildren(),nearBridge(newImageView2),playerPrincessTowerLeft,playerPrincessTowerRight,playerKingTower);
                 ImageView newImageView3 = new ImageView(image);
                 newImageView3.setLayoutX(cords[0] - 10);
                 newImageView3.setLayoutY(cords[1] + 10);
@@ -575,7 +575,7 @@ public class GameController implements Initializable {
                 synchronized (mapPane.getChildren()){
                     mapPane.getChildren().add(newImageView3);
                 }
-                gameElements[2].startElementAction(newImageView3,mapPane.getChildren(),nearBridge(newImageView3));
+                gameElements[2].startElementAction(newImageView3,mapPane.getChildren(),nearBridge(newImageView3),playerPrincessTowerLeft,playerPrincessTowerRight,playerKingTower);
                 ImageView newImageView4 = new ImageView(image);
                 newImageView4.setLayoutX(cords[0] + 10);
                 newImageView4.setLayoutY(cords[1] + 10);
@@ -585,7 +585,7 @@ public class GameController implements Initializable {
                 synchronized (mapPane.getChildren()){
                     mapPane.getChildren().add(newImageView4);
                 }
-                gameElements[3].startElementAction(newImageView4,mapPane.getChildren(),nearBridge(newImageView4));
+                gameElements[3].startElementAction(newImageView4,mapPane.getChildren(),nearBridge(newImageView4),playerPrincessTowerLeft,playerPrincessTowerRight,playerKingTower);
             }
         }));
         botTimeLine.setCycleCount(Animation.INDEFINITE);

@@ -72,7 +72,7 @@ public class KingTower extends TowerElement{
     }
     private Timeline animation;
     @Override
-    public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge) {
+    public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt) {
         active = true;
         Platform.runLater(new Runnable() {
             @Override
