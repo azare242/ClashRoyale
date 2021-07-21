@@ -27,8 +27,29 @@ public class MiniPEKKAElement extends TroopElement {
     }
 
     @Override
-    public void levelUp() {
-
+    public void setLevel(int level) {
+        switch (level) {
+            case 1 -> {
+                setDamage(325);
+                setHP(600);
+            }
+            case 2 -> {
+                setDamage(357);
+                setHP(660);
+            }
+            case 3 -> {
+                setDamage(393);
+                setHP(726);
+            }
+            case 4 -> {
+                setDamage(432);
+                setHP(798);
+            }
+            case 5 -> {
+                setDamage(474);
+                setHP(876);
+            }
+        }
     }
 
 

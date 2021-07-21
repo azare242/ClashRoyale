@@ -13,12 +13,35 @@ public class CannonElement extends BuildingElement {
     }
 
     @Override
-    public void levelUp() {
-
+    public void setLevel(int level) {
+        switch (level) {
+            case 1 -> {
+                setDamage(60);
+                setHP(380);
+            }
+            case 2 -> {
+                setDamage(66);
+                setHP(418);
+            }
+            case 3 -> {
+                setDamage(72);
+                setHP(459);
+            }
+            case 4 -> {
+                setDamage(79);
+                setHP(505);
+            }
+            case 5 -> {
+                setDamage(87);
+                setHP(554);
+            }
+        }
     }
 
     @Override
     public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt){
 
     }
+
+
 }

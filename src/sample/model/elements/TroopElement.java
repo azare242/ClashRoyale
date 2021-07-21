@@ -47,8 +47,7 @@ public abstract class TroopElement implements GameElement{
         level = 1;
     }
 
-    @Override
-    public abstract void levelUp();
+
 
     public void setHitSpeed(double hitSpeed) {
         this.hitSpeed = hitSpeed;

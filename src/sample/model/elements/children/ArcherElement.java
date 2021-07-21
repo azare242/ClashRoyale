@@ -26,8 +26,25 @@ public class ArcherElement extends TroopElement {
     }
 
     @Override
-    public void levelUp() {
-
+    public void setLevel(int level){
+        switch (level){
+            case 1 -> {
+                setDamage(33);
+                setHP(125);
+            }case 2 -> {
+                setDamage(44);
+                setHP(127);
+            }case 3 -> {
+                setDamage(48);
+                setHP(151);
+            }case 4 -> {
+                setDamage(53);
+                setHP(166);
+            }case 5 -> {
+                setDamage(58);
+                setHP(182);
+            }
+        }
     }
 
 

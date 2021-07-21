@@ -28,8 +28,29 @@ public class ValkyrieElement extends TroopElement {
     }
 
     @Override
-    public void levelUp() {
-
+    public void setLevel(int level) {
+        switch (level) {
+            case 1 -> {
+                setDamage(120);
+                setHP(880);
+            }
+            case 2 -> {
+                setDamage(132);
+                setHP(968);
+            }
+            case 3 -> {
+                setDamage(145);
+                setHP(1064);
+            }
+            case 4 -> {
+                setDamage(159);
+                setHP(1170);
+            }
+            case 5 -> {
+                setDamage(175);
+                setHP(1284);
+            }
+        }
     }
 
 }

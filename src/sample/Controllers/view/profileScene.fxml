@@ -100,7 +100,7 @@
                   <Image url="@trophy6.png" />
                </image>
             </ImageView>
-            <ProgressBar layoutX="48.0" layoutY="71.0" prefHeight="28.0" prefWidth="166.0" progress="0.0" />
+            <ProgressBar layoutX="48.0" layoutY="71.0" prefHeight="28.0" prefWidth="166.0" progress="0.0" fx:id="xpRateBar" />
             <ImageView fitHeight="58.0" fitWidth="86.0" layoutX="35.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@level%20star%202.png" />

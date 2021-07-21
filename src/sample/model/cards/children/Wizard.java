@@ -19,10 +19,7 @@ public class Wizard extends Troop {
         return gameElements;
     }
 
-    @Override
-    public void levelUp() {
 
-    }
     @Override
     public Image getDefaultImage(String side){
         if (side.equalsIgnoreCase("PLAYER")) return new Image(getClass().getResourceAsStream("/sample/model/cards/children/images/drop/WizardDropPlayerSide.PNG"));

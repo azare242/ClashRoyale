@@ -23,10 +23,6 @@ public class Barbarians extends Troop {
         return gameElements;
     }
 
-    @Override
-    public void levelUp() {
-
-    }
 
     @Override
     public Image getDefaultImage(String side){

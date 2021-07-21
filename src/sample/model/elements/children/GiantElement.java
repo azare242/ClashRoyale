@@ -27,8 +27,28 @@ public class GiantElement extends TroopElement {
     }
 
     @Override
-    public void levelUp() {
-
+    public void setLevel(int level) {
+        switch (level) {
+            case 1 -> {
+                setDamage(126);
+                setHP(2000);
+            }
+            case 2 -> {
+                setDamage(138);
+                setHP(2200);
+            }
+            case 3 -> {
+                setDamage(152);
+                setHP(2420);
+            }
+            case 4 -> {
+                setDamage(167);
+                setHP(2660);
+            }
+            case 5 -> {
+                setDamage(183);
+                setHP(2920);
+            }
+        }
     }
-
 }

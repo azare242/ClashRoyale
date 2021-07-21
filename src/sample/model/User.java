@@ -17,7 +17,7 @@ public class User implements Serializable {
     private String realName;
     private BattleDeck battleDeck;
     private HashMap<String,Card> cards;
-    private int XP;
+    private double XP;
     private int level;
 
     private PrincessTower princessTowerLeft;
@@ -49,10 +49,52 @@ public class User implements Serializable {
         kingTower = new KingTower(Side.PLAYER);
     }
 
-    public int getXP() {
-        return XP;
+    public double getXPRate() {
+        double XPRate = 0;
+        switch (level){
+            case 1 -> XPRate = (XP) / 300.0;
+            case 2 -> XPRate = (XP) / 500.0;
+            case 3 -> XPRate = (XP) / 900.0;
+            case 4 -> XPRate = (XP) / 1700.0;
+            case 5 -> XPRate = (XP) / 2500.0;
+        }
+        return XPRate;
     }
 
+    public void addXP(int count){
+        XP += count;
+        checkXP();
+    }
+    private void levelUp(){
+        level++;
+        XP = 0;
+        for (Card card : cards.values()){
+            card.levelUp();
+        }
+        kingTower.setLevel(level);
+        princessTowerRight.setLevel(level);
+        princessTowerLeft.setLevel(level);
+
+    }
+    private void checkXP(){
+        switch (level){
+            case 1 -> {
+                if (XP >= 300) levelUp();
+            }
+            case 2 -> {
+                if (XP >= 500) levelUp();
+            }
+            case 3 -> {
+                if (XP >= 900) levelUp();
+            }
+            case 4 -> {
+                if (XP >= 1700) levelUp();
+            }
+            case 5 -> {
+                if (XP >= 2500) levelUp();
+            }
+        }
+    }
     public int getLevel() {
         return level;
     }

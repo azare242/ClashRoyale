@@ -25,9 +25,29 @@ public class WizardElement extends TroopElement {
             attack2 = animations.WizardBotSideAttack2;
         }
     }
-
     @Override
-    public void levelUp() {
-
+    public void setLevel(int level) {
+        switch (level) {
+            case 1 -> {
+                setDamage(130);
+                setHP(340);
+            }
+            case 2 -> {
+                setDamage(143);
+                setHP(374);
+            }
+            case 3 -> {
+                setDamage(157);
+                setHP(411);
+            }
+            case 4 -> {
+                setDamage(172);
+                setHP(452);
+            }
+            case 5 -> {
+                setDamage(189);
+                setHP(496);
+            }
+        }
     }
 }

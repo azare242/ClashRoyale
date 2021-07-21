@@ -21,8 +21,9 @@ public abstract class Spell implements Card{
     @Override
     public abstract GameElement[] getGameElements();
 
-    @Override
-    public abstract void levelUp();
+    public void levelUp() {
+        level++;
+    }
 
     @Override
     public int getCost(){
@@ -31,4 +32,6 @@ public abstract class Spell implements Card{
 
     @Override
     public abstract Image getDefaultImage(String side);
+
+
 }

@@ -27,9 +27,29 @@ public class BabyDragonElement extends TroopElement {
     }
 
     @Override
-    public void levelUp() {
-
+    public void setLevel(int level) {
+        switch (level) {
+            case 1 -> {
+                setDamage(100);
+                setHP(800);
+            }
+            case 2 -> {
+                setDamage(110);
+                setHP(880);
+            }
+            case 3 -> {
+                setDamage(121);
+                setHP(968);
+            }
+            case 4 -> {
+                setDamage(133);
+                setHP(1064);
+            }
+            case 5 -> {
+                setDamage(146);
+                setHP(1168);
+            }
+        }
     }
-
 
 }

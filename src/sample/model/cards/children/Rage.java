@@ -20,10 +20,7 @@ public class Rage extends Spell {
         return gameElements;
     }
 
-    @Override
-    public void levelUp() {
 
-    }
 
     @Override
     public Image getDefaultImage(String side){

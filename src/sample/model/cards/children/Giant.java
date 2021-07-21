@@ -20,10 +20,7 @@ public class Giant extends Troop {
         return gameElements;
     }
 
-    @Override
-    public void levelUp() {
 
-    }
 
     @Override
     public Image getDefaultImage(String side){

@@ -21,10 +21,6 @@ public class BabyDragon extends Troop {
     }
 
 
-    @Override
-    public void levelUp() {
-
-    }
 
     @Override
     public Image getDefaultImage(String side){

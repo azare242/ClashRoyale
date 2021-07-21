@@ -21,9 +21,36 @@ public class InfernoTowerElement extends BuildingElement {
         if (currentDamage == maxDamage) return;
         setDamage(++currentDamage);
     }
-    @Override
-    public void levelUp() {
 
+    @Override
+    public void setLevel(int level) {
+        switch (level) {
+            case 1 -> {
+                setDamages(20,400);
+                setHP(800);
+            }
+            case 2 -> {
+                setDamages(22,440);
+                setHP(880);
+            }
+            case 3 -> {
+                setDamages(26,532);
+                setHP(968);
+            }
+            case 4 -> {
+                setDamages(26,532);
+                setHP(1064);
+            }
+            case 5 -> {
+                setDamages(29,584);
+                setHP(1168);
+            }
+        }
+    }
+
+    public void setDamages(int minDamage,int maxDamage) {
+        this.currentDamage = this.minDamage = minDamage;
+        this.maxDamage = maxDamage;
     }
 
     @Override

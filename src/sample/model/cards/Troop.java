@@ -20,9 +20,9 @@ public abstract class Troop implements Card{
     @Override
     public abstract GameElement[] getGameElements();
 
-    @Override
-    public abstract void levelUp();
-
+    public void levelUp() {
+        level++;
+    }
     @Override
     public int getCost(){
         return cost;

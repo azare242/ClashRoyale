@@ -23,10 +23,7 @@ public class KingTower extends TowerElement{
         Animations animations = Animations.getInstance();
     }
 
-    @Override
-    public void levelUp() {
 
-    }
 
     private boolean active = false;
 
@@ -98,6 +95,31 @@ public class KingTower extends TowerElement{
         animation.play();
     }
 
+    @Override
+    public void setLevel(int level) {
+        switch (level) {
+            case 1 -> {
+                setDamage(50);
+                setHp(2400);
+            }
+            case 2 -> {
+                setDamage(53);
+                setHp(2568);
+            }
+            case 3 -> {
+                setDamage(57);
+                setHp(2763);
+            }
+            case 4 -> {
+                setDamage(60);
+                setHp(2904);
+            }
+            case 5 -> {
+                setDamage(64);
+                setHp(3096);
+            }
+        }
+    }
     @Override
     public MovingArea getMovingArea() {
         return MovingArea.GROUND;

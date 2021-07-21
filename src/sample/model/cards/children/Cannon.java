@@ -20,10 +20,6 @@ public class Cannon extends Building {
         return gameElements;
     }
 
-    @Override
-    public void levelUp() {
-
-    }
 
     @Override
     public Image getDefaultImage(String side){

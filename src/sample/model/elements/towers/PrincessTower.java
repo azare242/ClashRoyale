@@ -18,10 +18,7 @@ public class PrincessTower extends TowerElement{
         super(7.5,0.8,1400,50,side);
     }
 
-    @Override
-    public void levelUp() {
 
-    }
     private double distance(ImageView thisImageView,ImageView otherImageView){
         double dx = Math.abs(otherImageView.getLayoutX() - thisImageView.getLayoutX());
         double dy = Math.abs(otherImageView.getLayoutY() - thisImageView.getLayoutY());
@@ -61,6 +58,31 @@ public class PrincessTower extends TowerElement{
         }));
         animation.setCycleCount(Animation.INDEFINITE);
         animation.play();
+    }
+    @Override
+    public void setLevel(int level) {
+        switch (level) {
+            case 1 -> {
+                setDamage(50);
+                setHp(1400);
+            }
+            case 2 -> {
+                setDamage(54);
+                setHp(1512);
+            }
+            case 3 -> {
+                setDamage(58);
+                setHp(1624);
+            }
+            case 4 -> {
+                setDamage(62);
+                setHp(1750);
+            }
+            case 5 -> {
+                setDamage(69);
+                setHp(1890);
+            }
+        }
     }
     @Override
     public MovingArea getMovingArea() {

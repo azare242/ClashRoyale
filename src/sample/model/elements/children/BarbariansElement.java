@@ -27,8 +27,29 @@ public class BarbariansElement extends TroopElement {
     }
 
     @Override
-    public void levelUp() {
-
+    public void setLevel(int level) {
+        switch (level) {
+            case 1 -> {
+                setDamage(75);
+                setHP(300);
+            }
+            case 2 -> {
+                setDamage(82);
+                setHP(330);
+            }
+            case 3 -> {
+                setDamage(90);
+                setHP(363);
+            }
+            case 4 -> {
+                setDamage(99);
+                setHP(738);
+            }
+            case 5 -> {
+                setDamage(109);
+                setHP(480);
+            }
+        }
     }
 
 }

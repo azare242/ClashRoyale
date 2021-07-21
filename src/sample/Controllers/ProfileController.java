@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -33,6 +34,7 @@ public class ProfileController {
     @FXML private ImageView card8;
     @FXML private Label levelLabel;
     @FXML private Label cupCountLabel;
+    @FXML private ProgressBar xpRateBar;
     private Image getImageByCard(Card card){
         if (card == null) return null;
         String className = card.getClass().getSimpleName();
@@ -124,6 +126,7 @@ public class ProfileController {
     @FXML private void initialize(){
         if (user.battleDeckIsEmpty()) {
             levelLabel.setText(String.valueOf(user.getLevel()));
+            xpRateBar.setProgress(user.getXPRate());
             return;
         }
 
@@ -153,6 +156,8 @@ public class ProfileController {
         card8.setImage(getImageByCard(card_8));
 
         levelLabel.setText(String.valueOf(user.getLevel()));
+
+        xpRateBar.setProgress(user.getXPRate());
 
     }
     @FXML

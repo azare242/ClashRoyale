@@ -14,11 +14,36 @@ public class RageElement extends SpellElement {
         duration = 6;
     }
     @Override
-    public void levelUp() {
-
-    }
-    @Override
     public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt){
 
+    }
+
+    public void setDuration(double duration) {
+        this.duration = duration;
+    }
+
+    @Override
+    public void setLevel(int level) {
+        switch (level) {
+            case 1 -> {
+                setDuration(6);
+            }
+            case 2 -> {
+                setDuration(6.5);
+
+            }
+            case 3 -> {
+                setDuration(7);
+
+            }
+            case 4 -> {
+                setDuration(7.5);
+
+            }
+            case 5 -> {
+                setDuration(8);
+
+            }
+        }
     }
 }
