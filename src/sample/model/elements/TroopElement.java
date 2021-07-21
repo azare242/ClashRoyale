@@ -156,14 +156,47 @@ public abstract class TroopElement implements GameElement{
     private void damageElement(GameElement gameElement){
         gameElement.takeDamage(this.damage);
     }
+
+    private ImageView getTarget(ImageView element,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt){
+        if (this.side==Side.PLAYER){
+            if (element.getLayoutY()>=nearBridge.getLayoutY())
+                return nearBridge;
+            else {
+                if (nearBridge.getLayoutX() < 150){
+                    if (ptL.getImage()!=null)
+                        return ptL;
+                }else {
+                    if (ptR.getImage()!=null)
+                        return ptR;
+                }
+                return kt;
+            }
+        }else {
+            if (element.getLayoutY()<=nearBridge.getLayoutY())
+                return nearBridge;
+            else {
+                if (nearBridge.getLayoutX() < 150){
+                    if (ptL.getImage()!=null)
+                        return ptL;
+                }else {
+                    if (ptR.getImage()!=null)
+                        return ptR;
+                }
+                return kt;
+            }
+        }
+    }
+
     @Override
-    public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge){
+    public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt){
         double x = imageView.getLayoutX();
         double y = imageView.getLayoutY();
         final int[] seconds = {0};
         //ImageView target = null;
+
         animation = new Timeline(new KeyFrame(Duration.millis(200), actionEvent -> {
             //target = setTarget(nearBridge,PTL,PTR,KT);
+            ImageView target = getTarget(imageView , nearBridge , ptL , ptR , kt);
             check(imageView,inGameElements);
             GameElement inRange = canBattle(imageView,inGameElements);
             if (inRange != null){
@@ -176,13 +209,13 @@ public abstract class TroopElement implements GameElement{
             }
             else {
                 if (this.side == Side.PLAYER) {
-                    if (x <= nearBridge.getLayoutX()) {
-                        if (imageView.getLayoutX() <= nearBridge.getLayoutX()) {
+                    if (x <= target.getLayoutX()) {
+                        if (imageView.getLayoutX() <= target.getLayoutX()) {
                             double newX = imageView.getLayoutX() + speed.getTilesPerSecond();
                             double newY = imageView.getLayoutY() - speed.getTilesPerSecond();
                             if (canWalk(imageView, inGameElements, newX, newY)) {
                                 imageView.setLayoutX(newX);
-                                if (imageView.getLayoutY() >= nearBridge.getLayoutY())
+                                if (imageView.getLayoutY() >= target.getLayoutY())
                                     imageView.setLayoutY(newY);
                             }
                         } else {
@@ -191,12 +224,12 @@ public abstract class TroopElement implements GameElement{
                                 imageView.setLayoutY(newY);
                         }
                     } else {
-                        if (imageView.getLayoutX() >= nearBridge.getLayoutX()) {
+                        if (imageView.getLayoutX() >= target.getLayoutX()) {
                             double newX = imageView.getLayoutX() - speed.getTilesPerSecond();
                             double newY = imageView.getLayoutY() - speed.getTilesPerSecond();
                             if (canWalk(imageView, inGameElements, newX, newY)) {
                                 imageView.setLayoutX(newX);
-                                if (imageView.getLayoutY() >= nearBridge.getLayoutY())
+                                if (imageView.getLayoutY() >= target.getLayoutY())
                                     imageView.setLayoutY(newY);
                             }
                         } else {
@@ -211,13 +244,13 @@ public abstract class TroopElement implements GameElement{
                         imageView.setImage(move2);
                     }
                 } else if (this.side == Side.BOT) {
-                    if (x <= nearBridge.getLayoutX()) {
-                        if (imageView.getLayoutX() <= nearBridge.getLayoutX()) {
+                    if (x <= target.getLayoutX()) {
+                        if (imageView.getLayoutX() <= target.getLayoutX()) {
                             double newX = imageView.getLayoutX() + speed.getTilesPerSecond();
                             double newY = imageView.getLayoutY() + speed.getTilesPerSecond();
                             if (canWalk(imageView, inGameElements, newX, newY)) {
                                 imageView.setLayoutX(newX);
-                                if (imageView.getLayoutY() <= nearBridge.getLayoutY() - 60)
+                                if (imageView.getLayoutY() <= target.getLayoutY() - 60)
                                     imageView.setLayoutY(newY);
                             }
                         } else {
@@ -226,12 +259,12 @@ public abstract class TroopElement implements GameElement{
                                 imageView.setLayoutY(newY);
                         }
                     } else {
-                        if (imageView.getLayoutX() >= nearBridge.getLayoutX()) {
+                        if (imageView.getLayoutX() >= target.getLayoutX()) {
                             double newX = imageView.getLayoutX() - speed.getTilesPerSecond();
                             double newY = imageView.getLayoutY() + speed.getTilesPerSecond();
                             if (canWalk(imageView, inGameElements, newX, newY)) {
                                 imageView.setLayoutX(newX);
-                                if (imageView.getLayoutY() >= nearBridge.getLayoutY() - 60) {
+                                if (imageView.getLayoutY() >= target.getLayoutY() - 60) {
                                     imageView.setLayoutX(newY);
                                 }
                             }
@@ -248,9 +281,6 @@ public abstract class TroopElement implements GameElement{
                     }
                 }
             }
-
-
-
             seconds[0]++;
         }));
         animation.setCycleCount(Animation.INDEFINITE);
