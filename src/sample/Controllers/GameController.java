@@ -30,6 +30,7 @@ import sample.model.cards.Spell;
 import sample.model.elements.GameElement;
 import sample.model.elements.children.ArcherElement;
 import sample.model.elements.children.BabyDragonElement;
+import sample.model.elements.towers.KingTower;
 
 import java.io.IOException;
 import java.net.URL;
@@ -134,8 +135,39 @@ public class GameController implements Initializable {
         playerPrincessTowerLeft.setUserData(user.getPrincessTowerLeft());
         playerPrincessTowerRight.setUserData(user.getPrincessTowerRight());
         playerKingTower.setUserData(user.getKingTower());
+        startTowers();
     }
 
+    private void startTowers(){
+        bot.getPrincessTowerLeft().startElementAction(enemyPrincessTowerLeft, mapPane.getChildren(),null);
+        bot.getPrincessTowerRight().startElementAction(enemyPrincessTowerRight, mapPane.getChildren(),null);
+        user.getPrincessTowerLeft().startElementAction(playerPrincessTowerLeft, mapPane.getChildren(), null);
+        user.getPrincessTowerRight().startElementAction(playerPrincessTowerRight, mapPane.getChildren(), null);
+    }
+    @FXML private Label scoreLabelPlayer;
+    @FXML private Label scoreLabelBot;
+    private boolean playerKilledBPL = false;
+    private boolean playerKilledBPR = false;
+    private boolean botKilledPPL = false;
+    private boolean botKilledPPR = false;
+    private void addScoreToPlayer(){
+            int currentScore = Integer.parseInt(scoreLabelPlayer.getText());
+            scoreLabelPlayer.setText(String.valueOf(currentScore + 1));
+    }
+    private void addScoreToBot(){
+        int currentScore = Integer.parseInt(scoreLabelBot.getText());
+        scoreLabelBot.setText(String.valueOf(currentScore + 1));
+    }
+    private void activeKingTower(){
+        KingTower kingTowerBot = bot.getKingTower();
+        if (enemyPrincessTowerLeft.getImage() == null || enemyPrincessTowerRight.getImage() == null || kingTowerBot.isDamaged()){
+            if (!kingTowerBot.isActive()) kingTowerBot.startElementAction(enemyKingTower,mapPane.getChildren(),null);
+        }
+        KingTower kingTowerPlayer = user.getKingTower();
+        if (playerPrincessTowerLeft.getImage() == null ||playerPrincessTowerRight.getImage() == null || kingTowerPlayer.isDamaged()){
+            if (!kingTowerPlayer.isActive()) kingTowerPlayer.startElementAction(enemyKingTower,mapPane.getChildren(),null);
+        }
+    }
     public void countDownTimer(){
         timer = new Timeline();
         timer.setCycleCount(Timeline.INDEFINITE);
@@ -145,6 +177,8 @@ public class GameController implements Initializable {
         KeyFrame frame = new KeyFrame(Duration.millis(1000), new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
+
+                activeKingTower();
                 second--;
                 if (!elixir.isFull()) {
                     if (minute < 2) {

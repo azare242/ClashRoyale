@@ -53,12 +53,12 @@
                   <Image url="@blue%20crown1.png" />
                </image>
             </ImageView>
-            <Label layoutX="37.0" layoutY="338.0" text="0" textFill="#38d0f7">
+            <Label fx:id="scoreLabelPlayer" layoutX="37.0" layoutY="338.0" text="0" textFill="#38d0f7">
                <font>
                   <Font name="Baloo Bhai Regular" size="56.0" />
                </font>
             </Label>
-            <Label layoutX="37.0" layoutY="144.0" text="0" textFill="#f35544">
+            <Label fx:id="scoreLabelBot" layoutX="37.0" layoutY="144.0" text="0" textFill="#f35544">
                <font>
                   <Font name="Baloo Bhai Regular" size="56.0" />
                </font>

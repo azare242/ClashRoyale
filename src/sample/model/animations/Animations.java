@@ -68,6 +68,8 @@ public class Animations {
     public final Image ValkyrieBotSideAttack2 = new Image(getClass().getResourceAsStream("/sample/model/animations/valkyrieMoves/valkyrieBotSideAttack2.png"));
 
 
+    public final Image BotKingActive = new Image(getClass().getResourceAsStream("/sample/model/animations/KingTower/King_Tower_Red_Active.png"));
+    public final Image PlayerKingActive = new Image(getClass().getResourceAsStream("/sample/model/animations/KingTower/King_Tower_Blue_Active.png"));
     private Animations(){
 
     }

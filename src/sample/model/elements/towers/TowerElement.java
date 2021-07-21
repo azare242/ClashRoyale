@@ -8,11 +8,11 @@ import sample.model.mechanismes.Side;
 
 public abstract class TowerElement implements GameElement {
 
-    private double range;
-    private double hitSpeed;
-    private int hp;
-    private int damage;
-    private int level;
+    protected double range;
+    protected double hitSpeed;
+    protected int hp;
+    protected int damage;
+    protected int level;
     protected Side side;
 
     public TowerElement(double range,double hitSpeed, int hp, int damage,Side side) {
@@ -51,9 +51,9 @@ public abstract class TowerElement implements GameElement {
     public abstract void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge);
 
     public synchronized void takeDamage(int count){
-
+        hp -= count;
     }
-    private void check(ImageView imageView , ObservableList<Node> inGameElements){
+    public void check(ImageView imageView , ObservableList<Node> inGameElements){
         if (hp <= 0) {
             imageView.setImage(null);
             synchronized (inGameElements) {
