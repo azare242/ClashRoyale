@@ -3,6 +3,7 @@ package sample.model.elements;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
+import sample.model.mechanismes.MovingArea;
 import sample.model.mechanismes.Side;
 
 public abstract class SpellElement implements GameElement{
@@ -34,5 +35,9 @@ public abstract class SpellElement implements GameElement{
     }
     private void check(ImageView imageView , ObservableList<Node> inGameElements){
 
+    }
+    @Override
+    public MovingArea getMovingArea(){
+        return null;
     }
 }

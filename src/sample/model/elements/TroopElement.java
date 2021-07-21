@@ -10,6 +10,9 @@ import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
+import sample.model.elements.children.GiantElement;
+import sample.model.elements.towers.TowerElement;
+import sample.model.mechanismes.MovingArea;
 import sample.model.mechanismes.Side;
 import sample.model.mechanismes.Speed;
 import sample.model.mechanismes.Target;
@@ -31,6 +34,7 @@ public abstract class TroopElement implements GameElement{
     protected Image move2;
     protected Image attack1;
     protected Image attack2;
+    protected MovingArea movingArea;
     public TroopElement(double hitSpeed, Speed speed, Target target, double range, boolean areaSplash, int HP, int damage, Side side) {
         this.hitSpeed = hitSpeed;
         this.speed = speed;
@@ -80,9 +84,12 @@ public abstract class TroopElement implements GameElement{
     }
 
 
+    @Override
+    public MovingArea getMovingArea() {
+        return movingArea;
+    }
 
-
-    private boolean canWalk(ImageView thisImageView,ObservableList<Node> inGameElements,double newX , double newY){
+    private boolean canWalk(ImageView thisImageView, ObservableList<Node> inGameElements, double newX , double newY){
         if (side == Side.BOT ) {
             if (newX >= 380|| newY >= 480) return false;
         } else {
@@ -117,13 +124,21 @@ public abstract class TroopElement implements GameElement{
                 if (gameElement != null){
                 if (this.side != gameElement.getSide()) {
                         if (distance(imageView, element) <= range * 10) {
-                            return gameElement;
+                            if (checkTarget(gameElement))
+                                return gameElement;
                         }
                     }
                 }
             }
         }
         return null;
+    }
+    private boolean checkTarget(GameElement gameElement){
+        if (gameElement.getMovingArea() == null) return false;
+        if ((this.target == Target.AIR || this.target == Target.AIR_AND_GROUND )&& gameElement.getMovingArea() == MovingArea.AIR) return true;
+        if ((this.target == Target.GROUND || this.target == Target.AIR_AND_GROUND )&& gameElement.getMovingArea() == MovingArea.GROUND) return true;
+        if (this instanceof GiantElement && (gameElement instanceof BuildingElement || gameElement instanceof TowerElement)) return true;
+        return false;
     }
     private Timeline animation;
     @Override

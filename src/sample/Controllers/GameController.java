@@ -106,9 +106,11 @@ public class GameController implements Initializable {
     private ElixirHandler elixir;
     private User user;
 
+    Bot bot;
     public GameController(User user){
         progress = 0.4;
         this.user = user;
+        bot = new EasyBot();
         elixir = new ElixirHandler();
         initCardsInGame();
         images = ImagesByCard.getInstance();
@@ -126,7 +128,12 @@ public class GameController implements Initializable {
         second = 0;
         minute = 3;
         countDownTimer();
-
+        enemyPrincessTowerLeft.setUserData(bot.getPrincessTowerLeft());
+        enemyPrincessTowerRight.setUserData(bot.getPrincessTowerRight());
+        enemyKingTower.setUserData(bot.getKingTower());
+        playerPrincessTowerLeft.setUserData(user.getPrincessTowerLeft());
+        playerPrincessTowerRight.setUserData(user.getPrincessTowerRight());
+        playerKingTower.setUserData(user.getKingTower());
     }
 
     public void countDownTimer(){
@@ -450,10 +457,18 @@ public class GameController implements Initializable {
         else nearPrincessTower = enemyPrincessTowerLeft;
         return nearPrincessTower;
     }
+    private ImageView nearPrincessViewForBabyDragonBotSide(ImageView element){
+        ImageView nearPrincessTower = null;
+        double dx1 = Math.abs(element.getLayoutX() - enemyPrincessTowerLeft.getLayoutX());
+        double dx2 = Math.abs(element.getLayoutX() - enemyPrincessTowerRight.getLayoutX());
+        if (dx1>dx2) nearPrincessTower =playerPrincessTowerRight;
+        else nearPrincessTower = playerPrincessTowerLeft;
+        return nearPrincessTower;
+    }
 
 
     private void botPlay(){
-        Bot bot = new EasyBot();
+
         botTimeLine = new Timeline(new KeyFrame(Duration.seconds(5),actionEvent -> {
             Card card = bot.play();
             int[] cords = bot.getCords();
@@ -470,7 +485,10 @@ public class GameController implements Initializable {
                 synchronized (mapPane.getChildren()){
                     mapPane.getChildren().add(newImageView);
                 }
-                gameElements[0].startElementAction(newImageView,mapPane.getChildren(),nearBridge(newImageView));
+                if (gameElements[0] instanceof BabyDragonElement){
+                    gameElements[0].startElementAction(newImageView,mapPane.getChildren(),nearPrincessViewForBabyDragonBotSide(newImageView));
+                } else
+                    gameElements[0].startElementAction(newImageView,mapPane.getChildren(),nearBridge(newImageView));
             } else if (gameElements.length == 2){
                 ImageView newImageView1 = new ImageView(image);
                 newImageView1.setLayoutX(cords[0] + 10);
@@ -481,6 +499,7 @@ public class GameController implements Initializable {
                 synchronized (mapPane.getChildren()){
                     mapPane.getChildren().add(newImageView1);
                 }
+
                 gameElements[0].startElementAction(newImageView1,mapPane.getChildren(),nearBridge(newImageView1));
                 ImageView newImageView2 = new ImageView(image);
                 newImageView2.setLayoutX(cords[0] - 10);

@@ -2,6 +2,7 @@ package sample.model.elements.children;
 
 import sample.model.animations.Animations;
 import sample.model.elements.TroopElement;
+import sample.model.mechanismes.MovingArea;
 import sample.model.mechanismes.Side;
 import sample.model.mechanismes.Speed;
 import sample.model.mechanismes.Target;
@@ -11,6 +12,7 @@ public class BabyDragonElement extends TroopElement {
         super(1.8, Speed.FAST, Target.AIR_AND_GROUND, 3, true, 800, 100,side);
         Animations animations = Animations.getInstance();
 
+        this.movingArea = MovingArea.AIR;
         if (side == Side.PLAYER){
             move1 = animations.BabyDragonPlayerSideMove1;
             move2 = animations.BabyDragonPlayerSideMove2;

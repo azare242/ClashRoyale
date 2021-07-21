@@ -24,7 +24,19 @@ public class User implements Serializable {
     private PrincessTower princessTowerRight;
     private KingTower kingTower;
 
-    public User(String userName,String passWord,String realName){
+    public PrincessTower getPrincessTowerLeft() {
+        return princessTowerLeft;
+    }
+
+    public PrincessTower getPrincessTowerRight() {
+        return princessTowerRight;
+    }
+
+    public KingTower getKingTower() {
+        return kingTower;
+    }
+
+    public User(String userName, String passWord, String realName){
         this.userName = userName;
         this.passWord = passWord;
         this.realName = realName;

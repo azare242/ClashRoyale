@@ -3,6 +3,7 @@ package sample.model.elements;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
+import sample.model.mechanismes.MovingArea;
 import sample.model.mechanismes.Side;
 import sample.model.mechanismes.Target;
 
@@ -72,6 +73,10 @@ public abstract class BuildingElement implements GameElement{
                 inGameElements.remove(imageView);
             }
         }
+    }
+    @Override
+    public MovingArea getMovingArea(){
+        return MovingArea.GROUND;
     }
 }
 

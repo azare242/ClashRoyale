@@ -5,6 +5,7 @@ import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import sample.model.cards.Spell;
 import sample.model.elements.SpellElement;
+import sample.model.mechanismes.MovingArea;
 import sample.model.mechanismes.Side;
 
 public class ArrowsElement extends SpellElement {
@@ -24,4 +25,5 @@ public class ArrowsElement extends SpellElement {
     public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge){
 
     }
+
 }
