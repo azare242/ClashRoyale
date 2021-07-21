@@ -46,7 +46,7 @@ public class KingTower extends TowerElement{
                 if (gameElement != null){
                     if (this.side != gameElement.getSide()) {
                         if (distance(imageView, element) <= range * 10) {
-
+                            return gameElement;
                         }
                     }
                 }
@@ -67,7 +67,6 @@ public class KingTower extends TowerElement{
         hp -= count;
         damaged = true;
     }
-    private Timeline animation;
     @Override
     public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt) {
         active = true;

@@ -34,7 +34,7 @@ public class PrincessTower extends TowerElement{
                 if (gameElement != null){
                     if (this.side != gameElement.getSide()) {
                         if (distance(imageView, element) <= range * 10) {
-
+                            return gameElement;
                         }
                     }
                 }
@@ -46,7 +46,6 @@ public class PrincessTower extends TowerElement{
         gameElement.takeDamage(this.damage);
     }
 
-    private Timeline animation;
     @Override
     public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt) {
         animation = new Timeline(new KeyFrame(Duration.seconds(hitSpeed), actionEvent -> {

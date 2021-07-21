@@ -147,6 +147,7 @@ public abstract class TroopElement implements GameElement{
     private void check(ImageView imageView , ObservableList<Node> inGameElements){
         if (HP <= 0) {
             imageView.setImage(null);
+            animation.stop();
             synchronized (inGameElements) {
                 inGameElements.remove(imageView);
             }

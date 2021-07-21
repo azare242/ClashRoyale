@@ -1,5 +1,6 @@
 package sample.model.elements.towers;
 
+import javafx.animation.Timeline;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
@@ -50,6 +51,7 @@ public abstract class TowerElement implements GameElement {
     @Override
     public abstract void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt);
 
+    protected Timeline animation;
     public synchronized void takeDamage(int count){
         hp -= count;
     }
@@ -57,6 +59,8 @@ public abstract class TowerElement implements GameElement {
         if (hp <= 0) {
             imageView.setImage(null);
             imageView.setUserData(null);
+            animation.stop();
         }
+
     }
 }
