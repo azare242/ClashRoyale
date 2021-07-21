@@ -1,7 +1,9 @@
 package sample.model.elements;
 
+import javafx.animation.Timeline;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import sample.model.mechanismes.MovingArea;
 import sample.model.mechanismes.Side;
@@ -17,6 +19,7 @@ public abstract class BuildingElement implements GameElement{
     protected int damage;
     protected int level;
     protected Side side;
+    protected Image image;
     public BuildingElement(double hitSpeed, Target target, double range, int lifeTime, int HP, int damage,Side side) {
         this.hitSpeed = hitSpeed;
         this.target = target;
@@ -60,6 +63,7 @@ public abstract class BuildingElement implements GameElement{
     public Side getSide(){
         return side;
     }
+    protected Timeline animation;
     @Override
     public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt){
 
@@ -68,9 +72,10 @@ public abstract class BuildingElement implements GameElement{
         public synchronized void takeDamage(int count){
         HP -= count;
     }
-    private void check(ImageView imageView , ObservableList<Node> inGameElements){
+    protected void check(ImageView imageView , ObservableList<Node> inGameElements){
         if (HP <= 0) {
             imageView.setImage(null);
+            animation.stop();
             synchronized (inGameElements) {
                 inGameElements.remove(imageView);
             }
@@ -80,5 +85,7 @@ public abstract class BuildingElement implements GameElement{
     public MovingArea getMovingArea(){
         return MovingArea.GROUND;
     }
+
+
 }
 

@@ -70,6 +70,11 @@ public class Animations {
 
     public final Image BotKingActive = new Image(getClass().getResourceAsStream("/sample/model/animations/KingTower/King_Tower_Red_Active.png"));
     public final Image PlayerKingActive = new Image(getClass().getResourceAsStream("/sample/model/animations/KingTower/King_Tower_Blue_Active.png"));
+
+    public final Image CannonPlayerSide = new Image(getClass().getResourceAsStream("/sample/model/animations/buildings/cannonPlayerSide.png"));
+    public final Image CannonBotSide = new Image(getClass().getResourceAsStream("/sample/model/animations/buildings/cannonBotSide.png"));
+    public final Image InfernoTowerPlayerSide = new Image(getClass().getResourceAsStream("/sample/model/animations/buildings/infernoDropPlayerSide.png"));
+    public final Image InfernoTowerBotSide = new Image(getClass().getResourceAsStream("/sample/model/animations/buildings/infernoDropBotSide.png"));
     private Animations(){
 
     }
