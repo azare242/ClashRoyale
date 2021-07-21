@@ -78,12 +78,14 @@ public class CannonElement extends BuildingElement {
     }
     @Override
     public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt){
+        final int[] seconds = {0};
         animation = new Timeline(new KeyFrame(Duration.seconds(hitSpeed) , actionEvent ->{
-            check(imageView,inGameElements);
+            check(imageView,inGameElements,seconds[0]);
             GameElement inRange = canBattle(imageView,inGameElements);
             if (inRange != null) {
                 damageElement(inRange);
             }
+            seconds[0]++;
         }));
         animation.setCycleCount(Animation.INDEFINITE);
         animation.play();

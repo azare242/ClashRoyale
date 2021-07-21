@@ -165,7 +165,7 @@ public class GameController implements Initializable {
         }
         KingTower kingTowerPlayer = user.getKingTower();
         if (playerPrincessTowerLeft.getImage() == null ||playerPrincessTowerRight.getImage() == null || kingTowerPlayer.isDamaged()){
-            if (!kingTowerPlayer.isActive()) kingTowerPlayer.startElementAction(enemyKingTower,mapPane.getChildren(),null,null,null,null);
+            if (!kingTowerPlayer.isActive()) kingTowerPlayer.startElementAction(playerKingTower,mapPane.getChildren(),null,null,null,null);
         }
     }
     public void countDownTimer(){

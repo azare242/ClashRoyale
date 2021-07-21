@@ -72,8 +72,8 @@ public abstract class BuildingElement implements GameElement{
         public synchronized void takeDamage(int count){
         HP -= count;
     }
-    protected void check(ImageView imageView , ObservableList<Node> inGameElements){
-        if (HP <= 0) {
+    protected void check(ImageView imageView , ObservableList<Node> inGameElements,int seconds){
+        if (HP <= 0 || seconds == lifeTime) {
             imageView.setImage(null);
             animation.stop();
             synchronized (inGameElements) {
