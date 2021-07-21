@@ -168,6 +168,13 @@ public class GameController implements Initializable {
             if (!kingTowerPlayer.isActive()) kingTowerPlayer.startElementAction(playerKingTower,mapPane.getChildren(),null,null,null,null);
         }
     }
+    private void checkEndGame(){
+        if (timerCounter.getText().equals("00:00")) System.exit(0);
+
+        if (enemyKingTower.getImage() == null) System.exit(0);
+
+        if (playerKingTower.getImage() == null) System.exit(0);
+    }
     public void countDownTimer(){
         timer = new Timeline();
         timer.setCycleCount(Timeline.INDEFINITE);
@@ -179,6 +186,7 @@ public class GameController implements Initializable {
             public void handle(ActionEvent actionEvent) {
 
                 activeKingTower();
+                checkEndGame();
                 second--;
                 if (!elixir.isFull()) {
                     if (minute < 2) {
