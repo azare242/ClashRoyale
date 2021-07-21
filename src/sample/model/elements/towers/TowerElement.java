@@ -53,12 +53,9 @@ public abstract class TowerElement implements GameElement {
     public synchronized void takeDamage(int count){
         hp -= count;
     }
-    public void check(ImageView imageView , ObservableList<Node> inGameElements){
+    public void check(ImageView imageView){
         if (hp <= 0) {
             imageView.setImage(null);
-            synchronized (inGameElements) {
-                inGameElements.remove(imageView);
-            }
         }
     }
 }
