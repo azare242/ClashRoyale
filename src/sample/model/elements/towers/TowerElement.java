@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import sample.model.elements.GameElement;
 import sample.model.mechanismes.Side;
+import sample.model.mechanismes.Speed;
 
 public abstract class TowerElement implements GameElement {
 
@@ -62,5 +63,16 @@ public abstract class TowerElement implements GameElement {
             animation.stop();
         }
 
+    }
+    private int damageUnRage = damage;
+    private double hitSpeedUnRage = hitSpeed;
+    public void rage(){
+        damage += 0.4 * damage;
+        hitSpeed += 0.4 * hitSpeed;
+
+    }
+    public void unRage(){
+        hitSpeed = hitSpeedUnRage;
+        damage = damageUnRage;
     }
 }

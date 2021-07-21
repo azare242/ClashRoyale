@@ -78,6 +78,7 @@ public class Animations {
 
     public final Image FireBall = new Image(getClass().getResourceAsStream("/sample/model/animations/spell/fireBall.png"));
     public final Image Arrows = new Image(getClass().getResourceAsStream("/sample/model/animations/spell/arrows.png"));
+    public final Image RageArea = new Image(getClass().getResourceAsStream("/sample/model/animations/spell/rageArea.png"));
     private Animations(){
 
     }

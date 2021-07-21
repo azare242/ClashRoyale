@@ -352,12 +352,26 @@ public class GameController implements Initializable {
     }
 
 
+    private boolean canDeployHere(MouseEvent e){
+        if (enemyPrincessTowerLeft.getImage() == null){
+            return e.getX() > 226;
+        }
+        else if (enemyPrincessTowerRight.getImage() == null){
+            return e.getX() < 226;
+        }
+        else if (enemyPrincessTowerLeft.getImage() == null && enemyPrincessTowerRight.getImage() == null){
+            return e.getY() < 185 ;
+        }
+        else {
+            return e.getY() < leftBridge.getLayoutY() || e.getY() < rightBridge.getLayoutY();
+        }
+    }
     @FXML public void deploy(MouseEvent e){
         if (toReplaceNextTime == null) return;
         if (playedCard == null) {
             return;
         }
-        if ((e.getY() < leftBridge.getLayoutY() || e.getY() < rightBridge.getLayoutY() )&&( !(playedCard instanceof Spell)) ){  //TODO: CHECK ENEMY PRINCESS TOWERS DESTROYED
+        if ( canDeployHere(e) && ( !(playedCard instanceof Spell)) ){
             return;
         }
         Card replaceCard = nextCard;

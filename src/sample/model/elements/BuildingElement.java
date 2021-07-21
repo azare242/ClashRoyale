@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import sample.model.mechanismes.MovingArea;
 import sample.model.mechanismes.Side;
+import sample.model.mechanismes.Speed;
 import sample.model.mechanismes.Target;
 
 public abstract class BuildingElement implements GameElement{
@@ -85,7 +86,18 @@ public abstract class BuildingElement implements GameElement{
     public MovingArea getMovingArea(){
         return MovingArea.GROUND;
     }
+    private int damageUnRage = damage;
+    private double hitSpeedUnRage = hitSpeed;
+    public void rage(){
+        damage += 0.4 * damage;
+        hitSpeed += 0.4 * hitSpeed;
 
+    }
+    public void unRage(){
+        hitSpeed = hitSpeedUnRage;
+        damage = damageUnRage;
+
+    }
 
 }
 

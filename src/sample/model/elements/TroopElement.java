@@ -45,6 +45,9 @@ public abstract class TroopElement implements GameElement{
         this.damage = damage;
         this.side = side;
         level = 1;
+        damageUnRage = damage;
+        speedUnRage = speed;
+        hitSpeedUnRage = hitSpeed;
     }
 
 
@@ -133,6 +136,7 @@ public abstract class TroopElement implements GameElement{
         return null;
     }
     private boolean checkTarget(GameElement gameElement){
+        if (gameElement instanceof SpellElement) return false;
         if (gameElement.getMovingArea() == null) return false;
         if ((this.target == Target.AIR || this.target == Target.AIR_AND_GROUND )&& gameElement.getMovingArea() == MovingArea.AIR) return true;
         if ((this.target == Target.GROUND || this.target == Target.AIR_AND_GROUND )&& gameElement.getMovingArea() == MovingArea.GROUND) return true;
@@ -286,5 +290,23 @@ public abstract class TroopElement implements GameElement{
     @Override
     public Side getSide(){
         return side;
+    }
+
+    protected int damageUnRage;
+    protected double hitSpeedUnRage;
+    protected Speed speedUnRage;
+    public void rage(){
+        damage += 0.4 * damage;
+        hitSpeed += 0.4 * hitSpeed;
+        switch (speed){
+            case SLOW -> speed = Speed.RAGED_SLOW;
+            case MEDIUM -> speed = Speed.RAGED_MEDIUM;
+            case FAST -> speed = Speed.RAGED_FAST;
+        }
+    }
+    public void unRage(){
+        hitSpeed = hitSpeedUnRage;
+        damage = damageUnRage;
+        speed = speedUnRage;
     }
 }

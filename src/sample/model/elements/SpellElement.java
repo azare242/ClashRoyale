@@ -38,4 +38,10 @@ public abstract class SpellElement implements GameElement{
     public MovingArea getMovingArea(){
         return null;
     }
+    public void rage(){
+
+    }
+    public void unRage(){
+
+    }
 }

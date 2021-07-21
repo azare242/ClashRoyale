@@ -15,4 +15,6 @@ public interface GameElement extends Serializable {
     public Side getSide();
     public void takeDamage(int count);
     public MovingArea getMovingArea();
+    public void rage();
+    public void unRage();
 }
