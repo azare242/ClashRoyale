@@ -192,10 +192,7 @@ public abstract class TroopElement implements GameElement{
         double x = imageView.getLayoutX();
         double y = imageView.getLayoutY();
         final int[] seconds = {0};
-        //ImageView target = null;
-
         animation = new Timeline(new KeyFrame(Duration.millis(200 + (hitSpeed * 10)), actionEvent -> {
-            //target = setTarget(nearBridge,PTL,PTR,KT);
             ImageView target = getTarget(imageView , nearBridge , ptL , ptR , kt);
             check(imageView,inGameElements);
             GameElement inRange = canBattle(imageView,inGameElements);
