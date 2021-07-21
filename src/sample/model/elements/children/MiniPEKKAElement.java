@@ -8,7 +8,7 @@ import sample.model.mechanismes.Target;
 
 public class MiniPEKKAElement extends TroopElement {
     public MiniPEKKAElement(Side side) {
-        super(1.8, Speed.FAST, Target.GROUND, 1, false, 600, 325,side);
+        super(1.8, Speed.FAST, Target.GROUND, 1.5, false, 600, 325,side);
         Animations animations = Animations.getInstance();
 
         if (side == Side.PLAYER){

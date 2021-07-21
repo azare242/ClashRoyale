@@ -13,4 +13,5 @@ public interface GameElement extends Serializable {
     public void setLevel(int level);
     public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge);
     public Side getSide();
+    public void takeDamage(int count);
 }

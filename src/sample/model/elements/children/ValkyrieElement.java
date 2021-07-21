@@ -8,7 +8,7 @@ import sample.model.mechanismes.Target;
 
 public class ValkyrieElement extends TroopElement {
     public ValkyrieElement(Side side) {
-        super(1.5,Speed.MEDIUM,Target.GROUND,1,true,880,120,side);
+        super(1.5,Speed.MEDIUM,Target.GROUND,1.5,true,880,120,side);
         Animations animations = Animations.getInstance();
 
         if (side == Side.PLAYER){

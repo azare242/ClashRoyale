@@ -62,5 +62,16 @@ public abstract class BuildingElement implements GameElement{
     @Override
     public abstract void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge);
 
+    public synchronized void takeDamage(int count){
+        HP -= count;
+    }
+    private void check(ImageView imageView , ObservableList<Node> inGameElements){
+        if (HP <= 0) {
+            imageView.setImage(null);
+            synchronized (inGameElements) {
+                inGameElements.remove(imageView);
+            }
+        }
+    }
 }
 

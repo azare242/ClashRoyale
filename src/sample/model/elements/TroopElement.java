@@ -127,14 +127,31 @@ public abstract class TroopElement implements GameElement{
     }
     private Timeline animation;
     @Override
+    public synchronized void takeDamage(int count){
+        HP -= count;
+    }
+    private void check(ImageView imageView , ObservableList<Node> inGameElements){
+        if (HP <= 0) {
+            imageView.setImage(null);
+            synchronized (inGameElements) {
+                inGameElements.remove(imageView);
+            }
+        }
+    }
+    private void damageElement(GameElement gameElement){
+        gameElement.takeDamage(this.damage);
+    }
+    @Override
     public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge){
         double x = imageView.getLayoutX();
         double y = imageView.getLayoutY();
         final int[] seconds = {0};
 
         animation = new Timeline(new KeyFrame(Duration.millis(200), actionEvent -> {
-
-            if (canBattle(imageView,inGameElements) != null){
+            check(imageView,inGameElements);
+            GameElement inRange = canBattle(imageView,inGameElements);
+            if (inRange != null){
+                damageElement(inRange);
                 if (seconds[0] % 2 == 0) {
                     imageView.setImage(attack1);
                 } else {

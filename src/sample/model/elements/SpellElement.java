@@ -28,4 +28,11 @@ public abstract class SpellElement implements GameElement{
 
     @Override
     public abstract void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge);
+
+    public synchronized void takeDamage(int count){
+
+    }
+    private void check(ImageView imageView , ObservableList<Node> inGameElements){
+
+    }
 }
