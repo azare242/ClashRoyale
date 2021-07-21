@@ -54,6 +54,7 @@ public class KingTower extends TowerElement{
         }
         return null;
     }
+
     private boolean damaged = false;
     public boolean isDamaged(){
         return damaged;

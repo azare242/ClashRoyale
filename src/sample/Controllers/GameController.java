@@ -28,9 +28,9 @@ import sample.model.bots.EasyBot;
 import sample.model.cards.Card;
 import sample.model.cards.Spell;
 import sample.model.elements.GameElement;
-import sample.model.elements.children.ArcherElement;
 import sample.model.elements.children.BabyDragonElement;
 import sample.model.elements.towers.KingTower;
+import sample.model.elements.towers.PrincessTower;
 
 import java.io.IOException;
 import java.net.URL;
@@ -168,12 +168,51 @@ public class GameController implements Initializable {
             if (!kingTowerPlayer.isActive()) kingTowerPlayer.startElementAction(playerKingTower,mapPane.getChildren(),null,null,null,null);
         }
     }
-    private void checkEndGame(){
-        if (timerCounter.getText().equals("00:00")) System.exit(0);
+    private String checkWinner(){
+        KingTower kingTowerP = (KingTower) playerKingTower.getUserData();
+        KingTower kingTowerB = (KingTower) enemyKingTower.getUserData();
+        PrincessTower princessTowerLP = (PrincessTower) playerPrincessTowerLeft.getUserData();
+        PrincessTower princessTowerRP = (PrincessTower) playerPrincessTowerRight.getUserData();
+        PrincessTower princessTowerLB = (PrincessTower) enemyPrincessTowerLeft.getUserData();
+        PrincessTower princessTowerRB = (PrincessTower) enemyPrincessTowerRight.getUserData();
 
-        if (enemyKingTower.getImage() == null) System.exit(0);
+        if (kingTowerB.getHp() + princessTowerLB.getHp() + princessTowerRB.getHp() < kingTowerP.getHp() + princessTowerRP.getHp() + princessTowerLP.getHp()) return "PLAYER_WIN";
+        else return "BOT_WIN";
+    }
+    private void exitGame(String winner) throws IOException {
+        if (winner.equals("PLAYER_WIN")){
+            user.addXP(200);
+        } else {
+            user.addXP(70);
+        }
 
-        if (playerKingTower.getImage() == null) System.exit(0);
+        timer.stop();
+        Stage stage = (Stage) back.getScene().getWindow();
+        stage.close();
+        Stage stage1 = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("view/endGame/score.fxml"));
+        loader.setController(new EndGameController("0","0",this.user));
+        Parent root = loader.load();
+        stage1.setScene(new Scene(root,321,567));
+        stage1.setTitle("Clash Royal");
+        stage1.show();
+        SoundEffects.stopGameSound();
+    }
+    private void checkEndGame() throws IOException {
+        if (timerCounter.getText().equals("00:00")) {
+            String winner = checkWinner();
+            exitGame(winner);
+        }
+
+        if (enemyKingTower.getImage() == null) {
+            String winner = "PLAYER_WIN";
+            exitGame(winner);
+        }
+
+        if (playerKingTower.getImage() == null) {
+            String winner = "BOT_WIN";
+            exitGame(winner);
+        }
     }
     public void countDownTimer(){
         timer = new Timeline();
@@ -186,7 +225,11 @@ public class GameController implements Initializable {
             public void handle(ActionEvent actionEvent) {
 
                 activeKingTower();
-                checkEndGame();
+                try {
+                    checkEndGame();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 second--;
                 if (!elixir.isFull()) {
                     if (minute < 2) {

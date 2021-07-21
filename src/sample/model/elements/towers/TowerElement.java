@@ -71,6 +71,11 @@ public abstract class TowerElement implements GameElement {
         hitSpeed += 0.4 * hitSpeed;
 
     }
+
+    public int getHp() {
+        return hp;
+    }
+
     public void unRage(){
         hitSpeed = hitSpeedUnRage;
         damage = damageUnRage;
