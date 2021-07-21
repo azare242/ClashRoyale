@@ -87,7 +87,7 @@ public class KingTower extends TowerElement{
                 SoundEffects.kingActivate();
             }
         });
-        animation = new Timeline(new KeyFrame(Duration.millis(800), actionEvent -> {
+        animation = new Timeline(new KeyFrame(Duration.seconds(hitSpeed), actionEvent -> {
             check(imageView);
             GameElement inRange = canBattle(imageView,inGameElements);
             if (inRange != null){

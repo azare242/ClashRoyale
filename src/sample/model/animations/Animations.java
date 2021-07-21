@@ -54,7 +54,7 @@ public class Animations {
     public final Image MiniPEKKABotSideMove1 = new Image(getClass().getResourceAsStream("/sample/model/animations/pekkaMoves/pekkaBotSideMove1.png"));
     public final Image MiniPEKKABotSideMove2 = new Image(getClass().getResourceAsStream("/sample/model/animations/pekkaMoves/pekkaBotSideMove2.png"));
     public final Image MiniPEKKAPlayerSideAttack1 = new Image(getClass().getResourceAsStream("/sample/model/animations/pekkaMoves/pekkaPlayerSideAttack1.png"));
-    public final Image MiniPEKKAPlayerSideAttack2 = new Image(getClass().getResourceAsStream("/sample/model/animations/pekkaMoves/pekkaPlayerSideAttack1.png"));
+    public final Image MiniPEKKAPlayerSideAttack2 = new Image(getClass().getResourceAsStream("/sample/model/animations/pekkaMoves/pekkaPlayerSideAttack2.png"));
     public final Image MiniPEKKABotSideAttack1= new Image(getClass().getResourceAsStream("/sample/model/animations/pekkaMoves/pekkaBotSideAttack1.png"));
     public final Image MiniPEKKABotSideAttack2 = new Image(getClass().getResourceAsStream("/sample/model/animations/pekkaMoves/pekkaBotSideAttack2.png"));
 

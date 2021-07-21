@@ -123,7 +123,7 @@ public abstract class TroopElement implements GameElement{
                 GameElement gameElement = (GameElement) element.getUserData();
                 if (gameElement != null){
                 if (this.side != gameElement.getSide()) {
-                        if (distance(imageView, element) <= range * 20) {
+                        if (distance(imageView, element) <= range * 10) {
                             if (checkTarget(gameElement))
                                 return gameElement;
                         }
@@ -194,7 +194,7 @@ public abstract class TroopElement implements GameElement{
         final int[] seconds = {0};
         //ImageView target = null;
 
-        animation = new Timeline(new KeyFrame(Duration.millis(200), actionEvent -> {
+        animation = new Timeline(new KeyFrame(Duration.millis(200 + (hitSpeed * 100)), actionEvent -> {
             //target = setTarget(nearBridge,PTL,PTR,KT);
             ImageView target = getTarget(imageView , nearBridge , ptL , ptR , kt);
             check(imageView,inGameElements);
