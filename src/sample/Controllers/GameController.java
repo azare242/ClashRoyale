@@ -8,6 +8,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -31,13 +32,11 @@ import sample.model.elements.GameElement;
 import sample.model.elements.children.BabyDragonElement;
 import sample.model.elements.towers.KingTower;
 import sample.model.elements.towers.PrincessTower;
+import sample.utils.FileUtils;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class GameController implements Initializable {
 
@@ -146,10 +145,6 @@ public class GameController implements Initializable {
     }
     @FXML private Label scoreLabelPlayer;
     @FXML private Label scoreLabelBot;
-    private boolean playerKilledBPL = false;
-    private boolean playerKilledBPR = false;
-    private boolean botKilledPPL = false;
-    private boolean botKilledPPR = false;
     private void addScoreToPlayer(){
             int currentScore = Integer.parseInt(scoreLabelPlayer.getText());
             scoreLabelPlayer.setText(String.valueOf(currentScore + 1));
@@ -179,19 +174,34 @@ public class GameController implements Initializable {
         if (kingTowerB.getHp() + princessTowerLB.getHp() + princessTowerRB.getHp() < kingTowerP.getHp() + princessTowerRP.getHp() + princessTowerLP.getHp()) return "PLAYER_WIN";
         else return "BOT_WIN";
     }
+    private void endTimeLines(){
+        synchronized (mapPane.getChildren()){
+            Iterator<Node> iterator = mapPane.getChildren().iterator();
+            while (iterator.hasNext()){
+                ImageView imageView = (ImageView) iterator.next();
+                GameElement gameElement = (GameElement) imageView.getUserData();
+                if (gameElement != null) {
+                    gameElement.endTimeLine();
+                }
+            }
+        }
+    }
     private void exitGame(String winner) throws IOException {
+        timer.stop();
+        endTimeLines();
         if (winner.equals("PLAYER_WIN")){
             user.addXP(200);
         } else {
             user.addXP(70);
         }
 
-        timer.stop();
+        new FileUtils().saveNewUser(this.user);
+
         Stage stage = (Stage) back.getScene().getWindow();
         stage.close();
         Stage stage1 = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("view/endGame/score.fxml"));
-        loader.setController(new EndGameController("0","0",this.user));
+        loader.setController(new EndGameController(scoreLabelPlayer.getText(),scoreLabelBot.getText(),this.user));
         Parent root = loader.load();
         stage1.setScene(new Scene(root,321,567));
         stage1.setTitle("Clash Royal");
@@ -205,11 +215,13 @@ public class GameController implements Initializable {
         }
 
         if (enemyKingTower.getImage() == null) {
+            increasePlayerScoreLabel();
             String winner = "PLAYER_WIN";
             exitGame(winner);
         }
 
         if (playerKingTower.getImage() == null) {
+            increaseBotScoreLabel();
             String winner = "BOT_WIN";
             exitGame(winner);
         }
@@ -223,7 +235,7 @@ public class GameController implements Initializable {
         KeyFrame frame = new KeyFrame(Duration.millis(1000), new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-
+                scoreBoard();
                 activeKingTower();
                 try {
                     checkEndGame();
@@ -656,4 +668,38 @@ public class GameController implements Initializable {
         botTimeLine.setCycleCount(Animation.INDEFINITE);
         botTimeLine.play();
     }
+    private boolean playerDBPL = false;
+    private boolean playerDBPR = false;
+    private boolean botDBPR = false;
+    private boolean botDBPL = false;
+    private void scoreBoard(){
+        if (enemyPrincessTowerLeft.getImage() == null && (!playerDBPL)) {
+            increasePlayerScoreLabel();
+            playerDBPL = true;
+        }
+        if (enemyPrincessTowerRight.getImage() == null && (!playerDBPR)) {
+            increasePlayerScoreLabel();
+            playerDBPR = true;
+        }
+        if (playerPrincessTowerLeft.getImage() == null && (!botDBPL)) {
+            increaseBotScoreLabel();
+            botDBPL = true;
+        }
+        if (playerPrincessTowerRight.getImage() == null && (!botDBPR)) {
+            increaseBotScoreLabel();
+            botDBPR = true;
+        }
+
+    }
+    private void increasePlayerScoreLabel(){
+        int s = Integer.parseInt(scoreLabelPlayer.getText());
+        s++;
+        scoreLabelPlayer.setText(String.valueOf(s));
+    }
+    private void increaseBotScoreLabel(){
+        int s = Integer.parseInt(scoreLabelBot.getText());
+        s++;
+        scoreLabelBot.setText(String.valueOf(s));
+    }
+
 }

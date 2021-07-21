@@ -17,4 +17,5 @@ public interface GameElement extends Serializable {
     public MovingArea getMovingArea();
     public void rage();
     public void unRage();
+    public void endTimeLine();
 }

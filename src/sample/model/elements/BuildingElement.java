@@ -20,7 +20,7 @@ public abstract class BuildingElement implements GameElement{
     protected int damage;
     protected int level;
     protected Side side;
-    protected Image image;
+    protected transient Image image;
     public BuildingElement(double hitSpeed, Target target, double range, int lifeTime, int HP, int damage,Side side) {
         this.hitSpeed = hitSpeed;
         this.target = target;
@@ -64,7 +64,7 @@ public abstract class BuildingElement implements GameElement{
     public Side getSide(){
         return side;
     }
-    protected Timeline animation;
+    protected transient Timeline animation;
     @Override
     public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt){
 
@@ -97,6 +97,10 @@ public abstract class BuildingElement implements GameElement{
         hitSpeed = hitSpeedUnRage;
         damage = damageUnRage;
 
+    }
+    @Override
+    public void endTimeLine(){
+        this.animation.stop();
     }
 
 }

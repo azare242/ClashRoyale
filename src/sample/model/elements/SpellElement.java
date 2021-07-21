@@ -44,4 +44,8 @@ public abstract class SpellElement implements GameElement{
     public void unRage(){
 
     }
+    @Override
+    public void endTimeLine(){
+
+    }
 }

@@ -52,7 +52,7 @@ public abstract class TowerElement implements GameElement {
     @Override
     public abstract void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt);
 
-    protected Timeline animation;
+    protected transient Timeline animation;
     public synchronized void takeDamage(int count){
         hp -= count;
     }
@@ -79,5 +79,9 @@ public abstract class TowerElement implements GameElement {
     public void unRage(){
         hitSpeed = hitSpeedUnRage;
         damage = damageUnRage;
+    }
+    @Override
+    public void endTimeLine(){
+
     }
 }

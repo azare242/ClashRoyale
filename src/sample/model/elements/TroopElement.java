@@ -30,10 +30,10 @@ public abstract class TroopElement implements GameElement{
     protected int damage;
     protected int level;
     protected Side side;
-    protected Image move1;
-    protected Image move2;
-    protected Image attack1;
-    protected Image attack2;
+    protected transient Image move1;
+    protected transient Image move2;
+    protected transient Image attack1;
+    protected transient Image attack2;
     protected MovingArea movingArea;
     public TroopElement(double hitSpeed, Speed speed, Target target, double range, boolean areaSplash, int HP, int damage, Side side) {
         this.hitSpeed = hitSpeed;
@@ -52,6 +52,10 @@ public abstract class TroopElement implements GameElement{
 
 
 
+    @Override
+    public void endTimeLine(){
+        this.animation.stop();
+    }
     public void setHitSpeed(double hitSpeed) {
         this.hitSpeed = hitSpeed;
     }
@@ -143,7 +147,7 @@ public abstract class TroopElement implements GameElement{
         if (this instanceof GiantElement && (gameElement instanceof BuildingElement || gameElement instanceof TowerElement)) return true;
         return false;
     }
-    private Timeline animation;
+    private transient Timeline animation;
     @Override
     public synchronized void takeDamage(int count){
         HP -= count;
