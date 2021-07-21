@@ -1,6 +1,7 @@
 package sample.model.cards.children;
 
 import javafx.scene.image.Image;
+import sample.model.animations.Animations;
 import sample.model.cards.Building;
 import sample.model.elements.GameElement;
 import sample.model.elements.children.BabyDragonElement;
@@ -24,6 +25,7 @@ public class InfernoTower extends Building {
 
     @Override
     public Image getDefaultImage(String side){
-        return new Image(getClass().getResourceAsStream("/sample/Controllers/view/Pics/Scenes/CardsIcon/test.png"));
+        if (side.equalsIgnoreCase("BOT")) return Animations.getInstance().InfernoTowerBotSide;
+        else return Animations.getInstance().InfernoTowerPlayerSide;
     }
 }
