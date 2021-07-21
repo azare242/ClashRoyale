@@ -75,6 +75,9 @@ public class Animations {
     public final Image CannonBotSide = new Image(getClass().getResourceAsStream("/sample/model/animations/buildings/cannonBotSide.png"));
     public final Image InfernoTowerPlayerSide = new Image(getClass().getResourceAsStream("/sample/model/animations/buildings/infernoDropPlayerSide.png"));
     public final Image InfernoTowerBotSide = new Image(getClass().getResourceAsStream("/sample/model/animations/buildings/infernoDropBotSide.png"));
+
+    public final Image FireBall = new Image(getClass().getResourceAsStream("/sample/model/animations/spell/fireBall.png"));
+    public final Image Arrows = new Image(getClass().getResourceAsStream("/sample/model/animations/spell/arrows.png"));
     private Animations(){
 
     }

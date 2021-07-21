@@ -3,8 +3,12 @@ package sample.model.elements.children;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
+import sample.model.elements.GameElement;
 import sample.model.elements.SpellElement;
 import sample.model.mechanismes.Side;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class FireBallElement extends SpellElement {
 
@@ -40,9 +44,36 @@ public class FireBallElement extends SpellElement {
         }
 
     }
-
+    private double distance(ImageView thisImageView,ImageView otherImageView){
+        double dx = Math.abs(otherImageView.getLayoutX() - thisImageView.getLayoutX());
+        double dy = Math.abs(otherImageView.getLayoutY() - thisImageView.getLayoutY());
+        return Math.hypot(dx,dy);
+    }
+    private ArrayList<GameElement> canBattle(ImageView imageView, ObservableList<Node> inGameElements){
+        ArrayList<GameElement> elements = new ArrayList<>();
+        synchronized (inGameElements){
+            Iterator<Node> iterator = inGameElements.iterator();
+            ImageView element = null;
+            while (iterator.hasNext()){
+                element = (ImageView) iterator.next();
+                GameElement gameElement = (GameElement) element.getUserData();
+                if (gameElement != null){
+                    if (this.side != gameElement.getSide()) {
+                        if (distance(imageView, element) <= 2.5 * 10) {
+                            elements.add(gameElement);
+                        }
+                    }
+                }
+            }
+        }
+        return elements;
+    }
     @Override
     public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt){
-
+        ArrayList<GameElement> elements = canBattle(imageView,inGameElements);
+        for (GameElement element : elements){
+            element.takeDamage(areaDamage);
+        }
+        imageView.setImage(null);
     }
 }
