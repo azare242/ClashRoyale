@@ -75,6 +75,9 @@ public class ArrowsElement extends SpellElement {
             element.takeDamage(areaDamage);
         }
         imageView.setImage(null);
+        synchronized (inGameElements){
+            inGameElements.remove(imageView);
+        }
     }
     public void setAreaDamage(int areaDamage) {
         this.areaDamage = areaDamage;

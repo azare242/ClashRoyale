@@ -75,5 +75,8 @@ public class FireBallElement extends SpellElement {
             element.takeDamage(areaDamage);
         }
         imageView.setImage(null);
+        synchronized (inGameElements){
+            inGameElements.remove(imageView);
+        }
     }
 }
