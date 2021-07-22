@@ -1,8 +1,11 @@
 package sample.model.elements.children;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 import sample.model.cards.Spell;
 import sample.model.elements.GameElement;
 import sample.model.elements.SpellElement;
@@ -76,16 +79,21 @@ public class ArrowsElement extends SpellElement {
         }
         return elements;
     }
+    private transient Timeline animation;
     @Override
     public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt){
-        ArrayList<GameElement> elements = canBattle(imageView,inGameElements);
-        for (GameElement element : elements){
-            element.takeDamage(areaDamage);
-        }
-        imageView.setImage(null);
-        synchronized (inGameElements){
-            inGameElements.remove(imageView);
-        }
+        animation = new Timeline(new KeyFrame(Duration.seconds(1), actionEvent -> {
+            ArrayList<GameElement> elements = canBattle(imageView,inGameElements);
+            for (GameElement element : elements){
+                element.takeDamage(areaDamage);
+            }
+            imageView.setImage(null);
+            synchronized (inGameElements){
+                inGameElements.remove(imageView);
+            }
+        }));
+        animation.setCycleCount(1);
+        animation.play();
     }
 
     /**
