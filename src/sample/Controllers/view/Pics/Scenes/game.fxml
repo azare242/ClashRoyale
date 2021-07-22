@@ -10,13 +10,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="600.0" style="-fx-background-color: #3ddfff#3ddfff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <right>
       <Pane prefHeight="577.0" prefWidth="111.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="startBtn" layoutX="5.0" layoutY="480.0" mnemonicParsing="false" onAction="#startTimer" prefHeight="45.0" prefWidth="94.0" text="START">
+            <Button fx:id="startBtn" layoutX="14.0" layoutY="446.0" mnemonicParsing="false" onAction="#startTimer" prefHeight="53.0" prefWidth="79.0" style="-fx-background-color: #1b6470#1b6470; -fx-background-radius: 10;" text="START" textFill="#44d6ed">
                <font>
-                  <Font size="21.0" />
+                  <Font name="Baloo Bhaina Regular" size="18.0" />
                </font></Button>
             <ImageView fitHeight="97.0" fitWidth="103.0" layoutX="7.0" layoutY="-19.0" opacity="0.71" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -85,12 +85,15 @@
                   <Font name="Baloo Paaji Regular" size="19.0" />
                </font>
             </Label>
-            <ImageView fx:id="nextCardImageView" fitHeight="56.0" fitWidth="45.0" layoutX="397.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="nextCardImageView" fitHeight="56.0" fitWidth="45.0" layoutX="413.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@CardsIcon/chosenCard.png" />
                </image>
             </ImageView>
-            <Button fx:id="back" layoutX="559.0" layoutY="1.0" mnemonicParsing="false" onAction="#backToMenu" text="Back" />
+            <Button fx:id="back" layoutX="508.0" layoutY="8.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="41.0" prefWidth="69.0" style="-fx-background-color: #1b6470#1b6470 #1b6470#1b6470; -fx-background-radius: 10;" text="Back" textFill="#44d6ed">
+               <font>
+                  <Font name="Baloo Paaji Regular" size="16.0" />
+               </font></Button>
             <Label fx:id="elixirLabel" alignment="CENTER" layoutX="385.0" layoutY="68.0" prefHeight="34.0" prefWidth="33.0" text="4" textFill="WHITE">
                <font>
                   <Font name="Baloo Bhaijaan Regular" size="23.0" />
