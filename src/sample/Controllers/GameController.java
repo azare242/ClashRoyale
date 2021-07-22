@@ -192,6 +192,8 @@ public class GameController implements Initializable {
         else return "BOT_WIN";
     }
     private void endTimeLines(){
+        timer.stop();
+        botTimeLine.stop();
         synchronized (mapPane.getChildren()){
             Iterator<Node> iterator = mapPane.getChildren().iterator();
             while (iterator.hasNext()){
@@ -204,7 +206,6 @@ public class GameController implements Initializable {
         }
     }
     private void exitGame(String winner) throws IOException {
-        timer.stop();
         endTimeLines();
         if (winner.equals("PLAYER_WIN")){
             user.addBattle(new Battle("YOU WIN"));
@@ -246,10 +247,12 @@ public class GameController implements Initializable {
         }
     }
 
+    private boolean gameStarted = false;
     /**
      * Count down timer.
      */
     public void countDownTimer(){
+        if (gameStarted) return;
         timer = new Timeline();
         timer.setCycleCount(Timeline.INDEFINITE);
         if (timer==null){
@@ -317,6 +320,7 @@ public class GameController implements Initializable {
         timer.getKeyFrames().add(frame);
         timer.playFromStart();
         botPlay();
+        gameStarted = true;
         SoundEffects.playGameSound();
     }
 
@@ -328,6 +332,7 @@ public class GameController implements Initializable {
      */
     @FXML
     public void backToMenu(javafx.event.ActionEvent actionEvent) throws IOException {
+        endTimeLines();
         Stage stage = (Stage) back.getScene().getWindow();
         stage.close();
         Stage stage1 = new Stage();
