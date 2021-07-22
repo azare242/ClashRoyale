@@ -7,8 +7,16 @@ import sample.model.elements.children.BabyDragonElement;
 import sample.model.elements.children.GiantElement;
 import sample.model.mechanismes.Side;
 
+/**
+ * The type Giant.
+ */
 public class Giant extends Troop {
 
+    /**
+     * Instantiates a new Giant.
+     *
+     * @param side the side
+     */
     public Giant(Side side){
         super(1,5,side);
     }

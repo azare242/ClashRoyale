@@ -12,21 +12,35 @@ import sample.model.SoundEffects;
 import sample.model.User;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
+
+/**
+ * End game Scene controller.
+ */
 public class EndGameController {
 
 
     @FXML private Button back;
 
     private User user;
+
+    /**
+     * Instantiates a new End game controller.
+     *
+     * @param user the user
+     */
     public EndGameController(User user){
         this.user = user;
 
     }
 
 
+    /**
+     * Back to menu.
+     *
+     * @param actionEvent the action event
+     * @throws IOException the io exception
+     */
     public void backToMenu(javafx.event.ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) back.getScene().getWindow();
         stage.close();

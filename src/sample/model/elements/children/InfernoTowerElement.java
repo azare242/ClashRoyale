@@ -15,7 +15,15 @@ import sample.model.mechanismes.Target;
 
 import java.util.Iterator;
 
+/**
+ * The type Inferno tower element.
+ */
 public class InfernoTowerElement extends BuildingElement {
+    /**
+     * Instantiates a new Inferno tower element.
+     *
+     * @param side the side
+     */
     public InfernoTowerElement(Side side) {
         super(0.4, Target.AIR_AND_GROUND, 6, 40, 800, 20,side);
         minDamage = currentDamage = 20;
@@ -25,10 +33,18 @@ public class InfernoTowerElement extends BuildingElement {
     private int minDamage;
     private int maxDamage;
     private int currentDamage;
+
+    /**
+     * Increase damage.
+     */
     public void increaseDamage(){
         if (currentDamage == maxDamage) return;
         setDamage(currentDamage + 10 );
     }
+
+    /**
+     * Reset.
+     */
     public void reset(){
         currentDamage = minDamage;
     }
@@ -59,6 +75,12 @@ public class InfernoTowerElement extends BuildingElement {
         }
     }
 
+    /**
+     * Sets damages.
+     *
+     * @param minDamage the min damage
+     * @param maxDamage the max damage
+     */
     public void setDamages(int minDamage,int maxDamage) {
         this.currentDamage = this.minDamage = minDamage;
         this.maxDamage = maxDamage;

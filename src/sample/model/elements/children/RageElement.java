@@ -14,15 +14,29 @@ import sample.model.mechanismes.Side;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * The type Rage element.
+ */
 public class RageElement extends SpellElement {
 
     private double duration;
+
+    /**
+     * Instantiates a new Rage element.
+     *
+     * @param side the side
+     */
     public RageElement(Side side){
         super(side);
         duration = 6;
     }
 
 
+    /**
+     * Sets duration.
+     *
+     * @param duration the duration
+     */
     public void setDuration(double duration) {
         this.duration = duration;
     }

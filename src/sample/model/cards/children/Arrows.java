@@ -7,8 +7,16 @@ import sample.model.elements.GameElement;
 import sample.model.elements.children.ArrowsElement;
 import sample.model.mechanismes.Side;
 
+/**
+ * The type Arrows.
+ */
 public class Arrows extends Spell {
 
+    /**
+     * Instantiates a new Arrows.
+     *
+     * @param side the side
+     */
     public Arrows(Side side){
         super(4,3,side);
 

@@ -15,10 +15,18 @@ import sample.model.cards.Card;
 
 import java.io.IOException;
 
+/**
+ * Profile  ُScene controller.
+ */
 public class ProfileController {
 
     private User user;
 
+    /**
+     * Instantiates a new Profile controller.
+     *
+     * @param user the user
+     */
     public ProfileController(User user){
         this.user = user;
     }
@@ -160,6 +168,13 @@ public class ProfileController {
         xpRateBar.setProgress(user.getXPRate());
 
     }
+
+    /**
+     * Switch to menu.
+     *
+     * @param actionEvent the action event
+     * @throws IOException the io exception
+     */
     @FXML
     public void switchToMenu(javafx.event.ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) backButton.getScene().getWindow();

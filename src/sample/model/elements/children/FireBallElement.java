@@ -10,15 +10,28 @@ import sample.model.mechanismes.Side;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * The type Fire ball element.
+ */
 public class FireBallElement extends SpellElement {
 
     private int areaDamage;
 
+    /**
+     * Instantiates a new Fire ball element.
+     *
+     * @param side the side
+     */
     public FireBallElement(Side side){
         super(side);
         areaDamage = 325;
     }
 
+    /**
+     * Sets area damage.
+     *
+     * @param areaDamage the area damage
+     */
     public void setAreaDamage(int areaDamage) {
         this.areaDamage = areaDamage;
     }

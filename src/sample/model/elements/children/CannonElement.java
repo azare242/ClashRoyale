@@ -15,7 +15,15 @@ import sample.model.mechanismes.Target;
 
 import java.util.Iterator;
 
+/**
+ * The type Cannon element.
+ */
 public class CannonElement extends BuildingElement {
+    /**
+     * Instantiates a new Cannon element.
+     *
+     * @param side the side
+     */
     public CannonElement(Side side) {
         super(0.8, Target.GROUND, 5.5, 30, 380, 60,side);
     }

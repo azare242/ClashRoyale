@@ -18,6 +18,9 @@ import sample.utils.FileUtils;
 
 import java.io.File;
 
+/**
+ *  Login register Scene controller.
+ */
 public class LoginRegisterController {
 
     @FXML private TextField enterUsername;
@@ -31,12 +34,20 @@ public class LoginRegisterController {
     @FXML private Label statusRegisterTab;
     private File folder;
 
+    /**
+     * Instantiates a new Login register controller.
+     */
     public LoginRegisterController(){
         folder = new File("Users");
         if (!folder.exists()) folder.mkdirs();
     }
 
 
+    /**
+     * Login.
+     *
+     * @param e the e
+     */
     @FXML public void login(ActionEvent e){
         if (folder.listFiles().length == 0) {
             SoundEffects.playErrorSound();
@@ -99,6 +110,12 @@ public class LoginRegisterController {
         }
         return true;
     }
+
+    /**
+     * Register.
+     *
+     * @param e the e
+     */
     @FXML public void register(ActionEvent e){
         String userName = enterUsernameNew.getText();
         if (checkNewUsername(userName)){

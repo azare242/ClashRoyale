@@ -7,8 +7,16 @@ import sample.model.elements.children.BabyDragonElement;
 import sample.model.elements.children.MiniPEKKAElement;
 import sample.model.mechanismes.Side;
 
+/**
+ * The type Mini pekka.
+ */
 public class MiniPEKKA extends Troop {
 
+    /**
+     * Instantiates a new Mini pekka.
+     *
+     * @param side the side
+     */
     public MiniPEKKA(Side side){
         super(1,4,side);
     }

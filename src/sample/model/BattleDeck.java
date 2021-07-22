@@ -5,10 +5,17 @@ import sample.model.cards.children.*;
 
 import java.io.Serializable;
 
+/**
+ * The type Battle deck.
+ */
 public class BattleDeck implements Serializable {
 
     private Card[] cards;
     private boolean isEmpty;
+
+    /**
+     * Instantiates a new Battle deck.
+     */
     public BattleDeck(){
         cards = new Card[8];
         isEmpty = true;
@@ -21,6 +28,12 @@ public class BattleDeck implements Serializable {
         }
     }
 
+    /**
+     * Set card.
+     *
+     * @param index the index
+     * @param card  the card
+     */
     public void setCard(int index , Card card){
         cards[index] = card;
         if (isEmpty) setIsEmpty(false);
@@ -72,6 +85,12 @@ public class BattleDeck implements Serializable {
         }
         return className;
     }
+
+    /**
+     * Remove card.
+     *
+     * @param id the id
+     */
     public void removeCard(String id){
 
         if (isEmpty) return;
@@ -88,12 +107,24 @@ public class BattleDeck implements Serializable {
         return -1;
     }
 
+    /**
+     * Deck emptied boolean.
+     *
+     * @return the boolean
+     */
     public boolean deckEmptied(){
         for (int i = 0 ; i < 8 ; ++i){
             if (cards[i] != null) return false;
         }
         return true;
     }
+
+    /**
+     * Get card card.
+     *
+     * @param index the index
+     * @return the card
+     */
     public Card getCard(int index){
         return cards[index];
     }

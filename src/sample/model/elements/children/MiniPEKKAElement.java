@@ -7,7 +7,15 @@ import sample.model.mechanismes.Side;
 import sample.model.mechanismes.Speed;
 import sample.model.mechanismes.Target;
 
+/**
+ * The type Mini pekka element.
+ */
 public class MiniPEKKAElement extends TroopElement {
+    /**
+     * Instantiates a new Mini pekka element.
+     *
+     * @param side the side
+     */
     public MiniPEKKAElement(Side side) {
         super(1.8, Speed.FAST, Target.GROUND, 1.5, false, 600, 325,side);
         Animations animations = Animations.getInstance();

@@ -6,6 +6,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import sample.Controllers.LoginRegisterController;
 
+/**
+ * START OF APP
+ */
 public class Main extends Application {
 
     @Override
@@ -24,6 +27,11 @@ public class Main extends Application {
     }
 
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         launch(args);
     }

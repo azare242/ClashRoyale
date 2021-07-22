@@ -9,26 +9,59 @@ import sample.model.mechanismes.Side;
 
 import java.util.Random;
 
+/**
+ * The type Bot.
+ */
 public abstract class Bot {
 
+    /**
+     * The Battle deck.
+     */
     protected BattleDeck battleDeck;
 
+    /**
+     * The King tower.
+     */
     protected KingTower kingTower;
+    /**
+     * The Princess tower right.
+     */
     protected PrincessTower princessTowerRight;
+    /**
+     * The Princess tower left.
+     */
     protected PrincessTower princessTowerLeft;
 
+    /**
+     * Gets king tower.
+     *
+     * @return the king tower
+     */
     public KingTower getKingTower() {
         return kingTower;
     }
 
+    /**
+     * Gets princess tower right.
+     *
+     * @return the princess tower right
+     */
     public PrincessTower getPrincessTowerRight() {
         return princessTowerRight;
     }
 
+    /**
+     * Gets princess tower left.
+     *
+     * @return the princess tower left
+     */
     public PrincessTower getPrincessTowerLeft() {
         return princessTowerLeft;
     }
 
+    /**
+     * Instantiates a new Bot.
+     */
     public Bot(){
         battleDeck = new BattleDeck();
         initDeck();
@@ -47,6 +80,12 @@ public abstract class Bot {
         battleDeck.setCard(7,new MiniPEKKA(Side.BOT));
     }
     private int battleDeckCounter = 0;
+
+    /**
+     * Get card from battle deck card.
+     *
+     * @return the card
+     */
     protected Card getCardFromBattleDeck(){
         int toDeploy = battleDeckCounter;
         if (battleDeckCounter == 7) battleDeckCounter = 0;
@@ -54,6 +93,17 @@ public abstract class Bot {
         return battleDeck.getCard(toDeploy);
     }
 
+    /**
+     * Play card.
+     *
+     * @return the card
+     */
     public abstract Card play();
+
+    /**
+     * Get cords int [ ].
+     *
+     * @return the int [ ]
+     */
     public abstract int[] getCords();
 }

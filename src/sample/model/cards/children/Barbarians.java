@@ -6,8 +6,16 @@ import sample.model.elements.GameElement;
 import sample.model.elements.children.BarbariansElement;
 import sample.model.mechanismes.Side;
 
+/**
+ * The type Barbarians.
+ */
 public class Barbarians extends Troop {
 
+    /**
+     * Instantiates a new Barbarians.
+     *
+     * @param side the side
+     */
     public Barbarians(Side side){
         super(4,5,side);
 

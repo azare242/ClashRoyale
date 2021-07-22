@@ -6,6 +6,9 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * The type Easy bot.
+ */
 public class EasyBot extends Bot{
     @Override
     public Card play() {
@@ -23,6 +26,9 @@ public class EasyBot extends Bot{
         return res;
     }
 
+    /**
+     * Instantiates a new Easy bot.
+     */
     public EasyBot(){
         super();
     }

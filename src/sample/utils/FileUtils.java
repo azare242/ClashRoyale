@@ -4,7 +4,15 @@ import sample.model.User;
 
 import java.io.*;
 
+/**
+ * File utils for save users.
+ */
 public class FileUtils {
+    /**
+     * Save new user.
+     *
+     * @param u the u
+     */
     public void saveNewUser(User u){
         String fileName = "Users\\" + u.getUserName() + ".bin";
         try(FileOutputStream out = new FileOutputStream(fileName)) {
@@ -17,6 +25,13 @@ public class FileUtils {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Open user file user.
+     *
+     * @param userName the user name
+     * @return the user
+     */
     public User openUserFile(String userName){
         User u = null;
         String fileName = "Users\\" + userName + ".bin";

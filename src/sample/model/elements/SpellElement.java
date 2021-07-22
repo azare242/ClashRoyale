@@ -6,10 +6,25 @@ import javafx.scene.image.ImageView;
 import sample.model.mechanismes.MovingArea;
 import sample.model.mechanismes.Side;
 
+/**
+ * The type Spell element.
+ */
 public abstract class SpellElement implements GameElement{
 
+    /**
+     * The Level.
+     */
     protected int level;
+    /**
+     * The Side.
+     */
     protected Side side;
+
+    /**
+     * Instantiates a new Spell element.
+     *
+     * @param side the side
+     */
     public SpellElement(Side side){
         level = 1;
         this.side = side;

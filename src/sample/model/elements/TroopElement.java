@@ -4,8 +4,6 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -20,22 +18,80 @@ import sample.model.mechanismes.Target;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * The type Troop element.
+ */
 public abstract class TroopElement implements GameElement{
 
+    /**
+     * The Hit speed.
+     */
     protected double hitSpeed;
+    /**
+     * The Speed.
+     */
     protected Speed speed;
+    /**
+     * The Target.
+     */
     protected Target target;
+    /**
+     * The Range.
+     */
     protected double range;
+    /**
+     * The Area splash.
+     */
     protected boolean areaSplash;
+    /**
+     * The Hp.
+     */
     protected int HP;
+    /**
+     * The Damage.
+     */
     protected int damage;
+    /**
+     * The Level.
+     */
     protected int level;
+    /**
+     * The Side.
+     */
     protected Side side;
+    /**
+     * The Move 1.
+     */
     protected transient Image move1;
+    /**
+     * The Move 2.
+     */
     protected transient Image move2;
+    /**
+     * The Attack 1.
+     */
     protected transient Image attack1;
+    /**
+     * The Attack 2.
+     */
     protected transient Image attack2;
+    /**
+     * The Moving area.
+     */
     protected MovingArea movingArea;
+
+    /**
+     * Instantiates a new Troop element.
+     *
+     * @param hitSpeed   the hit speed
+     * @param speed      the speed
+     * @param target     the target
+     * @param range      the range
+     * @param areaSplash the area splash
+     * @param HP         the hp
+     * @param damage     the damage
+     * @param side       the side
+     */
     public TroopElement(double hitSpeed, Speed speed, Target target, double range, boolean areaSplash, int HP, int damage, Side side) {
         this.hitSpeed = hitSpeed;
         this.speed = speed;
@@ -57,30 +113,66 @@ public abstract class TroopElement implements GameElement{
     public void endTimeLine(){
         this.animation.stop();
     }
+
+    /**
+     * Sets hit speed.
+     *
+     * @param hitSpeed the hit speed
+     */
     public void setHitSpeed(double hitSpeed) {
         this.hitSpeed = hitSpeed;
     }
 
+    /**
+     * Sets speed.
+     *
+     * @param speed the speed
+     */
     public void setSpeed(Speed speed) {
         this.speed = speed;
     }
 
+    /**
+     * Sets target.
+     *
+     * @param target the target
+     */
     public void setTarget(Target target) {
         this.target = target;
     }
 
+    /**
+     * Sets range.
+     *
+     * @param range the range
+     */
     public void setRange(double range) {
         this.range = range;
     }
 
+    /**
+     * Sets area splash.
+     *
+     * @param areaSplash the area splash
+     */
     public void setAreaSplash(boolean areaSplash) {
         this.areaSplash = areaSplash;
     }
 
+    /**
+     * Sets hp.
+     *
+     * @param HP the hp
+     */
     public void setHP(int HP) {
         this.HP = HP;
     }
 
+    /**
+     * Sets damage.
+     *
+     * @param damage the damage
+     */
     public void setDamage(int damage) {
         this.damage = damage;
     }
@@ -327,8 +419,17 @@ public abstract class TroopElement implements GameElement{
         return side;
     }
 
+    /**
+     * The Damage un rage.
+     */
     protected int damageUnRage;
+    /**
+     * The Hit speed un rage.
+     */
     protected double hitSpeedUnRage;
+    /**
+     * The Speed un rage.
+     */
     protected Speed speedUnRage;
     public void rage(){
         damage += 0.4 * damage;

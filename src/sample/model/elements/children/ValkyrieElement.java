@@ -7,7 +7,15 @@ import sample.model.mechanismes.Side;
 import sample.model.mechanismes.Speed;
 import sample.model.mechanismes.Target;
 
+/**
+ * The type Valkyrie element.
+ */
 public class ValkyrieElement extends TroopElement {
+    /**
+     * Instantiates a new Valkyrie element.
+     *
+     * @param side the side
+     */
     public ValkyrieElement(Side side) {
         super(1.5,Speed.MEDIUM,Target.GROUND,1.5,true,880,120,side);
         Animations animations = Animations.getInstance();

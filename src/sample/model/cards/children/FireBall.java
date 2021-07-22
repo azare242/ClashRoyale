@@ -8,8 +8,16 @@ import sample.model.elements.children.BabyDragonElement;
 import sample.model.elements.children.FireBallElement;
 import sample.model.mechanismes.Side;
 
+/**
+ * The type Fire ball.
+ */
 public class FireBall extends Spell {
 
+    /**
+     * Instantiates a new Fire ball.
+     *
+     * @param side the side
+     */
     public FireBall(Side side){
         super(2.5,4,side);
     }

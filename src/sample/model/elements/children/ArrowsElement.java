@@ -12,10 +12,18 @@ import sample.model.mechanismes.Side;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * The type Arrows element.
+ */
 public class ArrowsElement extends SpellElement {
 
     private int areaDamage;
 
+    /**
+     * Instantiates a new Arrows element.
+     *
+     * @param side the side
+     */
     public ArrowsElement(Side side) {
         super(side);
         areaDamage = 144;
@@ -79,6 +87,12 @@ public class ArrowsElement extends SpellElement {
             inGameElements.remove(imageView);
         }
     }
+
+    /**
+     * Sets area damage.
+     *
+     * @param areaDamage the area damage
+     */
     public void setAreaDamage(int areaDamage) {
         this.areaDamage = areaDamage;
     }

@@ -8,8 +8,16 @@ import sample.model.elements.children.BabyDragonElement;
 import sample.model.elements.children.RageElement;
 import sample.model.mechanismes.Side;
 
+/**
+ * The type Rage.
+ */
 public class Rage extends Spell {
 
+    /**
+     * Instantiates a new Rage.
+     *
+     * @param side the side
+     */
     public Rage(Side side){
         super(5,3,side);
     }

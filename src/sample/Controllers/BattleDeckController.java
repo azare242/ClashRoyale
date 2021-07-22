@@ -19,10 +19,19 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Battle deck Scene controller.
+ */
 public class BattleDeckController {
 
     private User user;
     private HashMap<Integer,String> initBattleDeckTemp;
+
+    /**
+     * Instantiates a new Battle deck controller.
+     *
+     * @param user the user
+     */
     public BattleDeckController(User user){
         this.user = user;
         initBattleDeckTemp = new HashMap<>();
@@ -184,6 +193,13 @@ public class BattleDeckController {
     @FXML private Button saveButton;
 
     private int chosenCards;
+
+    /**
+     * Save.
+     *
+     * @param actionEvent the action event
+     * @throws IOException the io exception
+     */
     @FXML public void save(javafx.event.ActionEvent actionEvent) throws IOException {
         if (chosenCards != 8) return;
         for (int i = 0 ; i < 8 ; ++i){
@@ -229,6 +245,12 @@ public class BattleDeckController {
 
         }
     }
+
+    /**
+     * Add barbar.
+     *
+     * @param actionEvent the action event
+     */
     @FXML
     public void addBarbar(javafx.event.ActionEvent actionEvent){
         if (hasID("BARBARIAN")){
@@ -251,6 +273,12 @@ public class BattleDeckController {
 
         }
     }
+
+    /**
+     * Add archer.
+     *
+     * @param actionEvent the action event
+     */
     @FXML
     public void addArcher(javafx.event.ActionEvent actionEvent){
         if (hasID("ARCHER")){
@@ -273,6 +301,12 @@ public class BattleDeckController {
 
         }
     }
+
+    /**
+     * Add giant.
+     *
+     * @param actionEvent the action event
+     */
     @FXML
     public void addGiant(javafx.event.ActionEvent actionEvent){
         if (hasID("GIANT")){
@@ -295,6 +329,12 @@ public class BattleDeckController {
 
         }
     }
+
+    /**
+     * Add wizard.
+     *
+     * @param actionEvent the action event
+     */
     @FXML
     public void addWizard(javafx.event.ActionEvent actionEvent){
         if (hasID("WIZARD")){
@@ -317,6 +357,12 @@ public class BattleDeckController {
 
         }
     }
+
+    /**
+     * Add baby.
+     *
+     * @param actionEvent the action event
+     */
     @FXML
     public void addBaby(javafx.event.ActionEvent actionEvent){
         if (hasID("BABYDRAGON")){
@@ -339,6 +385,12 @@ public class BattleDeckController {
 
         }
     }
+
+    /**
+     * Add valkyrie.
+     *
+     * @param actionEvent the action event
+     */
     @FXML
     public void addValkyrie(javafx.event.ActionEvent actionEvent){
         if (hasID("VALKYRIE")){
@@ -361,6 +413,12 @@ public class BattleDeckController {
 
         }
     }
+
+    /**
+     * Add pekka.
+     *
+     * @param actionEvent the action event
+     */
     @FXML
     public void addPekka(javafx.event.ActionEvent actionEvent){
         if (hasID("PEKKA")){
@@ -383,6 +441,12 @@ public class BattleDeckController {
 
         }
     }
+
+    /**
+     * Add fire ball.
+     *
+     * @param actionEvent the action event
+     */
     @FXML
     public void addFireBall(javafx.event.ActionEvent actionEvent){
         if (hasID("FIREBALL")){
@@ -405,6 +469,12 @@ public class BattleDeckController {
 
         }
     }
+
+    /**
+     * Add rage.
+     *
+     * @param actionEvent the action event
+     */
     @FXML
     public void addRage(javafx.event.ActionEvent actionEvent){
         if (hasID("RAGE")){
@@ -427,6 +497,12 @@ public class BattleDeckController {
 
         }
     }
+
+    /**
+     * Add arrow.
+     *
+     * @param actionEvent the action event
+     */
     @FXML
     public void addArrow(javafx.event.ActionEvent actionEvent){
         if (hasID("ARROW")){
@@ -449,6 +525,12 @@ public class BattleDeckController {
 
         }
     }
+
+    /**
+     * Add cannon.
+     *
+     * @param actionEvent the action event
+     */
     @FXML
     public void addCannon(javafx.event.ActionEvent actionEvent){
         if (hasID("CANNON")){
@@ -471,6 +553,12 @@ public class BattleDeckController {
 
         }
     }
+
+    /**
+     * Add inferno.
+     *
+     * @param actionEvent the action event
+     */
     @FXML
     public void addInferno(javafx.event.ActionEvent actionEvent){
         if (hasID("INFERNO")){
@@ -493,6 +581,12 @@ public class BattleDeckController {
         }
     }
 
+    /**
+     * Has id boolean.
+     *
+     * @param id the id
+     * @return the boolean
+     */
     @FXML
     public boolean hasID(String id){
         ArrayList<ImageView> deck = buildArray();
@@ -503,6 +597,11 @@ public class BattleDeckController {
         return false;
     }
 
+    /**
+     * Remove repetitive.
+     *
+     * @param id the id
+     */
     @FXML
     public void removeRepetitive(String id){
         ArrayList<ImageView> deck = buildArray();
@@ -515,6 +614,11 @@ public class BattleDeckController {
         }
     }
 
+    /**
+     * Clear deck.
+     *
+     * @param actionEvent the action event
+     */
     @FXML
     public void clearDeck(javafx.event.ActionEvent actionEvent){
         ArrayList<ImageView> deck = buildArray();
@@ -542,6 +646,11 @@ public class BattleDeckController {
         return deck;
     }
 
+    /**
+     * Can choose boolean.
+     *
+     * @return the boolean
+     */
     @FXML
     public boolean canChoose(){
         ArrayList<ImageView> deck = buildArray();
@@ -553,7 +662,12 @@ public class BattleDeckController {
     }
 
 
-
+    /**
+     * Switch to menu.
+     *
+     * @param actionEvent the action event
+     * @throws IOException the io exception
+     */
     @FXML
     public void switchToMenu(javafx.event.ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) backButton.getScene().getWindow();
@@ -567,6 +681,11 @@ public class BattleDeckController {
         stage1.show();
     }
 
+    /**
+     * Get empty card image view.
+     *
+     * @return the image view
+     */
     @FXML
     public ImageView getEmptyCard(){
         ArrayList<ImageView> deck = buildArray();
@@ -576,6 +695,12 @@ public class BattleDeckController {
         }
         return null;
     }
+
+    /**
+     * Get empty card index int.
+     *
+     * @return the int
+     */
     @FXML
     public int getEmptyCardIndex(){
         ArrayList<ImageView> deck = buildArray();

@@ -6,8 +6,16 @@ import sample.model.elements.GameElement;
 import sample.model.elements.children.ArcherElement;
 import sample.model.mechanismes.Side;
 
+/**
+ * The type Archers.
+ */
 public class Archers extends Troop {
 
+    /**
+     * Instantiates a new Archers.
+     *
+     * @param side the side
+     */
     public Archers(Side side){
         super(2,3,side);
     }

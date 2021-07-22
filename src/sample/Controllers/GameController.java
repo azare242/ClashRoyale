@@ -39,6 +39,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
+/**
+ * Game Scene controller.
+ */
 public class GameController implements Initializable {
 
     private double progress;
@@ -107,7 +110,16 @@ public class GameController implements Initializable {
     private ElixirHandler elixir;
     private User user;
 
+    /**
+     * The Bot.
+     */
     Bot bot;
+
+    /**
+     * Instantiates a new Game controller.
+     *
+     * @param user the user
+     */
     public GameController(User user){
         progress = 0.4;
         this.user = user;
@@ -123,6 +135,10 @@ public class GameController implements Initializable {
         }
         Collections.shuffle(cardsInGame);
     }
+
+    /**
+     * Start timer.
+     */
     @FXML
     public void startTimer(){
         timerCounter.setText("03:00");
@@ -229,6 +245,10 @@ public class GameController implements Initializable {
             exitGame(winner);
         }
     }
+
+    /**
+     * Count down timer.
+     */
     public void countDownTimer(){
         timer = new Timeline();
         timer.setCycleCount(Timeline.INDEFINITE);
@@ -300,6 +320,12 @@ public class GameController implements Initializable {
         SoundEffects.playGameSound();
     }
 
+    /**
+     * Back to menu.
+     *
+     * @param actionEvent the action event
+     * @throws IOException the io exception
+     */
     @FXML
     public void backToMenu(javafx.event.ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) back.getScene().getWindow();
@@ -362,6 +388,12 @@ public class GameController implements Initializable {
             }
         }
     }
+
+    /**
+     * Select 1.
+     *
+     * @param e the e
+     */
     @FXML public void select1(MouseEvent e){
         playedCard = (Card) card1ImageView.getUserData();
         if (!elixir.enough(playedCard.getCost())){
@@ -371,7 +403,12 @@ public class GameController implements Initializable {
         toReplaceNextTime = card1ImageView;
     }
 
-@FXML public void select2(MouseEvent e){
+    /**
+     * Select 2.
+     *
+     * @param e the e
+     */
+    @FXML public void select2(MouseEvent e){
         playedCard = (Card) card2ImageView.getUserData();
         if (!elixir.enough(playedCard.getCost())){
             return;
@@ -381,6 +418,11 @@ public class GameController implements Initializable {
 
     }
 
+    /**
+     * Select 3.
+     *
+     * @param e the e
+     */
     @FXML public void select3(MouseEvent e) {
     playedCard = (Card) card3ImageView.getUserData();
     if (!elixir.enough(playedCard.getCost())) {
@@ -391,7 +433,12 @@ public class GameController implements Initializable {
 
 }
 
-@FXML public void select4(MouseEvent e) {
+    /**
+     * Select 4.
+     *
+     * @param e the e
+     */
+    @FXML public void select4(MouseEvent e) {
     playedCard = (Card) card4ImageView.getUserData();
     if (!elixir.enough(playedCard.getCost())) {
         return;
@@ -432,6 +479,12 @@ public class GameController implements Initializable {
             return e.getY() > leftBridge.getLayoutY() || e.getY() > rightBridge.getLayoutY();
         }
     }
+
+    /**
+     * Deploy.
+     *
+     * @param e the e
+     */
     @FXML public void deploy(MouseEvent e){
         if (toReplaceNextTime == null) return;
         if (playedCard == null) {

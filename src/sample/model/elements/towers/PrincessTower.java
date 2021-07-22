@@ -13,7 +13,15 @@ import sample.model.mechanismes.Side;
 
 import java.util.Iterator;
 
+/**
+ * The type Princess tower.
+ */
 public class PrincessTower extends TowerElement{
+    /**
+     * Instantiates a new Princess tower.
+     *
+     * @param side the side
+     */
     public PrincessTower(Side side) {
         super(7.5,0.8,1400,50,side);
     }

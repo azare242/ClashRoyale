@@ -1,5 +1,15 @@
 package sample.model.mechanismes;
 
+/**
+ * The enum Moving area.
+ */
 public enum MovingArea {
-    AIR,GROUND
+    /**
+     * Air moving area.
+     */
+    AIR,
+    /**
+     * Ground moving area.
+     */
+    GROUND
 }

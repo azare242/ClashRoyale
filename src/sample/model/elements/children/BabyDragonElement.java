@@ -7,7 +7,15 @@ import sample.model.mechanismes.Side;
 import sample.model.mechanismes.Speed;
 import sample.model.mechanismes.Target;
 
+/**
+ * The type Baby dragon element.
+ */
 public class BabyDragonElement extends TroopElement {
+    /**
+     * Instantiates a new Baby dragon element.
+     *
+     * @param side the side
+     */
     public BabyDragonElement(Side side) {
         super(1.8, Speed.FAST, Target.AIR_AND_GROUND, 3, true, 800, 100,side);
         Animations animations = Animations.getInstance();

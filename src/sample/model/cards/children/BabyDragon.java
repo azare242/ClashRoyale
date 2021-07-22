@@ -7,8 +7,16 @@ import sample.model.elements.children.ArrowsElement;
 import sample.model.elements.children.BabyDragonElement;
 import sample.model.mechanismes.Side;
 
+/**
+ * The type Baby dragon.
+ */
 public class BabyDragon extends Troop {
 
+    /**
+     * Instantiates a new Baby dragon.
+     *
+     * @param side the side
+     */
     public BabyDragon(Side side){
         super(1,4,side);
     }

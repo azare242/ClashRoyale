@@ -9,8 +9,16 @@ import sample.model.elements.children.BabyDragonElement;
 import sample.model.elements.children.CannonElement;
 import sample.model.mechanismes.Side;
 
+/**
+ * The type Cannon.
+ */
 public class Cannon extends Building {
 
+    /**
+     * Instantiates a new Cannon.
+     *
+     * @param side the side
+     */
     public Cannon(Side side){
         super(6,side);
     }

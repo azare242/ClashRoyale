@@ -17,7 +17,15 @@ import sample.model.mechanismes.Side;
 
 import java.util.Iterator;
 
+/**
+ * The type King tower.
+ */
 public class KingTower extends TowerElement{
+    /**
+     * Instantiates a new King tower.
+     *
+     * @param side the side
+     */
     public KingTower(Side side) {
         super(7,1,2400,50,side);
         Animations animations = Animations.getInstance();
@@ -27,6 +35,11 @@ public class KingTower extends TowerElement{
 
     private boolean active = false;
 
+    /**
+     * Is active boolean.
+     *
+     * @return the boolean
+     */
     public boolean isActive() {
         return active;
     }
@@ -56,6 +69,12 @@ public class KingTower extends TowerElement{
     }
 
     private boolean damaged = false;
+
+    /**
+     * Is damaged boolean.
+     *
+     * @return the boolean
+     */
     public boolean isDamaged(){
         return damaged;
     }

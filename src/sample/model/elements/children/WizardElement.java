@@ -7,7 +7,15 @@ import sample.model.mechanismes.Side;
 import sample.model.mechanismes.Speed;
 import sample.model.mechanismes.Target;
 
+/**
+ * The type Wizard element.
+ */
 public class WizardElement extends TroopElement {
+    /**
+     * Instantiates a new Wizard element.
+     *
+     * @param side the side
+     */
     public WizardElement(Side side) {
         super(1.7,Speed.MEDIUM,Target.AIR_AND_GROUND,5,true,340,130,side);
         Animations animations = Animations.getInstance();

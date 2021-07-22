@@ -12,10 +12,18 @@ import sample.model.User;
 
 import java.io.IOException;
 
+/**
+ * Menu Scene controller.
+ */
 public class MenuController {
 
     private User user;
 
+    /**
+     * Instantiates a new Menu controller.
+     *
+     * @param user the user
+     */
     public MenuController(User user){
         this.user = user;
         SoundEffects.playMenuSound();
@@ -26,6 +34,12 @@ public class MenuController {
 
     @FXML private Button startGameButton;
 
+    /**
+     * Switch to profile.
+     *
+     * @param actionEvent the action event
+     * @throws IOException the io exception
+     */
     @FXML
     public void switchToProfile(javafx.event.ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) profileButton.getScene().getWindow();
@@ -39,6 +53,12 @@ public class MenuController {
         stage1.show();
     }
 
+    /**
+     * Switch to battle deck.
+     *
+     * @param actionEvent the action event
+     * @throws IOException the io exception
+     */
     @FXML
     public void switchToBattleDeck(javafx.event.ActionEvent actionEvent) throws IOException{
         Stage stage = (Stage) battleDeckButton.getScene().getWindow();
@@ -53,6 +73,13 @@ public class MenuController {
     }
 
     @FXML private Label status;
+
+    /**
+     * Go to game.
+     *
+     * @param actionEvent the action event
+     * @throws IOException the io exception
+     */
     @FXML
     public void goToGame(javafx.event.ActionEvent actionEvent) throws IOException {
 
@@ -73,6 +100,13 @@ public class MenuController {
         stage1.show();
     }
     @FXML private Button history;
+
+    /**
+     * History.
+     *
+     * @param actionEvent the action event
+     * @throws IOException the io exception
+     */
     @FXML public void history(javafx.event.ActionEvent actionEvent) throws IOException{
         Stage stage  = (Stage) history.getScene().getWindow();
         stage.close();
@@ -87,6 +121,13 @@ public class MenuController {
     }
 
     @FXML private Button logOut;
+
+    /**
+     * Log out.
+     *
+     * @param actionEvent the action event
+     * @throws IOException the io exception
+     */
     @FXML public void logOut(javafx.event.ActionEvent actionEvent) throws IOException {
         Stage stage  = (Stage) logOut.getScene().getWindow();
         stage.close();

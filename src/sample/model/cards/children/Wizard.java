@@ -7,8 +7,16 @@ import sample.model.elements.children.BabyDragonElement;
 import sample.model.elements.children.WizardElement;
 import sample.model.mechanismes.Side;
 
+/**
+ * The type Wizard.
+ */
 public class Wizard extends Troop {
 
+    /**
+     * Instantiates a new Wizard.
+     *
+     * @param side the side
+     */
     public Wizard(Side side){
         super(1,5,side);
     }

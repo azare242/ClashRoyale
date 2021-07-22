@@ -7,7 +7,15 @@ import sample.model.mechanismes.Side;
 import sample.model.mechanismes.Speed;
 import sample.model.mechanismes.Target;
 
+/**
+ * The type Archer element.
+ */
 public class ArcherElement extends TroopElement {
+    /**
+     * Instantiates a new Archer element.
+     *
+     * @param side the side
+     */
     public ArcherElement(Side side) {
         super(1.2, Speed.MEDIUM, Target.AIR_AND_GROUND, 5, false, 125, 33,side);
         this.movingArea = MovingArea.GROUND;

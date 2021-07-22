@@ -7,7 +7,15 @@ import sample.model.mechanismes.Side;
 import sample.model.mechanismes.Speed;
 import sample.model.mechanismes.Target;
 
+/**
+ * The type Giant element.
+ */
 public class GiantElement extends TroopElement {
+    /**
+     * Instantiates a new Giant element.
+     *
+     * @param side the side
+     */
     public GiantElement(Side side) {
         super(1.5,Speed.SLOW,Target.BUILDINGS,1.5,false,2000,126,side);
         Animations animations = Animations.getInstance();

@@ -7,7 +7,15 @@ import sample.model.elements.children.BabyDragonElement;
 import sample.model.elements.children.ValkyrieElement;
 import sample.model.mechanismes.Side;
 
+/**
+ * The type Valkyrie.
+ */
 public class Valkyrie extends Troop {
+    /**
+     * Instantiates a new Valkyrie.
+     *
+     * @param side the side
+     */
     public Valkyrie(Side side){
         super(1,5,side);
     }

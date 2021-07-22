@@ -8,8 +8,16 @@ import sample.model.elements.children.BabyDragonElement;
 import sample.model.elements.children.InfernoTowerElement;
 import sample.model.mechanismes.Side;
 
+/**
+ * The type Inferno tower.
+ */
 public class InfernoTower extends Building {
 
+    /**
+     * Instantiates a new Inferno tower.
+     *
+     * @param side the side
+     */
     public InfernoTower(Side side){
         super(5,side);
     }

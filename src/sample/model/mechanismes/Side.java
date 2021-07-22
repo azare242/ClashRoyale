@@ -1,5 +1,15 @@
 package sample.model.mechanismes;
 
+/**
+ * The enum Side.
+ */
 public enum Side {
-    PLAYER,BOT
+    /**
+     * Player side.
+     */
+    PLAYER,
+    /**
+     * Bot side.
+     */
+    BOT
 }
