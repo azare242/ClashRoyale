@@ -37,9 +37,10 @@ public class InfernoTowerElement extends BuildingElement {
     /**
      * Increase damage.
      */
-    public void increaseDamage(){
-        if (currentDamage == maxDamage) return;
-        setDamage(currentDamage + 10 );
+    public void increaseDamage() {
+        if (currentDamage >= maxDamage) return;
+        if (currentDamage + 10 >= maxDamage) currentDamage = maxDamage;
+        else currentDamage += 10;
     }
 
     /**
