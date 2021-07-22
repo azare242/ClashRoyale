@@ -400,6 +400,7 @@ public class GameController implements Initializable {
      * @param e the e
      */
     @FXML public void select1(MouseEvent e){
+        if (!gameStarted) return;
         playedCard = (Card) card1ImageView.getUserData();
         if (!elixir.enough(playedCard.getCost())){
             return;
@@ -414,6 +415,7 @@ public class GameController implements Initializable {
      * @param e the e
      */
     @FXML public void select2(MouseEvent e){
+        if (!gameStarted) return;
         playedCard = (Card) card2ImageView.getUserData();
         if (!elixir.enough(playedCard.getCost())){
             return;
@@ -429,6 +431,7 @@ public class GameController implements Initializable {
      * @param e the e
      */
     @FXML public void select3(MouseEvent e) {
+        if (!gameStarted) return;
     playedCard = (Card) card3ImageView.getUserData();
     if (!elixir.enough(playedCard.getCost())) {
         return;
@@ -444,6 +447,7 @@ public class GameController implements Initializable {
      * @param e the e
      */
     @FXML public void select4(MouseEvent e) {
+        if (!gameStarted) return;
     playedCard = (Card) card4ImageView.getUserData();
     if (!elixir.enough(playedCard.getCost())) {
         return;
