@@ -80,5 +80,25 @@
           </Tab>
         </tabs>
       </TabPane>
+      <Label alignment="CENTER" layoutX="13.0" layoutY="61.0" prefHeight="144.0" prefWidth="300.0" text="CLash Royale" textFill="#f7c931">
+         <font>
+            <Font name="Baloo Bhaina Regular" size="37.0" />
+         </font>
+      </Label>
+      <Label layoutX="155.0" layoutY="147.0" text="by" textFill="#f7c931">
+         <font>
+            <Font name="Baloo Chettan Regular" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="6.0" layoutY="152.0" text="Shahryar Safizade" textFill="#f7c931">
+         <font>
+            <Font name="Baloo Tammudu Regular" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="234.0" layoutY="152.0" text="Alireza Zare" textFill="#f7c931">
+         <font>
+            <Font name="Baloo Tammudu Regular" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
