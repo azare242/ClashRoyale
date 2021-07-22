@@ -332,7 +332,9 @@ public class GameController implements Initializable {
      */
     @FXML
     public void backToMenu(javafx.event.ActionEvent actionEvent) throws IOException {
-        endTimeLines();
+        if (gameStarted) {
+            endTimeLines();
+        }
         Stage stage = (Stage) back.getScene().getWindow();
         stage.close();
         Stage stage1 = new Stage();
