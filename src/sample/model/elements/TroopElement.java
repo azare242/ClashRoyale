@@ -17,6 +17,7 @@ import sample.model.mechanismes.Side;
 import sample.model.mechanismes.Speed;
 import sample.model.mechanismes.Target;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public abstract class TroopElement implements GameElement{
@@ -195,6 +196,31 @@ public abstract class TroopElement implements GameElement{
         }
     }
 
+    private ArrayList<GameElement> areaSplash(ImageView imageView, ObservableList<Node> inGameElements){
+        ArrayList<GameElement> elements = new ArrayList<>();
+        synchronized (inGameElements){
+            Iterator<Node> iterator = inGameElements.iterator();
+            ImageView element = null;
+            while (iterator.hasNext()){
+                element = (ImageView) iterator.next();
+                GameElement gameElement = (GameElement) element.getUserData();
+                if (gameElement != null){
+                    if (this.side != gameElement.getSide()) {
+                        if (distance(imageView, element) <= range * 10) {
+                            if (checkTarget(gameElement))
+                                elements.add(gameElement);
+                        }
+                    }
+                }
+            }
+        }
+        return elements;
+    }
+    private void damageElements(ArrayList<GameElement> inRanges){
+        for (GameElement gameElement : inRanges){
+            gameElement.takeDamage(this.damage);
+        }
+    }
     @Override
     public void startElementAction(ImageView imageView , ObservableList<Node> inGameElements,ImageView nearBridge , ImageView ptL , ImageView ptR , ImageView kt){
         double x = imageView.getLayoutX();
@@ -204,15 +230,20 @@ public abstract class TroopElement implements GameElement{
             ImageView target = getTarget(imageView , nearBridge , ptL , ptR , kt);
             check(imageView,inGameElements);
             GameElement inRange = canBattle(imageView,inGameElements);
-            if (inRange != null){
-                damageElement(inRange);
+            ArrayList<GameElement> inRanges = areaSplash(imageView,inGameElements);
+            if (inRange != null || inRanges.size() != 0){
+                if (!areaSplash) {
+                    damageElement(inRange);
+                } else {
+                    damageElements(inRanges);
+                }
                 if (seconds[0] % 2 == 0) {
                     imageView.setImage(attack1);
                 } else {
                     imageView.setImage(attack2);
                 }
             }
-            else {
+            else if (inRange == null && inRanges.size() == 0){
                 if (this.side == Side.PLAYER) {
                     if (x <= target.getLayoutX()) {
                         if (imageView.getLayoutX() <= target.getLayoutX()) {

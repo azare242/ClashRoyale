@@ -2,7 +2,6 @@ package sample.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -12,21 +11,23 @@ import sample.model.SoundEffects;
 import sample.model.User;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class EndGameController {
 
 
+public class HistoryController {
+
+    @FXML private Label history;
+    private User user;
     @FXML private Button back;
 
-    private User user;
-    public EndGameController(User user){
+    public HistoryController(User user){
         this.user = user;
 
     }
 
-
+    public void initialize(){
+        history.setText(user.getBattleHistory());
+    }
+    @FXML
     public void backToMenu(javafx.event.ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) back.getScene().getWindow();
         stage.close();
@@ -37,6 +38,6 @@ public class EndGameController {
         stage1.setScene(new Scene(root,321,567));
         stage1.setTitle("Clash Royal");
         stage1.show();
-    }
 
+    }
 }

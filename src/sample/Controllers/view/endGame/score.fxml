@@ -19,17 +19,7 @@
             <Font name="Baloo Bhaijaan Regular" size="16.0" />
          </font>
       </Button>
-      <Label fx:id="playerScore" layoutX="75.0" layoutY="72.0" prefHeight="61.0" prefWidth="21.0" text="0" textFill="#2a8edf">
-         <font>
-            <Font name="Baloo Chettan Regular" size="73.0" />
-         </font>
-      </Label>
-      <Label fx:id="botScore" layoutX="207.0" layoutY="72.0" prefHeight="61.0" prefWidth="21.0" text="0" textFill="#a64a35">
-         <font>
-            <Font name="Baloo Chettan Regular" size="73.0" />
-         </font>
-      </Label>
-      <Label layoutX="58.0" layoutY="14.0" prefHeight="58.0" prefWidth="262.0" text="You      Bot" textFill="#edb21c">
+      <Label alignment="CENTER" layoutX="29.0" layoutY="102.0" prefHeight="58.0" prefWidth="262.0" text="Training Over" textFill="#edb21c">
          <font>
             <Font name="Baloo Bhaijaan Regular" size="40.0" />
          </font>

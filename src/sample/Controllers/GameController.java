@@ -21,6 +21,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import sample.Controllers.view.ImagesByCard;
+import sample.history.Battle;
 import sample.model.ElixirHandler;
 import sample.model.SoundEffects;
 import sample.model.User;
@@ -190,8 +191,10 @@ public class GameController implements Initializable {
         timer.stop();
         endTimeLines();
         if (winner.equals("PLAYER_WIN")){
+            user.addBattle(new Battle("YOU WIN"));
             user.addXP(200);
         } else {
+            user.addBattle(new Battle("YOU LOSE"));
             user.addXP(70);
         }
 
@@ -201,7 +204,7 @@ public class GameController implements Initializable {
         stage.close();
         Stage stage1 = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("view/endGame/score.fxml"));
-        loader.setController(new EndGameController(scoreLabelPlayer.getText(),scoreLabelBot.getText(),this.user));
+        loader.setController(new EndGameController(this.user));
         Parent root = loader.load();
         stage1.setScene(new Scene(root,321,567));
         stage1.setTitle("Clash Royal");
@@ -416,17 +419,17 @@ public class GameController implements Initializable {
 
 
     private boolean canDeployHere(MouseEvent e){
-        if (enemyPrincessTowerLeft.getImage() == null){
-            return e.getX() > 226;
+        if (enemyPrincessTowerLeft.getImage() == null && enemyPrincessTowerRight.getImage() != null){
+            return e.getX() < 226 || e.getY() > leftBridge.getLayoutY() || e.getY() > leftBridge.getLayoutY();
         }
-        else if (enemyPrincessTowerRight.getImage() == null){
-            return e.getX() < 226;
+        else if (enemyPrincessTowerRight.getImage() == null && enemyPrincessTowerLeft.getImage() != null){
+            return e.getX() > 226 || e.getY() > leftBridge.getLayoutY() || e.getY() > leftBridge.getLayoutY();
         }
         else if (enemyPrincessTowerLeft.getImage() == null && enemyPrincessTowerRight.getImage() == null){
-            return e.getY() < 185 ;
+            return e.getY() < 185 || e.getY() > leftBridge.getLayoutY() || e.getY() > leftBridge.getLayoutY();
         }
         else {
-            return e.getY() < leftBridge.getLayoutY() || e.getY() < rightBridge.getLayoutY();
+            return e.getY() > leftBridge.getLayoutY() || e.getY() > rightBridge.getLayoutY();
         }
     }
     @FXML public void deploy(MouseEvent e){
@@ -434,7 +437,7 @@ public class GameController implements Initializable {
         if (playedCard == null) {
             return;
         }
-        if ( canDeployHere(e) && ( !(playedCard instanceof Spell)) ){
+        if ( !canDeployHere(e) && ( !(playedCard instanceof Spell)) ){
             return;
         }
         Card replaceCard = nextCard;

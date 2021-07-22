@@ -1,5 +1,7 @@
 package sample.model;
 
+import sample.history.Battle;
+import sample.history.BattleHistory;
 import sample.model.cards.Card;
 import sample.model.cards.children.*;
 import sample.model.elements.towers.KingTower;
@@ -24,6 +26,7 @@ public class User implements Serializable {
     private PrincessTower princessTowerRight;
     private KingTower kingTower;
 
+    private BattleHistory battleHistory;
     public PrincessTower getPrincessTowerLeft() {
         return princessTowerLeft;
     }
@@ -47,6 +50,7 @@ public class User implements Serializable {
         princessTowerLeft = new PrincessTower(Side.PLAYER);
         princessTowerRight = new PrincessTower(Side.PLAYER);
         kingTower = new KingTower(Side.PLAYER);
+        battleHistory = new BattleHistory();
     }
 
     public double getXPRate() {
@@ -136,5 +140,11 @@ public class User implements Serializable {
     }
     public boolean battleDeckIsEmpty(){
         return battleDeck.deckEmptied();
+    }
+    public void addBattle(Battle battle){
+        battleHistory.addBattle(battle);
+    }
+    public String getBattleHistory(){
+        return battleHistory.get();
     }
 }

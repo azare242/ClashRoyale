@@ -72,4 +72,25 @@ public class MenuController {
         stage1.setTitle("Clash Royal");
         stage1.show();
     }
+    @FXML private Button history;
+    @FXML public void history(javafx.event.ActionEvent actionEvent) throws IOException{
+        Stage stage  = (Stage) history.getScene().getWindow();
+        stage.close();
+
+        Stage stage1 = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("view/history/hitory.fxml"));
+        loader.setController(new HistoryController(this.user));
+        Parent root = loader.load();
+        stage1.setScene(new Scene(root,321,567));
+        stage1.setTitle("Clash Royal");
+        stage1.show();
+    }
+
+    @FXML private Button logOut;
+    @FXML public void logOut(javafx.event.ActionEvent actionEvent) throws IOException {
+        Stage stage  = (Stage) logOut.getScene().getWindow();
+        stage.close();
+
+        System.exit(0);
+    }
 }

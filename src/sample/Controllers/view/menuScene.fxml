@@ -24,7 +24,7 @@
             <Font name="Baloo Chettan Regular" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="78.0" layoutY="161.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="165.0" style="-fx-background-color: #d8c048#d8c048 #d8c048#d8c048;" text="Battle History" textFill="#228b76">
+      <Button fx:id="history" layoutX="78.0" layoutY="161.0" mnemonicParsing="false" onAction="#history" prefHeight="42.0" prefWidth="165.0" style="-fx-background-color: #d8c048#d8c048 #d8c048#d8c048;" text="Battle History" textFill="#228b76">
          <font>
             <Font name="Baloo Chettan Regular" size="20.0" />
          </font>
@@ -34,7 +34,7 @@
             <Font name="Baloo Chettan Regular" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="78.0" layoutY="263.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="165.0" style="-fx-background-color: #d8c048#d8c048 #d8c048#d8c048;" text="Play 1v1" textFill="#228b76">
+      <Button fx:id="logOut" layoutX="78.0" layoutY="263.0" mnemonicParsing="false" onAction="#logOut" prefHeight="42.0" prefWidth="165.0" style="-fx-background-color: #d8c048#d8c048 #d8c048#d8c048;" text="EXIT" textFill="#228b76">
          <font>
             <Font name="Baloo Chettan Regular" size="20.0" />
          </font>
